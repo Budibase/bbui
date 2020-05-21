@@ -1,0 +1,10 @@
+<script>
+  import { View } from 'svench'
+  import Bar from './Bar.svelte'
+</script>
+
+Let us be frank. Component Bar is mainly here for _decorative_ purposes.
+
+<View name="default">
+  <Bar />
+</View>

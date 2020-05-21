@@ -1,0 +1,8 @@
+<script>
+  import { View } from 'svench'
+  import Component from './Component.svelte'
+</script>
+
+<View name="default">
+  <Component />
+</View>

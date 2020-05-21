@@ -1,0 +1,32 @@
+<script>
+  import { View } from 'svench'
+  import Foo from './Foo.svelte'
+</script>
+
+<svench:options order={0} />
+
+<View
+  name="default"
+  knobs={{ red: false, strong: false }}
+  let:knobs
+  let:action>
+
+  <Foo {...knobs} on:click={action('click')} />
+
+</View>
+
+<View
+  name="destructure knobs"
+  knobs={{ red: false, strong: false, slot: 'Lorem ipsum' }}
+  let:knobs={{ red, strong, slot }}
+  let:action>
+
+  <Foo {red} {strong} on:click={action('click')}>
+    {slot}
+  </Foo>
+
+</View>
+
+<View name="red">
+  <Foo red={true} />
+</View>

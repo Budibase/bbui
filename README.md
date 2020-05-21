@@ -1,34 +1,39 @@
-*Psst — looking for an app template? Go here --> [sveltejs/template](https://github.com/sveltejs/template)*
+# Svench component template
 
----
+Develop your sharable component (or components lib) with [Svench](https://github.com/rixo/svench) and HMR prewired.
 
-# component-template
-
-A base for building shareable Svelte components. Clone it with [degit](https://github.com/Rich-Harris/degit):
+Ideal to try Svench without messing with your project's config ;)
 
 ```bash
-npx degit sveltejs/component-template my-new-component
-cd my-new-component
-npm install # or yarn
+git clone git@github.com:rixo/svench-component-template.git my-lib
+cd my-lib
+yarn
+yarn svench
 ```
 
-Your component's source code lives in `src/Component.svelte`.
+Open your browser at http://localhost:4242.
 
-You can create a package that exports multiple components by adding them to the `src` directory and editing `src/index.js` to reexport them as named exports.
+**NOTE** For now, it is recommended to clone the template (instead of degit), to be able to merge future updates to the config (since Svench is in early dev...).
 
-TODO
+You should keep the template's remote as `upstream` and add the address of your own repo as `origin`:
 
-* [ ] some firm opinions about the best way to test components
-* [ ] update `degit` so that it automates some of the setup work
+```bash
+git remote rename origin upstream
+# add yours
+git remote add origin ...
 
+# push and track to your repo
+git push -u origin master
+# -u is not needed on subsequent pushes
+git push
 
-## Setting up
-
-* Run `npm init` (or `yarn init`)
-* Replace this README with your own
-
+# update from upstream
+git pull upstream master
+```
 
 ## Consuming components
+
+(From [official component template](https://github.com/sveltejs/component-template#consuming-components))
 
 Your package.json has a `"svelte"` field pointing to `src/index.js`, which allows Svelte apps to import the source code directly, if they are using a bundler plugin like [rollup-plugin-svelte](https://github.com/sveltejs/rollup-plugin-svelte) or [svelte-loader](https://github.com/sveltejs/svelte-loader) (where [`resolve.mainFields`](https://webpack.js.org/configuration/resolve/#resolve-mainfields) in your webpack config includes `"svelte"`). **This is recommended.**
 

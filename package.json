@@ -1,17 +1,23 @@
 {
-  "name": "SvelteComponent",
+  "name": "my-components",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "svench": "cross-env SVENCH=1 rollup -cw",
+    "dev": "npm run --silent svench"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
+    "cross-env": "^7.0.2",
+    "mdsvex": "^0.5.1-beta.3",
     "rollup": "^1.20.0",
-    "rollup-plugin-svelte": "^5.0.0",
-    "svelte": "^3.0.0"
+    "rollup-plugin-hot": "^0.0.22",
+    "rollup-plugin-svelte-hot": "^0.7.0",
+    "svelte": "^3.0.0",
+    "svench": "^0.0.7"
   },
   "keywords": [
     "svelte"

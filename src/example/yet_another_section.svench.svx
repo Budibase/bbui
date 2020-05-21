@@ -1,0 +1,11 @@
+<svench:options path="yet another section/page" />
+
+# Complete path rewrite
+
+When using the `section` option, directory nesting is preserved in the URL path to the page.
+
+You can completely replace the URL path with the `path` option:
+
+```svelte
+<svench:options path="yet another section/page" />
+```

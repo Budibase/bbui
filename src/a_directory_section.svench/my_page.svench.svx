@@ -1,0 +1,3 @@
+# Sections
+
+You can have sections by having `.svench` directories in your "root" source folder.
