@@ -1,0 +1,28 @@
+.svench-content-md {
+  color: #666;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+h1.svench-content-md {
+  font-size: 2em;
+}
+h2.svench-content-md {
+  font-size: 1.66em;
+}
+h3.svench-content-md {
+  font-size: 1.33em;
+}
+h4.svench-content-md {
+  font-size: 1.33em;
+  font-weight: normal;
+}
+h5.svench-content-md {
+  font-size: 1em;
+  font-weight: bold;
+}
+h6.svench-content-md {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+}

@@ -2,8 +2,10 @@ import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import pkg from './package.json'
 import hmr from 'rollup-plugin-hot'
+import postcss from 'rollup-plugin-postcss-hot'
 import { mdsvex } from 'mdsvex'
 import svench from 'svench/rollup'
+import addClasses from 'rehype-add-classes'
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
@@ -18,6 +20,11 @@ const PRODUCTION = !WATCH
 const preprocess = [
   mdsvex({
     extension: '.svx',
+		rehypePlugins: [
+			[addClasses, {
+				'*': 'svench-content-md'
+			}]
+		]
   }),
 ]
 
@@ -32,6 +39,8 @@ export default {
         { file: pkg.main, format: 'umd', name },
       ],
   plugins: [
+		postcss(),
+
     svench({
       // The root dir that Svench will parse and watch.
       dir: './src',
@@ -45,7 +54,8 @@ export default {
       // Example: code splitting with ES modules
       override: {
         // replace your entry with Svench's one
-        input: true,
+        // using a custom entrypoint to include our global CSS
+        input: '.svench/svench.js',
         output: {
           // change output format to ES module
           format: 'es',

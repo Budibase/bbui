@@ -31,7 +31,7 @@
     d.head.appendChild(script);
   }
   window['__ROLLUP_PLUGIN_HOT_RUNTIME'].then(function() {
-    System.import("/svench/@hot/svench/svench.js", wsServerUrl).catch(err => {
+    System.import("/svench/@hot/component-template/.svench/svench.js", wsServerUrl).catch(err => {
     console.error(err && err.stack || err);
   });
   });
