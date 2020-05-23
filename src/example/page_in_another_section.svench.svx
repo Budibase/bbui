@@ -1,9 +1,0 @@
-<svench:options section="another section" />
-
-# Page in another section
-
-You can move a page to another section with the `section` option:
-
-```svelte
-<svench:options section="another section" />
-```
