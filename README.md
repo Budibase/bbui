@@ -31,10 +31,26 @@ git push
 git pull upstream master
 ```
 
+## Styling
+
+Custom styling and theming is very much under development in Svench. This template implements some ideas to tackle the question of styling user content like markdown pages without leaking CSS into the views (i.e. the components behind demonstrated).
+
+We add the `rehype-add-classes` to Mdsvex to add the `svench-content-md` to _every_ Mdsvex-rendered elements. This way we can achieve Svelte-like CSS scoping for our markdown content.
+
+Note: we can't rely on a generic class on containers, because every container element Svench can control also contains the views. This means that any inheritable CSS property (e.g. `color`, `font-size`...) set on the container would be inherited in the view. Also, coupling your target selector (e.g. `h1`) with the very specific class we add (`svench-content-md`) should prevent any selector collision with your actual components in the views.
+
+```css
+h1.svench-content-md {
+  font-size: 2em;
+}
+```
+
+This templates also includes a PostCSS plugin and a custom svench entrypoint, in `.svench/svench.js`. This lets you add custom styles for your workbench in `.svench/svench.css`. You can also add a preprocessor like Sass or Less if you want. Refer to the instructions in [rollup-plugin-postcss](https://github.com/egoist/rollup-plugin-postcss#with-sassstylusless).
+
+Note: don't try too hard to add a padding to your markdown pages... This is more a question of layout more than styling, and would need extra support for Svench itself... That is currently a work in progress!
+
 ## Consuming components
 
-(From [official component template](https://github.com/sveltejs/component-template#consuming-components))
+This template follows instructions from the official template, regarding publishing of Svelte components. Notably, it has a `svelte` field in `package.json` that points to the components' source code.
 
-Your package.json has a `"svelte"` field pointing to `src/index.js`, which allows Svelte apps to import the source code directly, if they are using a bundler plugin like [rollup-plugin-svelte](https://github.com/sveltejs/rollup-plugin-svelte) or [svelte-loader](https://github.com/sveltejs/svelte-loader) (where [`resolve.mainFields`](https://webpack.js.org/configuration/resolve/#resolve-mainfields) in your webpack config includes `"svelte"`). **This is recommended.**
-
-For everyone else, `npm run build` will bundle your component's source code into a plain JavaScript module (`dist/index.mjs`) and a UMD script (`dist/index.js`). This will happen automatically when you publish your component to npm, courtesy of the `prepublishOnly` hook in package.json.
+Refer to the [official component template](https://github.com/sveltejs/component-template#consuming-components) for more information.
