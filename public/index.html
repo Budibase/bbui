@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="/svench/svench.css" />
     <link rel="stylesheet" href="/svench/theme.css" />
 
-    <script defer src="/svench/svench.js"></script>
+    <!-- cf https://www.npmjs.com/package/dimport#usage -->
+    <script type="module" src="https://unpkg.com/dimport?module" data-main="/svench/svench.js"></script>
+    <script type="nomodule" src="https://unpkg.com/dimport/nomodule" data-main="/svench/svench.js"></script>
   </head>
 
   <body />
