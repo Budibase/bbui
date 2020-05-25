@@ -1,3 +1,4 @@
+import * as path from 'path'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import pkg from './package.json'
@@ -20,78 +21,100 @@ const PRODUCTION = !WATCH
 const preprocess = [
   mdsvex({
     extension: '.svx',
-		rehypePlugins: [
-			[addClasses, {
-				'*': 'svench-content-md'
-			}]
-		]
+    rehypePlugins: [
+      [
+        addClasses,
+        {
+          '*': 'svench-content svench-content-md',
+        },
+      ],
+    ],
   }),
 ]
 
-export default {
-  input: 'src/index.js',
-  // Svench plugin will override output when enabled (and we can't let Rollup
-  // see multiple outputs array, or it will start multiple Svench server)
-  output: SVENCH
-    ? {}
-    : [
-        { file: pkg.module, format: 'es' },
-        { file: pkg.main, format: 'umd', name },
-      ],
-  plugins: [
-		postcss(),
+const configs = {
+  svench: {
+    input: '.svench/svench.js',
+    output: {
+      format: 'es',
+      dir: 'public/svench',
+    },
+    plugins: [
+      postcss({
+        extract: path.resolve('public/svench/theme.css'),
+        sourceMap: true,
+      }),
 
-    svench({
-      // The root dir that Svench will parse and watch.
-      dir: './src',
+      svench({
+        // The root dir that Svench will parse and watch.
+        dir: 'src',
 
-      // The Svench plugins does some code transform, and so it needs to know of
-      // your preprocessors to be able to parse your local Svelte variant.
-      preprocess,
+        // The Svench plugins does some code transform, and so it needs to know of
+        // your preprocessors to be able to parse your local Svelte variant.
+        preprocess,
 
-      extensions: ['.svench', '.svench.svelte', '.svench.svx'],
+        extensions: ['.svench', '.svench.svelte', '.svench.svx'],
 
-      // Example: code splitting with ES modules
-      override: {
-        // replace your entry with Svench's one
-        // using a custom entrypoint to include our global CSS
-        input: '.svench/svench.js',
-        output: {
-          // change output format to ES module
-          format: 'es',
-          // remove the file from the original config (can't have file & dir)
-          file: null,
-          // and change to a dir (code splitting outputs multiple files)
-          dir: 'public/svench',
+        serve: WATCH && {
+          host: '0.0.0.0',
+          port: 4242,
+          public: 'public',
         },
-      },
+      }),
 
-      serve: {
-        host: '0.0.0.0',
-        port: 4242,
-        public: 'public',
-      },
-    }),
+      svelte({
+        dev: !PRODUCTION,
+        css: css => {
+          css.write('public/svench/svench.css')
+        },
+        extensions: ['.svelte', '.svench', '.svx'],
+        preprocess,
+        hot: HOT && {
+          optimistic: true,
+          noPreserveState: false,
+        },
+      }),
 
-    svelte({
-      dev: !PRODUCTION,
-      css: css => {
-        css.write('dist/bundle.css')
-      },
-      extensions: ['.svelte', '.svench', '.svx'],
-      preprocess,
-      hot: HOT && {
-        optimistic: true,
-        noPreserveState: false,
-      },
-    }),
+      resolve(),
 
-    resolve(),
+      HOT &&
+        hmr({
+          public: 'public',
+          inMemory: true,
+        }),
+    ],
+  },
 
-    hmr({
-      public: 'public',
-      inMemory: true,
-      compatModuleHot: !HOT, // for terser
-    }),
-  ],
+  lib: {
+    input: 'src/index.js',
+    output: [
+      { file: pkg.module, format: 'es' },
+      { file: pkg.main, format: 'umd', name },
+    ],
+    plugins: [
+      postcss(),
+
+      svelte({
+        dev: !PRODUCTION,
+        css: css => {
+          css.write('dist/bundle.css')
+        },
+        extensions: ['.svelte'],
+        hot: HOT && {
+          optimistic: true,
+          noPreserveState: false,
+        },
+      }),
+
+      resolve(),
+
+      HOT &&
+        hmr({
+          public: 'public',
+          inMemory: true,
+        }),
+    ],
+  },
 }
+
+export default configs[SVENCH ? 'svench' : 'lib']

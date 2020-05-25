@@ -1,8 +1,10 @@
 # Svench component template
 
-Develop your sharable component (or components lib) with [Svench](https://github.com/rixo/svench) and HMR prewired.
+Develop your sharable component(s) -- or lib -- with [Svench](https://github.com/rixo/svench) and HMR prewired.
 
 Ideal to try Svench without messing with your project's config ;)
+
+## Usage
 
 ```bash
 git clone git@github.com:rixo/svench-component-template.git my-lib
@@ -30,6 +32,24 @@ git push
 # update from upstream
 git pull upstream master
 ```
+
+### Scripts
+
+#### build
+
+Build your component(s) in `dist`.
+
+#### dev
+
+Watch and build your component(s) in `dist`.
+
+#### svench
+
+Launch Svench app at http://localhost:4242, with watch.
+
+#### build:svench
+
+Build your workbench in `public`.
 
 ## Styling
 

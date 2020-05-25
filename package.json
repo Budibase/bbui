@@ -4,10 +4,12 @@
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup --config",
+    "dev": "rollup --config --watch",
     "prepublishOnly": "npm run build",
     "svench": "cross-env SVENCH=1 rollup -cw",
-    "dev": "npm run --silent svench"
+    "build:svench": "cross-env SVENCH=1 rollup -c",
+    "test": "echo TODO"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
@@ -21,11 +23,6 @@
     "svelte": "^3.22.0",
     "svench": "^0.0.8"
   },
-  "keywords": [
-    "svelte"
-  ],
-  "files": [
-    "src",
-    "dist"
-  ]
+  "keywords": ["svelte"],
+  "files": ["src", "dist"]
 }
