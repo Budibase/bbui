@@ -28,5 +28,5 @@
 </View>
 
 <View name="red">
-  <Foo red={true} />
+  <Foo red={true} hint={false} />
 </View>

@@ -1,13 +1,16 @@
 <script>
   export let red = false
   export let strong = false
+  export let hint = '(click me)'
 </script>
 
 <div class:red class:strong on:click>
   <p>
     <slot>I am component Foo.</slot>
   </p>
-  <p>(click me)</p>
+  {#if hint}
+    <p>{hint}</p>
+  {/if}
 </div>
 
 <style>
