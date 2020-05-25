@@ -4,7 +4,9 @@ Develop your sharable component(s) -- or lib -- with [Svench](https://github.com
 
 Ideal to try Svench without messing with your project's config ;)
 
-## Usage
+## Install
+
+**NOTE** For now, it is recommended to clone the template (instead of degit), to be able to merge future updates to the config (since Svench is in early dev...).
 
 ```bash
 git clone git@github.com:rixo/svench-component-template.git my-lib
@@ -15,23 +17,37 @@ yarn svench
 
 Open your browser at http://localhost:4242.
 
-**NOTE** For now, it is recommended to clone the template (instead of degit), to be able to merge future updates to the config (since Svench is in early dev...).
+Edit a `.svench` file in `./src`.
 
-You should keep the template's remote as `upstream` and add the address of your own repo as `origin`:
+### Merging changes from the template
+
+Svench is currently under very active development. Integration with the build config / project setup is the subject of intensive research, so expects its API to change a lot.
+
+In order to keep up with the changes, I advice that you keep the template's repo as a remote of your project. This way you'll be able to merge upstream changes. Ah! And maybe don't mess with the config too much in your project or the merge may be... hairy!
+
+Run these commands (e.g. after install) to keep the template's remote as `upstream` and add the address of your own repo as `origin`:
 
 ```bash
 git remote rename origin upstream
 # add yours
-git remote add origin ...
+git remote add origin YOUR_GIT_REPO
 
 # push and track to your repo
 git push -u origin master
+
 # -u is not needed on subsequent pushes
 git push
+git pull
+```
 
+Pull from `upstream` when you want to merge latest changes from the template:
+
+```bash
 # update from upstream
 git pull upstream master
 ```
+
+## Usage
 
 ### Scripts
 
