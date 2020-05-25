@@ -2,7 +2,7 @@ import * as path from 'path'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import pkg from './package.json'
-import hmr from 'rollup-plugin-hot'
+import Hmr from 'rollup-plugin-hot'
 import postcss from 'rollup-plugin-postcss-hot'
 import { mdsvex } from 'mdsvex'
 import svench from 'svench/rollup'
@@ -31,6 +31,13 @@ const preprocess = [
     ],
   }),
 ]
+
+const hmr =
+  HOT &&
+  Hmr({
+    public: 'public',
+    inMemory: true,
+  })
 
 const configs = {
   svench: {
@@ -77,11 +84,7 @@ const configs = {
 
       resolve(),
 
-      HOT &&
-        hmr({
-          public: 'public',
-          inMemory: true,
-        }),
+      hmr,
     ],
   },
 
@@ -108,11 +111,7 @@ const configs = {
 
       resolve(),
 
-      HOT &&
-        hmr({
-          public: 'public',
-          inMemory: true,
-        }),
+      hmr,
     ],
   },
 }
