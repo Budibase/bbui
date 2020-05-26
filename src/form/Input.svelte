@@ -24,13 +24,13 @@
     color: var(--font);
     font-size: 18px;
     border-radius: 3px;
-    border: solid 1px var(--medium-grey);
+    border: solid 1px var(--grey-medium);
     padding: 20px;
     margin: 0;
   }
 
   input::placeholder {
-    color: var(--dark-grey);
+    color: var(--grey-dark);
   }
 
   input:focus {
@@ -38,7 +38,7 @@
   }
 
   input:disabled {
-    background: var(--medium-grey);
+    background: var(--grey-medium);
   }
 </style>
 
