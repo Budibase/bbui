@@ -4,8 +4,13 @@ A package that handles all common components across the Budibase organisation.
 
 To add components import and export it from the `src/index.js` file. 
 
-TODO
+## Components
 
+Input
+
+## TODO
+
+* [ ] Figure out a good documentation situation
 * [ ] Add testing suite (E2E using Playwright?)
 * [ ] Add Svench (as soon as stable)
 
