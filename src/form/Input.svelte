@@ -21,12 +21,14 @@
   }
 
   input {
+    box-sizing: border-box;
     color: var(--font);
     font-size: 18px;
     border-radius: 3px;
     border: solid 1px var(--grey-medium);
     padding: 20px;
     margin: 0;
+    background-color: white;
   }
 
   input::placeholder {
