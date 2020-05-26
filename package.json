@@ -1,26 +1,39 @@
 {
   "name": "@budibase/bbui",
   "description": "A UI solution used in the different Budibase projects.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "start": "sirv public",
+    "build": "rollup --config",
+    "dev": "rollup --config --watch",
+    "prepublishOnly": "npm run build",
+    "svench": "cross-env SVENCH=1 rollup -cw",
+    "build:svench": "cross-env SVENCH=1 rollup -c",
+    "test": "echo TODO"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
+    "cross-env": "^7.0.2",
+    "mdsvex": "^0.5.1-beta.3",
+    "rehype-add-classes": "^1.0.0",
     "rollup": "^1.20.0",
-    "rollup-plugin-svelte": "^5.0.0",
-    "svelte": "^3.0.0"
+    "rollup-plugin-hot": "^0.0.23",
+    "rollup-plugin-postcss-hot": "^0.0.1",
+    "rollup-plugin-svelte-hot": "^0.7.0",
+    "svelte": "^3.22.0",
+    "svench": "^0.0.8"
   },
   "keywords": [
-    "svelte",
-    "budibase"
+    "svelte"
   ],
   "files": [
     "src",
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "sirv-cli": "^0.4.6"
+  }
 }

@@ -2,17 +2,24 @@
 
 A package that handles all common components across the Budibase organisation.
 
-To add components import and export it from the `src/index.js` file. 
+The project uses [Svench](https://github.com/rixo/svench). It is somewhat akin to Storybook but a lot less bloated and much easier to setup. It also supports HMR for quick development.
 
-## Components
+## Example workflow to create a component
 
-Input
+1. Create a file: `Headline.svelte`
+2. Create a Svench file: `Headline.svench`
+3. Build component and add variants to the Svench file.
+4. Once done, re-export the file in `src/index.js`.
+5. Publish, update the package in the main project and profit. 
+
+## Currently available components
+
+* Input
 
 ## TODO
 
 * [ ] Figure out a good documentation situation
 * [ ] Add testing suite (E2E using Playwright?)
-* [ ] Add Svench (as soon as stable)
 
 
 ## Setting up

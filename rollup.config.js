@@ -1,20 +1,119 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
-import pkg from './package.json';
+import * as path from 'path'
+import svelte from 'rollup-plugin-svelte-hot'
+import resolve from '@rollup/plugin-node-resolve'
+import pkg from './package.json'
+import Hmr from 'rollup-plugin-hot'
+import postcss from 'rollup-plugin-postcss-hot'
+import { mdsvex } from 'mdsvex'
+import svench from 'svench/rollup'
+import addClasses from 'rehype-add-classes'
 
 const name = pkg.name
 	.replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
 	.replace(/^\w/, m => m.toUpperCase())
-	.replace(/-\w/g, m => m[1].toUpperCase());
+	.replace(/-\w/g, m => m[1].toUpperCase())
 
-export default {
-	input: 'src/index.js',
-	output: [
-		{ file: pkg.module, 'format': 'es' },
-		{ file: pkg.main, 'format': 'umd', name }
-	],
-	plugins: [
-		svelte(),
-		resolve()
-	]
-};
+const WATCH = !!process.env.ROLLUP_WATCH
+const SVENCH = !!process.env.SVENCH
+const HOT = WATCH
+const PRODUCTION = !WATCH
+
+const preprocess = [
+	mdsvex({
+		extension: '.svx',
+		rehypePlugins: [
+			[
+				addClasses,
+				{
+					'*': 'svench-content svench-content-md',
+				},
+			],
+		],
+	}),
+]
+
+const hmr =
+	HOT &&
+	Hmr({
+		public: 'public',
+		inMemory: true,
+	})
+
+const configs = {
+	svench: {
+		input: '.svench/svench.js',
+		output: {
+			format: 'es',
+			dir: 'public/svench',
+		},
+		plugins: [
+			postcss({
+				extract: path.resolve('public/svench/theme.css'),
+				sourceMap: true,
+			}),
+
+			svench({
+				// The root dir that Svench will parse and watch.
+				dir: 'src',
+
+				// The Svench plugins does some code transform, and so it needs to know of
+				// your preprocessors to be able to parse your local Svelte variant.
+				preprocess,
+
+				extensions: ['.svench', '.svench.svelte', '.svench.svx'],
+
+				serve: WATCH && {
+					host: '0.0.0.0',
+					port: 4242,
+					public: 'public',
+				},
+			}),
+
+			svelte({
+				dev: !PRODUCTION,
+				css: css => {
+					css.write('public/svench/svench.css')
+				},
+				extensions: ['.svelte', '.svench', '.svx'],
+				preprocess,
+				hot: HOT && {
+					optimistic: true,
+					noPreserveState: false,
+				},
+			}),
+
+			resolve(),
+
+			hmr,
+		],
+	},
+
+	lib: {
+		input: 'src/index.js',
+		output: [
+			{ file: pkg.module, format: 'es' },
+			{ file: pkg.main, format: 'umd', name },
+		],
+		plugins: [
+			postcss(),
+
+			svelte({
+				dev: !PRODUCTION,
+				css: css => {
+					css.write('dist/bundle.css')
+				},
+				extensions: ['.svelte'],
+				hot: HOT && {
+					optimistic: true,
+					noPreserveState: false,
+				},
+			}),
+
+			resolve(),
+
+			hmr,
+		],
+	},
+}
+
+export default configs[SVENCH ? 'svench' : 'lib']

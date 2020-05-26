@@ -20,7 +20,7 @@
     margin-bottom: 12px;
   }
 
-  input {
+  textarea {
     color: var(--font);
     font-size: 18px;
     border-radius: 3px;
@@ -29,20 +29,20 @@
     margin: 0;
   }
 
-  input::placeholder {
-    color: var(--grey-medium);
+  textarea::placeholder {
+    color: var(--grey-dark);
   }
 
-  input:focus {
+  textarea:focus {
     box-shadow: 0 4px 16px 0 rgba(57, 60, 68, 0.08);
   }
 
-  input:disabled {
+  textarea:disabled {
     background: var(--grey-medium);
   }
 </style>
 
 <div class="container">
   <label for={name}>{label}</label>
-  <input use:validator {type} {name} {placeholder} />
+  <textarea use:validator {type} {name} {placeholder} />
 </div>
