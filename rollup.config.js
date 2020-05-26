@@ -5,7 +5,7 @@ import pkg from './package.json'
 import Hmr from 'rollup-plugin-hot'
 import postcss from 'rollup-plugin-postcss-hot'
 import { mdsvex } from 'mdsvex'
-import svench from 'svench/rollup'
+import { plugin as svench } from 'svench/rollup'
 import addClasses from 'rehype-add-classes'
 
 const name = pkg.name
@@ -48,6 +48,7 @@ const configs = {
 		},
 		plugins: [
 			postcss({
+        hot: HOT,
 				extract: path.resolve('public/svench/theme.css'),
 				sourceMap: true,
 			}),
@@ -110,8 +111,6 @@ const configs = {
 			}),
 
 			resolve(),
-
-			hmr,
 		],
 	},
 }

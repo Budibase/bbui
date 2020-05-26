@@ -1,6 +1,10 @@
+body {
+  color: red !important;
+}
+
 :root {
     --white: #FFFFFF;
-    
+
     --blue: #0055ff;
     --blue-light: #F1F4FC;
     --blue-dark: #2F4C9B;
@@ -8,7 +12,7 @@
     --ink: #393C44;
     --ink-light: #808192;
     --ink-lighter: #ADAEC4;
-    
+
     --grey: #F2F2F2;
     --grey-light: #FBFBFB;
     --grey-medium: #e8e8ef;
@@ -40,7 +44,7 @@
     --deletion10: #F2545B1A;
     --deletiondark: #CF4046;
 
-    
+
     --darkslate: #1a202c;
     --slate: #d8d8d8;
     --lightslate: #f9f9f9;
