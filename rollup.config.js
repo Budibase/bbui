@@ -2,10 +2,10 @@ import * as path from 'path'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import pkg from './package.json'
-import Hmr from 'rollup-plugin-hot'
+import hmr from 'rollup-plugin-hot'
 import postcss from 'rollup-plugin-postcss-hot'
 import { mdsvex } from 'mdsvex'
-import svench from 'svench/rollup'
+import { plugin as svench } from 'svench/rollup'
 import addClasses from 'rehype-add-classes'
 
 const name = pkg.name
@@ -32,13 +32,6 @@ const preprocess = [
   }),
 ]
 
-const hmr =
-  HOT &&
-  Hmr({
-    public: 'public',
-    inMemory: true,
-  })
-
 const configs = {
   svench: {
     input: '.svench/svench.js',
@@ -48,6 +41,7 @@ const configs = {
     },
     plugins: [
       postcss({
+        hot: HOT,
         extract: path.resolve('public/svench/theme.css'),
         sourceMap: true,
       }),
@@ -84,7 +78,11 @@ const configs = {
 
       resolve(),
 
-      hmr,
+      HOT &&
+        hmr({
+          public: 'public',
+          inMemory: true,
+        }),
     ],
   },
 
@@ -103,15 +101,9 @@ const configs = {
           css.write('dist/bundle.css')
         },
         extensions: ['.svelte'],
-        hot: HOT && {
-          optimistic: true,
-          noPreserveState: false,
-        },
       }),
 
       resolve(),
-
-      hmr,
     ],
   },
 }
