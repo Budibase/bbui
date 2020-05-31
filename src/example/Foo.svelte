@@ -1,10 +1,11 @@
 <script>
   export let red = false
+  export let blue = false
   export let strong = false
   export let hint = '(click me)'
 </script>
 
-<div class:red class:strong on:click>
+<div class:red class:blue class:strong on:click>
   <p>
     <slot>I am component Foo.</slot>
   </p>
@@ -21,6 +22,9 @@
   }
   .red {
     color: red;
+  }
+  .blue {
+    color: skyblue;
   }
   .strong {
     font-weight: bold;
