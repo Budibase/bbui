@@ -1,12 +1,15 @@
 import * as path from 'path'
+import * as fs from 'fs'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
-import pkg from './package.json'
 import hmr from 'rollup-plugin-hot'
+import del from 'rollup-plugin-delete'
 import postcss from 'rollup-plugin-postcss-hot'
 import { mdsvex } from 'mdsvex'
 import { plugin as svench } from 'svench/rollup'
 import addClasses from 'rehype-add-classes'
+
+import pkg from './package.json'
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
@@ -32,6 +35,8 @@ const preprocess = [
   }),
 ]
 
+let $
+
 const configs = {
   svench: {
     input: '.svench/svench.js',
@@ -40,13 +45,17 @@ const configs = {
       dir: 'public/svench',
     },
     plugins: [
+      del({
+        targets: 'public/svench/*',
+      }),
+
       postcss({
         hot: HOT,
         extract: path.resolve('public/svench/theme.css'),
         sourceMap: true,
       }),
 
-      svench({
+      ({ $ } = svench({
         // The root dir that Svench will parse and watch.
         dir: 'src',
 
@@ -57,19 +66,22 @@ const configs = {
         extensions: ['.svench', '.svench.svelte', '.svench.svx'],
 
         serve: WATCH && {
-          host: '0.0.0.0',
+          host: 'localhost',
           port: 4242,
           public: 'public',
+          nollup: 'localhost:42421',
         },
-      }),
-
+      })),
       svelte({
         dev: !PRODUCTION,
         css: css => {
           css.write('public/svench/svench.css')
         },
         extensions: ['.svelte', '.svench', '.svx'],
-        preprocess,
+        // preprocess,
+        preprocess: {
+          markup: (...args) => $.preprocess(...args),
+        },
         hot: HOT && {
           optimistic: true,
           noPreserveState: false,
@@ -82,6 +94,7 @@ const configs = {
         hmr({
           public: 'public',
           inMemory: true,
+          compatModuleHot: !HOT, // for terser
         }),
     ],
   },

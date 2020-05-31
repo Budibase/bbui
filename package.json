@@ -9,6 +9,7 @@
     "dev": "rollup --config --watch",
     "prepublishOnly": "npm run build",
     "svench": "cross-env SVENCH=1 rollup -cw",
+    "svench:nollup": "cross-env SVENCH=1 nollup --hot --port 42421 --virtual-write public --watch src --watch '.svench/*' --watch node_modules/svench/tmp --watch node_modules/svench/src --config",
     "build:svench": "cross-env SVENCH=1 rollup -c",
     "test": "echo TODO"
   },
@@ -19,11 +20,12 @@
     "nollup": "rixo/nollup#next",
     "rehype-add-classes": "^1.0.0",
     "rollup": "^2.10.9",
-    "rollup-plugin-hot": "^0.0.23",
-    "rollup-plugin-postcss-hot": "^0.0.4",
-    "rollup-plugin-svelte-hot": "^0.7.0",
+    "rollup-plugin-delete": "^1.2.0",
+    "rollup-plugin-hot": "^0.0.25",
+    "rollup-plugin-postcss-hot": "^0.0.5",
+    "rollup-plugin-svelte-hot": "^0.7.1-0",
     "svelte": "^3.22.0",
-    "svench": "^0.0.8"
+    "svench": "^0.0.9-8"
   },
   "keywords": [
     "svelte"
