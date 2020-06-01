@@ -97,6 +97,14 @@ const configs = {
           compatModuleHot: !HOT, // for terser
         }),
     ],
+
+    watch: {
+      clearScreen: false,
+      // buildDelay is needed to ensure Svench's code (routes) generator will
+      // pick file changes before Rollup and prevent a double build (if Rollup
+      // first sees a change to src/Foo.svench, then to Svench's routes.js)
+      buildDelay: 100,
+    },
   },
 
   lib: {
