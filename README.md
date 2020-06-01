@@ -4,6 +4,10 @@ Develop your sharable component(s) -- or lib -- with [Svench](https://github.com
 
 Ideal to try Svench without messing with your project's config ;)
 
+## Demo
+
+This template is deployed at https://svench-component-template.now.sh/.
+
 ## Install
 
 **NOTE** For now, it is recommended to clone the template (instead of degit), to be able to merge future updates to the config (since Svench is in early dev...).

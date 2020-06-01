@@ -1,19 +1,16 @@
 <article>
   <h1>
-    <!-- <span class="icon">🔧</span> -->
     <span class="icon">🔬</span>
     Svench
   </h1>
 
-  <h2>This is your workbench.</h2>
+  ## This is your workbench.
 
-  <p>
-    Edit <code>index.svench.svx</code> to customize this page.
-  </p>
+  This is a [Svench](https://github.com/rixo/svench) project, created with [Svench's component template](https://github.com/rixo/svench-component-template).
 
-  <p>
-    Check `example` for inspiration.
-  </p>
+  Edit <code>index.svench.svx</code> to customize this page.
+
+  Check `example` for inspiration.
 </article>
 
 <style>
