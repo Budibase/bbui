@@ -23,7 +23,7 @@
     "rollup-plugin-delete": "^1.2.0",
     "rollup-plugin-hot": "^0.0.25",
     "rollup-plugin-postcss-hot": "^0.0.5",
-    "rollup-plugin-svelte-hot": "^0.7.1-0",
+    "rollup-plugin-svelte-hot": "^0.8.0",
     "svelte": "^3.22.0",
     "svench": "^0.0.9-8"
   },
