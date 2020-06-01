@@ -120,4 +120,4 @@ const configs = {
   }),
 }
 
-export default configs[SVENCH ? 'svench' : 'lib']
+export default configs[SVENCH ? 'svench' : 'lib']()
