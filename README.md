@@ -70,7 +70,17 @@ Watch and build your component(s) in `dist`.
 
 #### svench
 
+~~~bash
+yarn svench
+~~~
+
 Launch Svench app at http://localhost:4242, with watch.
+
+##### Nollup
+
+I'm very excited by the in-progress integration of Nollup, because it will mean a quantum leap in rebuild time for projects with the a lot of components.
+
+You can preview the current progress with the script `yarn svench:nollup`. At this point, we're still using a patched branch of Nollup... (The `yarn svench:nollup:dev` script is useful when developping Svench itself -- it makes Nollup watches & reload Svench's own sources).
 
 #### build:svench
 
