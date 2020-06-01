@@ -16,7 +16,6 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
     "cross-env": "^7.0.2",
-    "mdsvex": "^0.5.1-beta.3",
     "nollup": "rixo/nollup#next",
     "rehype-add-classes": "^1.0.0",
     "rollup": "^2.10.9",
@@ -25,7 +24,7 @@
     "rollup-plugin-postcss-hot": "^0.0.5",
     "rollup-plugin-svelte-hot": "^0.8.0",
     "svelte": "^3.22.0",
-    "svench": "^0.0.9-8"
+    "svench": "^0.0.9-9"
   },
   "keywords": [
     "svelte"

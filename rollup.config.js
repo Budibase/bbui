@@ -5,7 +5,6 @@ import resolve from '@rollup/plugin-node-resolve'
 import hmr from 'rollup-plugin-hot'
 import del from 'rollup-plugin-delete'
 import postcss from 'rollup-plugin-postcss-hot'
-import { mdsvex } from 'mdsvex'
 import { plugin as svench } from 'svench/rollup'
 import addClasses from 'rehype-add-classes'
 
@@ -20,20 +19,6 @@ const WATCH = !!process.env.ROLLUP_WATCH
 const SVENCH = !!process.env.SVENCH
 const HOT = WATCH
 const PRODUCTION = !WATCH
-
-const preprocess = [
-  mdsvex({
-    extension: '.svx',
-    rehypePlugins: [
-      [
-        addClasses,
-        {
-          '*': 'svench-content svench-content-md',
-        },
-      ],
-    ],
-  }),
-]
 
 let $
 
@@ -63,10 +48,6 @@ const configs = {
         // The root dir that Svench will parse and watch.
         dir: 'src',
 
-        // The Svench plugins does some code transform, and so it needs to know of
-        // your preprocessors to be able to parse your local Svelte variant.
-        preprocess,
-
         extensions: ['.svench', '.svench.svelte', '.svench.svx'],
 
         serve: WATCH && {
@@ -76,14 +57,17 @@ const configs = {
           nollup: 'localhost:42421',
         },
       })),
+
       svelte({
         dev: !PRODUCTION,
         css: css => {
           css.write('public/svench/svench.css')
         },
         extensions: ['.svelte', '.svench', '.svx'],
-        // preprocess,
         preprocess: {
+          // $.preprocess is Svench's "combined" preprocessor, it wraps both
+          // Mdsvex preprocessors (configured for Svench), and its own
+          // preprocessor (for static analysis -- eg extract source from views)
           markup: (...args) => $.preprocess(...args),
         },
         hot: HOT && {
