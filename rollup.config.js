@@ -45,8 +45,12 @@ const configs = {
       dir: 'public/svench',
     },
     plugins: [
+      // NOTE cleaning old builds is required to avoid serving stale static
+      // files from a previous build instead of in-memory files from the dev/hmr
+      // server
       del({
         targets: 'public/svench/*',
+        runOnce: true,
       }),
 
       postcss({
