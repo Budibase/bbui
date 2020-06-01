@@ -45,6 +45,11 @@ Pull from `upstream` when you want to merge latest changes from the template:
 ```bash
 # update from upstream
 git pull upstream master
+
+# -> this is the point where you might have to resolve a merge conflict or two...
+
+# upstream dependencies might have changed, so reinstall
+yarn
 ```
 
 ## Usage
