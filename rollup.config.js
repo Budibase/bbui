@@ -22,8 +22,11 @@ const PRODUCTION = !WATCH
 
 let $
 
+// NOTE configs are in function form to avoid instantiating plugins of the
+// config that is not used for nothing (in particular, the HMR plugin launches
+// a dev server on startup, this is not desired when just building for prod)
 const configs = {
-  svench: {
+  svench: () => ({
     input: '.svench/svench.js',
     output: {
       format: 'es',
@@ -93,9 +96,9 @@ const configs = {
       // first sees a change to src/Foo.svench, then to Svench's routes.js)
       buildDelay: 100,
     },
-  },
+  }),
 
-  lib: {
+  lib: () => ({
     input: 'src/index.js',
     output: [
       { file: pkg.module, format: 'es' },
@@ -114,7 +117,7 @@ const configs = {
 
       resolve(),
     ],
-  },
+  }),
 }
 
 export default configs[SVENCH ? 'svench' : 'lib']
