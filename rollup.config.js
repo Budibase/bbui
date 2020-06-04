@@ -5,7 +5,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import hmr from 'rollup-plugin-hot'
 import del from 'rollup-plugin-delete'
 import postcss from 'rollup-plugin-postcss-hot'
-import { plugin as svench } from 'svench/rollup'
+import { plugin as Svench } from 'svench/rollup'
 import addClasses from 'rehype-add-classes'
 
 import pkg from './package.json'
@@ -20,7 +20,20 @@ const SVENCH = !!process.env.SVENCH
 const HOT = WATCH
 const PRODUCTION = !WATCH
 
-let $
+// let $
+const svench = Svench({
+  // The root dir that Svench will parse and watch.
+  dir: 'src',
+
+  extensions: ['.svench', '.svench.svelte', '.svench.svx'],
+
+  serve: WATCH && {
+    host: 'localhost',
+    port: 4242,
+    public: 'public',
+    nollup: 'localhost:42421',
+  },
+})
 
 // NOTE configs are in function form to avoid instantiating plugins of the
 // config that is not used for nothing (in particular, the HMR plugin launches
@@ -47,19 +60,7 @@ const configs = {
         sourceMap: true,
       }),
 
-      ({ $ } = svench({
-        // The root dir that Svench will parse and watch.
-        dir: 'src',
-
-        extensions: ['.svench', '.svench.svelte', '.svench.svx'],
-
-        serve: WATCH && {
-          host: 'localhost',
-          port: 4242,
-          public: 'public',
-          nollup: 'localhost:42421',
-        },
-      })),
+      svench,
 
       svelte({
         dev: !PRODUCTION,
@@ -67,19 +68,17 @@ const configs = {
           css.write('public/svench/svench.css')
         },
         extensions: ['.svelte', '.svench', '.svx'],
-        preprocess: {
-          // $.preprocess is Svench's "combined" preprocessor, it wraps both
-          // Mdsvex preprocessors (configured for Svench), and its own
-          // preprocessor (for static analysis -- eg extract source from views)
-          markup: (...args) => $.preprocess(...args),
-        },
+        // Svench's "combined" preprocessor wraps both Mdsvex preprocessors
+        // (configured for Svench), and its own preprocessor (for static
+        // analysis -- eg extract source from views)
+        preprocess: svench.$.preprocess,
         hot: HOT && {
           optimistic: true,
           noPreserveState: false,
         },
       }),
 
-      resolve(),
+      resolve({ browser: true }),
 
       HOT &&
         hmr({

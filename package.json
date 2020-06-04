@@ -9,11 +9,13 @@
     "dev": "rollup --config --watch",
     "prepublishOnly": "npm run build",
     "svench": "cross-env SVENCH=1 rollup -cw",
-    "svench:nollup": "cross-env SVENCH=1 nollup --hot --port 42421 --virtual-write public --watch src --watch '.svench/*' --watch node_modules/svench/tmp --watch node_modules/svench/src --config",
+    "svench:nollup": "cross-env SVENCH=1 nollup --hot --port 42421 --virtual-write public --watch src --watch '.svench/*' --watch node_modules/svench/tmp --config",
+    "svench:nollup:dev": "yarn svench:nollup --watch ../svench/src --watch ../svench/*.js",
     "build:svench": "cross-env SVENCH=1 rollup -c",
     "test": "echo TODO"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^6.0.0",
     "cross-env": "^7.0.2",
     "nollup": "rixo/nollup#next",
@@ -26,13 +28,8 @@
     "svelte": "^3.22.0",
     "svench": "^0.0.9-9"
   },
-  "keywords": [
-    "svelte"
-  ],
-  "files": [
-    "src",
-    "dist"
-  ],
+  "keywords": ["svelte"],
+  "files": ["src", "dist"],
   "dependencies": {
     "sirv-cli": "^0.4.6"
   }
