@@ -26,10 +26,15 @@
     "rollup-plugin-postcss-hot": "^0.0.5",
     "rollup-plugin-svelte-hot": "^0.8.0",
     "svelte": "^3.22.0",
-    "svench": "^0.0.9-9"
+    "svench": "^0.0.9-10"
   },
-  "keywords": ["svelte"],
-  "files": ["src", "dist"],
+  "keywords": [
+    "svelte"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
   "dependencies": {
     "sirv-cli": "^0.4.6"
   }
