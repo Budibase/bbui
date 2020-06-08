@@ -1,7 +1,7 @@
 {
   "name": "@budibase/bbui",
   "description": "A UI solution used in the different Budibase projects.",
-  "version": "0.3.7-development",
+  "version": "0.0.0-development",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
