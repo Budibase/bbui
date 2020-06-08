@@ -1,0 +1,8 @@
+<script>
+  import { View } from "svench";
+  import Input from "./Input.svelte";
+</script>
+
+<View name="default">
+  <Input placeholder="Enter your name" label="Name" />
+</View>

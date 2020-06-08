@@ -1,0 +1,20 @@
+<script>
+  import { View } from "svench";
+  import Button from "./Button.svelte";
+</script>
+
+<View name="Primary">
+  <Button primary on:click={() => alert('Clicked!')}>Primary</Button>
+</View>
+<View name="Outline">
+  <Button outline on:click={() => alert('Clicked!')}>Outline</Button>
+</View>
+<View name="Error">
+  <Button error on:click={() => alert('Clicked!')}>Error</Button>
+</View>
+<View name="Disabled">
+  <Button primary disabled on:click={() => alert('Clicked!')}>Disabled</Button>
+</View>
+<View name="Thin">
+  <Button primary thin on:click={() => alert('Clicked!')}>Primary</Button>
+</View>

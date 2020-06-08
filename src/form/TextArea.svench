@@ -1,0 +1,8 @@
+<script>
+  import { View } from "svench";
+  import TextArea from "./TextArea.svelte";
+</script>
+
+<View name="default">
+  <TextArea placeholder="Enter your name" label="Name" />
+</View>

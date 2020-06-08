@@ -7,5 +7,6 @@
 //     import { Foo, Bar } from 'my-lib'
 //
 
-export { default as Foo } from './example/Foo.svelte'
-export { default as Bar } from './example/Bar.svelte'
+export { default as Input } from './form/Input.svelte';
+export { default as TextArea } from './form/TextArea.svelte';
+export { default as Button } from './form/Button.svelte';
