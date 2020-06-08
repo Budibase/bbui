@@ -1,0 +1,8 @@
+<script>
+  import { View } from "svench";
+  import Select from "./Select.svelte";
+</script>
+
+<View name="default">
+  <Select placeholder="Pick a movie" label="Movie" />
+</View>
