@@ -1,5 +1,7 @@
 {
-  "name": "my-components",
+  "name": "@budibase/bbui",
+  "description": "A UI solution used in the different Budibase projects.",
+  "version": "0.3.5",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",

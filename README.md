@@ -1,111 +1,37 @@
-# Svench component template
+# Budibase bbui
 
-Develop your sharable component(s) -- or lib -- with [Svench](https://github.com/rixo/svench) and HMR prewired.
+A package that handles all common components across the Budibase organisation.
 
-Ideal to try Svench without messing with your project's config ;)
-
-## Demo
-
-This template is deployed at https://svench-component-template.now.sh/.
+The project uses [Svench](https://github.com/rixo/svench). It is somewhat akin to Storybook but a lot less bloated and much easier to setup. It also supports HMR for quick development.
 
 ## Install
 
-**NOTE** For now, it is recommended to clone the template (instead of degit), to be able to merge future updates to the config (since Svench is in early dev...).
+1. Clone
+2. `npm install`
+3. `npm run svench`
 
-```bash
-git clone git@github.com:rixo/svench-component-template.git my-lib
-cd my-lib
-yarn
-yarn svench
-```
+## Example workflow to create a component
 
-Open your browser at http://localhost:4242.
+1. Create a file: `Headline.svelte`
+2. Create a Svench file: `Headline.svench`
+3. Build component and add variants to the Svench file.
+4. Once done, re-export the file in `src/index.js`.
+5. Publish, update the package in the main project and profit. 
 
-Edit a `.svench` file in `./src`.
+## Currently available components
 
-### Merging changes from the template
+* Input
+* TextArea
+* Button
 
-Svench is currently under very active development. Integration with the build config / project setup is the subject of intensive research, so expects its API to change a lot.
+## TODO
 
-In order to keep up with the changes, I advice that you keep the template's repo as a remote of your project. This way you'll be able to merge upstream changes. Ah! And maybe don't mess with the config too much in your project or the merge may be... hairy!
+* [ ] Figure out a good documentation situation
+* [ ] Add testing suite (E2E using Playwright?)
 
-Run these commands (e.g. after install) to keep the template's remote as `upstream` and add the address of your own repo as `origin`:
 
-```bash
-git remote rename origin upstream
-# add yours
-git remote add origin YOUR_GIT_REPO
+## Setting up
 
-# push and track to your repo
-git push -u origin master
-
-# -u is not needed on subsequent pushes
-git push
-git pull
-```
-
-Pull from `upstream` when you want to merge latest changes from the template:
-
-```bash
-# update from upstream
-git pull upstream master
-
-# -> this is the point where you might have to resolve a merge conflict or two...
-
-# upstream dependencies might have changed, so reinstall
-yarn
-```
-
-## Usage
-
-### Scripts
-
-#### build
-
-Build your component(s) in `dist`.
-
-#### dev
-
-Watch and build your component(s) in `dist`.
-
-#### svench
-
-~~~bash
-yarn svench
-~~~
-
-Launch Svench app at http://localhost:4242, with watch.
-
-##### Nollup
-
-I'm very excited by the in-progress integration of Nollup, because it will mean a quantum leap in rebuild time for projects with the a lot of components.
-
-You can preview the current progress with the script `yarn svench:nollup`. At this point, we're still using a patched branch of Nollup... (The `yarn svench:nollup:dev` script is useful when developping Svench itself -- it makes Nollup watches & reload Svench's own sources).
-
-#### build:svench
-
-Build your workbench in `public`.
-
-## Styling
-
-Custom styling and theming is very much under development in Svench. This template implements some ideas to tackle the question of styling user content like markdown pages without leaking CSS into the views (i.e. the components behind demonstrated).
-
-We add the `rehype-add-classes` to Mdsvex to add the `svench-content-md` to _every_ Mdsvex-rendered elements. This way we can achieve Svelte-like CSS scoping for our markdown content.
-
-Note: we can't rely on a generic class on containers, because every container element Svench can control also contains the views. This means that any inheritable CSS property (e.g. `color`, `font-size`...) set on the container would be inherited in the view. Also, coupling your target selector (e.g. `h1`) with the very specific class we add (`svench-content-md`) should prevent any selector collision with your actual components in the views.
-
-```css
-h1.svench-content-md {
-  font-size: 2em;
-}
-```
-
-This templates also includes a PostCSS plugin and a custom svench entrypoint, in `.svench/svench.js`. This lets you add custom styles for your workbench in `.svench/svench.css`. You can also add a preprocessor like Sass or Less if you want. Refer to the instructions in [rollup-plugin-postcss](https://github.com/egoist/rollup-plugin-postcss#with-sassstylusless).
-
-Note: don't try too hard to add a padding to your markdown pages... This is more a question of layout more than styling, and would need extra support for Svench itself... That is currently a work in progress!
-
-## Consuming components
-
-This template follows instructions from the official template, regarding publishing of Svelte components. Notably, it has a `svelte` field in `package.json` that points to the components' source code.
-
-Refer to the [official component template](https://github.com/sveltejs/component-template#consuming-components) for more information.
+* Run `npm init` (or `yarn init`)
+* Replace this README with your own
+ of the `prepublishOnly` hook in package.json.
