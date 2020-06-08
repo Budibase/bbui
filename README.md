@@ -24,6 +24,9 @@ The project uses [Svench](https://github.com/rixo/svench). It is somewhat akin t
 * TextArea
 * Button
 
+Links:
+* Homepage Link (HomeLink)
+
 ## TODO
 
 * [ ] Figure out a good documentation situation
