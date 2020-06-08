@@ -18,3 +18,9 @@
 <View name="Thin">
   <Button primary thin on:click={() => alert('Clicked!')}>Primary</Button>
 </View>
+<View
+  name="use Knobs"
+  knobs={{ primary: true, outline: false, error: false, disabled: false, thin: false }}
+  let:knobs>
+  <Button {...knobs} on:click={() => alert('Clicked!')}>Primary</Button>
+</View>

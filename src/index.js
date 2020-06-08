@@ -10,3 +10,4 @@
 export { default as Input } from './form/Input.svelte';
 export { default as TextArea } from './form/TextArea.svelte';
 export { default as Button } from './form/Button.svelte';
+export { default as Home } from './Links/Home.svelte';
