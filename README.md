@@ -7,8 +7,8 @@ The project uses [Svench](https://github.com/rixo/svench). It is somewhat akin t
 ## Install
 
 1. Clone
-2. `yarn`
-3. `yarn svench`
+2. `npm install`
+3. `npm run svench`
 
 ## Example workflow to create a component
 
