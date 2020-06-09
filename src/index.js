@@ -11,3 +11,4 @@ export { default as Input } from './Form/Input.svelte';
 export { default as TextArea } from './Form/TextArea.svelte';
 export { default as Button } from './Form/Button.svelte';
 export { default as Home } from './Links/Home.svelte';
+export { default as DetailSummary } from './List/Items/DetailSummary.svelte';
