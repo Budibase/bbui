@@ -1,8 +1,6 @@
 <script>
-  // your script goes here
-  export let name = "Name",
-    icon,
-    show;
+  export let name,
+    show = false;
 
   const capitalize = name => name[0].toUpperCase() + name.slice(1);
 </script>
@@ -58,7 +56,7 @@
 <div class="property-group-container">
   <div class="property-group-name" on:click={() => (show = !show)}>
     <div class="icon">
-      <i class={icon} />
+      <i class={show ? 'ri-arrow-down-s-fill' : 'ri-arrow-right-s-fill'} />
     </div>
     <div class="name">{capitalize(name)}</div>
   </div>
