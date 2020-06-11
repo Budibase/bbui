@@ -43,13 +43,50 @@ h6.svench-content {
   --grey-medium: #e8e8ef;
   --grey-dark: #E6E6E6;
 
-  --red: #E26D69;
-  --red-light: #FFE6E6;
-  --red-dark: #800400;
+  --primary100: #0055ff;
+  --primary80: rgba(0, 85, 255, 0.8);
+  --primary60: #rgba(0, 85, 255, 0.6);
+  --primary40: #rgba(0, 85, 255, 0.4);
+  --primary20: #rgba(0, 85, 255, 0.2);
+  --primary10: #rgba(0, 85, 255, 0.1);
+  --primary5: #rgba(0, 85, 255, 0.05);
+  --primarydark: #0044cc;
 
-  --yellow: #FFD26A;
-  --yellow-light: #FFF7E6;
-  --yellow-dark: #805900;
+  --secondary100:#393C44;
+  --secondary80: rgba(0, 3, 51, 0.8);
+  --secondary60: rgba(0, 3, 51, 0.6);
+  --secondary40: rgba(0, 3, 51, 0.4);
+  --secondary20: rgba(0, 3, 51, 0.2);
+  --secondary10: rgba(0, 3, 51, 0.1);
+  --secondary5: rgba(0, 3, 51, 0.05);
+  --secondarydark: #00021a;
+
+  --tertiary: #F2F5F7;
+
+  --success100: #49C39EFF;
+  --success75: #49C39EBF;
+  --success50: #49C39E80;
+  --success25: #49C39E40;
+  --success10: #49C39E1A;
+  --successdark: #44B492;
+
+  --deletion100: #F2545BFF;
+  --deletion75: #F2545BBF;
+  --deletion50: #F2545B80;
+  --deletion25: #F2545B40;
+  --deletion10: #F2545B1A;
+  --deletiondark: #CF4046;
+  
+  --error100: #eb5757;
+  --error75: #49C39EBF;
+  --error50: #49C39E80;
+  --error25: #49C39E40;
+  --error10: #49C39E1A;
+  --errordark: #44B492;
+  
+  --darkslate: #1a202c;
+  --slate: #d8d8d8;
+  --lightslate: #f9f9f9;
 
   --borderradius: 2px;
   --borderradiusall: 2px 2px 2px 2px;
