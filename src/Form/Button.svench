@@ -4,46 +4,23 @@
 </script>
 
 <View name="Primary">
-  <Button primary small on:click={() => alert('Clicked!')}>Small</Button>
-  <Button primary on:click={() => alert('Clicked!')}>Default</Button>
-  <Button primary medium on:click={() => alert('Clicked!')}>Large</Button>
-  <Button primary large on:click={() => alert('Clicked!')}>Large</Button>
-  <Button primary wide on:click={() => alert('Clicked!')}>Wide</Button>
+  <Button primary on:click={() => alert('Clicked!')}>Primary</Button>
 </View>
-<View name="Secondary">
-  <Button secondary small on:click={() => alert('Clicked!')}>Small</Button>
-  <Button secondary on:click={() => alert('Clicked!')}>Default</Button>
-  <Button secondary medium on:click={() => alert('Clicked!')}>Medium</Button>
-  <Button secondary large on:click={() => alert('Clicked!')}>Large</Button>
-  <Button secondary wide on:click={() => alert('Clicked!')}>Wide</Button>
-</View>
-<View name="Attention / Success">
-  <Button attention small on:click={() => alert('Clicked!')}>Small</Button>
-  <Button attention on:click={() => alert('Clicked!')}>Default</Button>
-  <Button attention medium on:click={() => alert('Clicked!')}>Medium</Button>
-  <Button attention large on:click={() => alert('Clicked!')}>Large</Button>
-  <Button attention wide on:click={() => alert('Clicked!')}>Wide</Button>
+<View name="Outline">
+  <Button outline on:click={() => alert('Clicked!')}>Outline</Button>
 </View>
 <View name="Error">
-  <Button error small on:click={() => alert('Clicked!')}>Small</Button>
-  <Button error on:click={() => alert('Clicked!')}>Default</Button>
-  <Button error medium on:click={() => alert('Clicked!')}>Medium</Button>
-  <Button error large on:click={() => alert('Clicked!')}>Large</Button>
-  <Button error wide on:click={() => alert('Clicked!')}>Wide</Button>
-</View>
-<View name="Warning">
-  <Button warning small on:click={() => alert('Clicked!')}>Small</Button>
-  <Button warning on:click={() => alert('Clicked!')}>Default</Button>
-  <Button warning medium on:click={() => alert('Clicked!')}>Medium</Button>
-  <Button warning large on:click={() => alert('Clicked!')}>Large</Button>
-  <Button warning wide on:click={() => alert('Clicked!')}>Wide</Button>
+  <Button error on:click={() => alert('Clicked!')}>Error</Button>
 </View>
 <View name="Disabled">
   <Button primary disabled on:click={() => alert('Clicked!')}>Disabled</Button>
 </View>
+<View name="Thin">
+  <Button primary thin on:click={() => alert('Clicked!')}>Primary</Button>
+</View>
 <View
   name="use Knobs"
-  knobs={{ primary: true, secondary: false, attention: false, error: false, disabled: false, small: false, medium: false, large: false, wide: false }}
+  knobs={{ primary: true, outline: false, error: false, disabled: false, thin: false }}
   let:knobs>
-  <Button {...knobs} on:click={() => alert('Clicked!')}>Knooby</Button>
+  <Button {...knobs} on:click={() => alert('Clicked!')}>Primary</Button>
 </View>
