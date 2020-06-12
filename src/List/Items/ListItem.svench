@@ -1,0 +1,8 @@
+<script>
+  import { View } from "svench";
+  import ListItem from "./ListItem.svelte";
+</script>
+
+<View name="default">
+  <ListItem title="My List Item" icon="ri-home-3-line" />
+</View>
