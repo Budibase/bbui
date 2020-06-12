@@ -1,26 +1,8 @@
 <script>
   import { View } from "svench";
   import Select from "./Select.svelte";
-
-  const options = [
-    "Chocolate",
-    "Vanilla",
-    "Strawberry"
-  ]
 </script>
 
 <View name="default">
-  <Select>
-    {#each options as option}
-      <option value={option}>{option}</option>
-    {/each}
-  </Select>
-</View>
-
-<View name="secondary">
-  <Select secondary>
-    {#each options as option}
-      <option value={option}>{option}</option>
-    {/each}
-  </Select>
+  <Select placeholder="Pick a movie" label="Movie" />
 </View>
