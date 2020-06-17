@@ -50,9 +50,9 @@
     color: var(--ink);
   }
   button.secondary:hover:not([disabled]) {
-    border: solid 1px var(--ink);
-    background-color: var(--ink);
-    color: white;
+    border: solid 1px var(--grey);
+    background-color: var(--grey-light);
+    color: var(--ink);
   }
   .attention {
     background-color: var(--blue);
