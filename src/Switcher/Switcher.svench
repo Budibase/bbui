@@ -21,5 +21,7 @@
 </script>
 
 <View name="default">
-  <Switcher headings={items} bind:value={value} />
+  <Switcher headings={items} bind:value={value}>
+    Content
+  </Switcher>
 </View>
