@@ -1,8 +1,30 @@
 <script>
   import { View } from "svench";
   import Input from "./Input.svelte";
+  import Button from "./Button.svelte";
 </script>
+
+<style>
+  .buttons {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: auto auto;
+  }
+</style>
 
 <View name="default">
   <Input placeholder="Enter your name" label="Name" />
+</View>
+
+<View name="thin">
+  <Input thin placeholder="Enter your name" label="Name" />
+</View>
+
+<View name="with buttons">
+  <Input thin placeholder="Enter your name" label="Name">
+    <div class="buttons">
+      <Button secondary small on:click={() => alert('Clicked!')}>Edit</Button>
+      <Button disabled small on:click={() => alert('Clicked!')}>Save</Button>
+    </div>
+  </Input>
 </View>

@@ -19,6 +19,13 @@
   label {
     color: var(--font);
     margin-bottom: 12px;
+    display: flex;
+  }
+
+  .right {
+    align-items: center;
+    display: grid;
+    margin-left: auto;
   }
 
   textarea {
@@ -41,9 +48,20 @@
   textarea:disabled {
     background: var(--grey-medium);
   }
+
+  .thin + textarea {
+    padding: 12px 9px;
+    font-size: 12px;
+    letter-spacing: 0.12px;
+  }
 </style>
 
 <div class="container">
-  <label for={name}>{label}</label>
+  <label for={name}>
+    {label}
+    <div class="right">
+      <slot />
+    </div>
+  </label>
   <textarea bind:value {placeholder} {name} use:text_area_resize />
 </div>
