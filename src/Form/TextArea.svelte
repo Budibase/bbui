@@ -85,7 +85,7 @@
 </style>
 
 <div class="container">
-  <label for={name}>
+  <label class:thin for={name}>
     {label}
     {#if edit}
       <div class="right">
@@ -101,7 +101,7 @@
   <textarea
     class:thin
     bind:value
-    {disabled}
+    disabled={disabled || !editMode}
     {placeholder}
     {name}
     use:text_area_resize />

@@ -109,7 +109,7 @@
     on:change={updateValue}
     on:input={updateValue}
     use:validator
-    {disabled}
+    disabled={disabled || !editMode}
     {type}
     {name}
     {placeholder} />

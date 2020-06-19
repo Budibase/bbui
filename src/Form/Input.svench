@@ -4,14 +4,6 @@
   import Button from "./Button.svelte";
 </script>
 
-<style>
-  .buttons {
-    display: grid;
-    grid-gap: 12px;
-    grid-template-columns: auto auto;
-  }
-</style>
-
 <View name="default">
   <Input placeholder="Enter your name" label="Name" />
 </View>
