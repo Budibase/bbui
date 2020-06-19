@@ -101,7 +101,7 @@
   <textarea
     class:thin
     bind:value
-    disabled={disabled || !editMode}
+    disabled={disabled || (edit && !editMode)}
     {placeholder}
     {name}
     use:text_area_resize />
