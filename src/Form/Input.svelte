@@ -1,6 +1,7 @@
 <script>
   export let name,
     label,
+    thin,
     type,
     placeholder,
     validator = () => {};
@@ -8,6 +9,7 @@
 
 <style>
   .container {
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     font-size: 14px;
@@ -18,6 +20,13 @@
   label {
     color: var(--font);
     margin-bottom: 12px;
+    display: flex;
+  }
+
+  .right {
+    align-items: center;
+    display: grid;
+    margin-left: auto;
   }
 
   input {
@@ -42,9 +51,27 @@
   input:disabled {
     background: var(--grey-medium);
   }
+
+  .thin + input {
+    padding: 12px 9px;
+    font-size: 12px;
+    letter-spacing: 0.12px;
+  }
 </style>
 
 <div class="container">
-  <label for={name}>{label}</label>
-  <input on:change on:input use:validator {type} {name} {placeholder} />
+  <label class:thin for={name}>
+    {label}
+    <div class="right">
+      <slot />
+    </div>
+  </label>
+  <input
+    class:thin
+    on:change
+    on:input
+    use:validator
+    {type}
+    {name}
+    {placeholder} />
 </div>

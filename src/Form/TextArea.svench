@@ -1,8 +1,27 @@
 <script>
   import { View } from "svench";
   import TextArea from "./TextArea.svelte";
+
+  import Button from "./Button.svelte";
 </script>
+
+<style>
+  .buttons {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: auto auto;
+  }
+</style>
 
 <View name="default">
   <TextArea placeholder="Enter your name" label="Name" />
+</View>
+
+<View name="with buttons">
+  <TextArea placeholder="Enter your name" label="Name">
+    <div class="buttons">
+      <Button attention small on:click={() => alert('Clicked!')}>Edit</Button>
+      <Button small on:click={() => alert('Clicked!')}>Save</Button>
+    </div>
+  </TextArea>
 </View>
