@@ -16,15 +16,19 @@
   <Input placeholder="Enter your name" label="Name" />
 </View>
 
+<View name="disabled">
+  <Input disabled placeholder="Enter your name" label="Name" />
+</View>
+
 <View name="thin">
   <Input thin placeholder="Enter your name" label="Name" />
 </View>
 
-<View name="with buttons">
-  <Input thin placeholder="Enter your name" label="Name">
-    <div class="buttons">
-      <Button secondary small on:click={() => alert('Clicked!')}>Edit</Button>
-      <Button disabled small on:click={() => alert('Clicked!')}>Save</Button>
-    </div>
-  </Input>
+<View name="with edit buttons">
+  <Input
+    thin
+    edit
+    placeholder="Enter your name"
+    label="Name"
+    on:save={console.log} />
 </View>

@@ -1,10 +1,32 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  import Button from "./Button.svelte";
+  const dispatch = createEventDispatcher();
   import { text_area_resize } from "../actions/autoresize_textarea.js";
   export let name,
     label,
-    value,
+    thin,
+    edit,
+    disabled,
     placeholder,
     validator = () => {};
+
+  // This section handles the edit mode and dispatching of things to the parent when saved
+  let editMode = false;
+  let value;
+
+  const updateValue = e => {
+    value = e.target.value;
+  };
+
+  const save = () => {
+    editMode = false;
+    dispatch("save", value);
+  };
+
+  const enableEdit = () => {
+    editMode = true;
+  };
 </script>
 
 <style>
@@ -25,6 +47,8 @@
   .right {
     align-items: center;
     display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 12px;
     margin-left: auto;
   }
 
@@ -54,14 +78,31 @@
     font-size: 12px;
     letter-spacing: 0.12px;
   }
+  textarea:disabled {
+    background: var(--grey);
+    border: 1px solid var(--grey);
+  }
 </style>
 
 <div class="container">
   <label for={name}>
     {label}
-    <div class="right">
-      <slot />
-    </div>
+    {#if edit}
+      <div class="right">
+        <Button small secondary disabled={editMode} on:click={enableEdit}>
+          Edit
+        </Button>
+        <Button small attention disabled={!editMode} on:click={save}>
+          Save
+        </Button>
+      </div>
+    {/if}
   </label>
-  <textarea bind:value {placeholder} {name} use:text_area_resize />
+  <textarea
+    class:thin
+    bind:value
+    {disabled}
+    {placeholder}
+    {name}
+    use:text_area_resize />
 </div>

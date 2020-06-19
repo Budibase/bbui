@@ -1,10 +1,33 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  import Button from "./Button.svelte";
+  const dispatch = createEventDispatcher();
+
   export let name,
     label,
     thin,
+    edit,
+    disabled,
     type,
     placeholder,
     validator = () => {};
+
+  // This section handles the edit mode and dispatching of things to the parent when saved
+  let editMode = false;
+  let value;
+
+  const updateValue = e => {
+    value = e.target.value;
+  };
+
+  const save = () => {
+    editMode = false;
+    dispatch("save", value);
+  };
+
+  const enableEdit = () => {
+    editMode = true;
+  };
 </script>
 
 <style>
@@ -26,6 +49,8 @@
   .right {
     align-items: center;
     display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 12px;
     margin-left: auto;
   }
 
@@ -57,20 +82,34 @@
     font-size: 12px;
     letter-spacing: 0.12px;
   }
+  input:disabled {
+    background: var(--grey);
+    border: 1px solid var(--grey);
+  }
 </style>
 
 <div class="container">
   <label class:thin for={name}>
     {label}
-    <div class="right">
-      <slot />
-    </div>
+    {#if edit}
+      <div class="right">
+        <Button small secondary disabled={editMode} on:click={enableEdit}>
+          Edit
+        </Button>
+        <Button small attention disabled={!editMode} on:click={save}>
+          Save
+        </Button>
+      </div>
+    {/if}
   </label>
   <input
     class:thin
     on:change
     on:input
+    on:change={updateValue}
+    on:input={updateValue}
     use:validator
+    {disabled}
     {type}
     {name}
     {placeholder} />
