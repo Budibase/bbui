@@ -9,7 +9,6 @@
 
 <style>
   .container {
-    min-width: 500px;
     display: flex;
     flex-direction: column;
     font-size: 14px;
