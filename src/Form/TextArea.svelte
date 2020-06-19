@@ -13,11 +13,7 @@
 
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
-  let value;
-
-  const updateValue = e => {
-    value = e.target.value;
-  };
+  export let value;
 
   const save = () => {
     editMode = false;

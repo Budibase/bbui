@@ -3,18 +3,13 @@
   import TextArea from "./TextArea.svelte";
 
   import Button from "./Button.svelte";
+
+  let value;
+  $: console.log(value);
 </script>
 
-<style>
-  .buttons {
-    display: grid;
-    grid-gap: 12px;
-    grid-template-columns: auto auto;
-  }
-</style>
-
 <View name="default">
-  <TextArea placeholder="Enter your name" label="Name" />
+  <TextArea bind:value placeholder="Enter your name" label="Name" />
 </View>
 
 <View name="default">
