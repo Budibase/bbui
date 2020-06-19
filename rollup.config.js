@@ -2,6 +2,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
+import copy from 'rollup-plugin-copy'
 import hmr from 'rollup-plugin-hot'
 import del from 'rollup-plugin-delete'
 import postcss from 'rollup-plugin-postcss-hot'
@@ -81,11 +82,11 @@ const configs = {
       resolve({ browser: true }),
 
       HOT &&
-        hmr({
-          public: 'public',
-          inMemory: true,
-          compatModuleHot: !HOT, // for terser
-        }),
+      hmr({
+        public: 'public',
+        inMemory: true,
+        compatModuleHot: !HOT, // for terser
+      }),
     ],
 
     watch: {
@@ -112,6 +113,15 @@ const configs = {
           css.write('dist/bundle.css')
         },
         extensions: ['.svelte'],
+      }),
+      copy({
+        targets: [
+          {
+            src: ".svench/svench.css",
+            dest: "dist",
+            rename: 'bbui.css'
+          },
+        ],
       }),
 
       resolve(),
