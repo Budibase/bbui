@@ -10,11 +10,10 @@
     display: flex;
     flex-direction: column;
     height: auto;
-    background: var(--grey-light);
     margin: 0px 0px 4px 0px;
-    padding: 8px 12px;
+    padding: 8px 0px;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 5px;
   }
 
   .property-group-name {
@@ -55,10 +54,10 @@
 
 <div class="property-group-container">
   <div class="property-group-name" on:click={() => (show = !show)}>
-    <div class="icon">
-      <i class={show ? 'ri-arrow-down-s-fill' : 'ri-arrow-right-s-fill'} />
-    </div>
     <div class="name">{capitalize(name)}</div>
+    <div class="icon">
+      <i class={show ? 'ri-arrow-down-s-fill' : 'ri-arrow-left-s-fill'} />
+    </div>
   </div>
   <div class="property-panel" class:show>
     <slot />
