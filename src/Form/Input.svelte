@@ -10,11 +10,11 @@
     disabled,
     type,
     placeholder,
+    value,
     validator = () => {};
 
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
-  let value;
 
   const updateValue = e => {
     value = e.target.value;
@@ -108,8 +108,10 @@
     on:input
     on:change={updateValue}
     on:input={updateValue}
+    on:blur={updateValue}
     use:validator
     disabled={disabled || (edit && !editMode)}
+    {value}
     {type}
     {name}
     {placeholder} />
