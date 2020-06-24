@@ -27,19 +27,23 @@ h6.svench-content {
   font-style: italic;
 }
 
+
 :root { 
   --white: #FFFFFF;
+  --ink: #000000;
 
-  --ink-lighter: #ADAEC4;
-  --ink-light: #808192;
-  --ink: #393C44;
-
-  --grey: #FBFBFB;
-  --grey-dark: #FBFBFB;
-  --grey-darker: #EBEBEB;
+  --grey-1: #fafafa;
+  --grey-2: #f5f5f5;
+  --grey-3: #eeeeee;
+  --grey-4: #e0e0e0;
+  --grey-5: #bdbdbd;
+  --grey-6: #9e9e9e;
+  --grey-7: #757575;
+  --grey-8: #616161;
+  --grey-9: #424242;
 
   --blue-light: #F1F4FC;
-  --blue: #0055ff;
+  --blue: #4285f4;
   --blue-dark: #2F4C9B;
 
   --red-light: #FFE6E6;
@@ -54,15 +58,15 @@ h6.svench-content {
   --orange: #F0955A;
   --orange-dark: #803300;
 
-  --green-light: #008017;
+  --green-light: #E6FFEB;
   --green: #84C991;
-  --green-dark: #E6FFEB;
+  --green-dark: #008017;
 
   --purple-light: #E9E6FF;
   --purple: #806FDE;
   --purple-dark: #130080;
 
-  --rounded: 3px;
+  --rounded: 4px;
   --rounded-small: 2px;
   --rounded-medium: 5px;
   --rounded-large: 10px;
@@ -90,25 +94,97 @@ h6.svench-content {
   --font-render: optimizeLegibility;
   --font-smooth: antialiased;
 
-  --text: var(--font-normal) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
-  --text-sm: var(--font-normal) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-lg: var(--font-normal) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-light: var(--font-light) "regular" var(--ink-light) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-medium: var(--font-medium) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-heavy: var(--font-bold) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --quotation: var(--font-normal) "italics" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-sm-light: var(--font-light) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-sm-medium: var(--font-medium) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-sm-heavy: var(--font-bold) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-lg-medium: var(--font-medium) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-lg-heavy: var(--font-bold) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
+  --text-sm: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-md: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-lg: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
+  --text-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
+  --text-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
+  --quotation: var(--font-sans) var(--font-400) "italics" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
+  --text-sm-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-sm-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-sm-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-md-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-md-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-md-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-lg-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text-lg-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text-lg-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
+
+  --heading: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-lg) var(--text-render) var(--text-smooth);
+  --heading-sm: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-md) var(--text-render) var(--text-smooth);
+  --heading-lg: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-xl) var(--text-render) var(--text-smooth);
+  --heading-xl: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-2xl) var(--text-render) var(--text-smooth);
+  --heading-2xl: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-3xl) var(--text-render) var(--text-smooth);
+
+  --text-mono: var(--font-mono) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
+  --text-serif: var(--font-serif) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
 
 
-  --heading: var(--font-medium) "regular" var(--ink) var(--font-size-lg) var(--text-render) var(--text-smooth);
-  --heading-sm: var(--font-medium) "regular" var(--ink) var(--font-size-md) var(--text-render) var(--text-smooth);
-  --heading-lg: var(--font-bold) "regular" var(--ink) var(--font-size-xl) var(--text-render) var(--text-smooth);
-  --heading-xl: var(--font-bold) "regular" var(--ink) var(--font-size-2xl) var(--text-render) var(--text-smooth);
-  --heading-2xl: var(--font-bold) "regular" var(--ink) var(--font-size-3xl) var(--text-render) var(--text-smooth);
-
-  
 }
+
+
+h1 {
+  font-size: 3rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-rendering: var(--text-render); 
+  -webkit-font-smoothing: var(--text-smooth);
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-rendering: var(--text-render); 
+  -webkit-font-smoothing: var(--text-smooth);
+  color: var(--ink);
+}
+
+h3 {
+  font-size: 1.7rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-rendering: var(--text-render); 
+  -webkit-font-smoothing: var(--text-smooth);
+  color: var(--ink);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-rendering: var(--text-render); 
+  -webkit-font-smoothing: var(--text-smooth);
+  color: var(--ink);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-rendering: var(--text-render); 
+  -webkit-font-smoothing: var(--text-smooth);
+  color: var(--ink);
+}
+
+h6 {
+  font-size: var(--font-size-md);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-rendering: var(--text-render); 
+  -webkit-font-smoothing: var(--text-smooth);
+  color: var(--ink);
+}
+
+p {
+  font-size: var(--font-size);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  text-rendering: var(--text-render); 
+  -webkit-font-smoothing: var(--text-smooth);
+  color: var(--ink);
+}
+

@@ -2,10 +2,13 @@
   export let 
     primary = false,
     secondary = false,
-    attention = false,
+    blue = false,
     disabled = false,
-    error = false,
-    warning = false,
+    red = false,
+    yellow = false,
+    orange = false,
+    green = false,
+    purple = false,
     small = false,
     medium = false,
     wide = false,
@@ -14,12 +17,13 @@
 
 <style>
   button {
+    font-family: Inter;
     cursor: pointer;
     font-weight: 500;
     font-size: 14px;
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: 3px;
+    border-radius: 5px;
     color: var(--white);
     padding: 0px 24px;
     height: 32px;
@@ -45,43 +49,73 @@
     color: var(--ink);
   }
   .secondary {
-    border: solid 1px var(--grey);
+    border: solid 1px var(--grey-4);
     background-color: white;
     color: var(--ink);
   }
   button.secondary:hover:not([disabled]) {
-    border: solid 1px var(--grey);
-    background-color: var(--grey-light);
+    border: solid 1px var(--grey-4);
+    background-color: var(--grey-1);
     color: var(--ink);
   }
-  .attention {
+  .blue {
     background-color: var(--blue);
     border: solid 1px var(--blue);
   }
-  button.attention:hover:not([disabled]) {
+  button.blue:hover:not([disabled]) {
     border: solid 1px var(--blue);
-    background-color: var(--white);
+    background-color: var(--blue-light);
     color: var(--blue);
   }
-  .error {
+  .red {
     border: solid 1px var(--red);
     background-color: var(--red);
     color: white;
   }
-  button.error:hover:not([disabled]) {
+  button.red:hover:not([disabled]) {
     border: solid 1px var(--red);
-    background-color: white;
+    background-color: var(--red-light);
     color: var(--red);
   }
-  .warning {
+  .yellow {
     border: solid 1px var(--yellow);
     background-color: var(--yellow);
     color: white;
   }
-  button.warning:hover:not([disabled]) {
+  button.yellow:hover:not([disabled]) {
     border: solid 1px var(--yellow);
-    background-color: white;
+    background-color: var(--yellow-light);
     color: var(--yellow);
+  }
+  .orange {
+    border: solid 1px var(--orange);
+    background-color: var(--orange);
+    color: white;
+  }
+  button.orange:hover:not([disabled]) {
+    border: solid 1px var(--orange);
+    background-color: var(--orange-light);
+    color: var(--orange);
+  }
+  .green {
+    border: solid 1px var(--green);
+    background-color: var(--green);
+    color: white;
+  }
+  button.green:hover:not([disabled]) {
+    border: solid 1px var(--green);
+    background-color: var(--green-light);
+    color: var(--green);
+  }
+  .purple {
+    border: solid 1px var(--purple);
+    background-color: var(--purple);
+    color: white;
+  }
+  button.purple:hover:not([disabled]) {
+    border: solid 1px var(--purple);
+    background-color: var(--purple-light);
+    color: var(--purple);
   }
   .small {
     width: 100px;
@@ -99,6 +133,7 @@
     height: 50px;
     font-weight: 500;
     font-size: 18px;
+    border-radius: 8px;
   }
   .wide {
     width: 100%;
@@ -109,18 +144,22 @@
     font-weight: 500;
   }
   button:disabled {
-    background-color: var(--grey-dark);
+    background-color: var(--grey-3);
     cursor: not-allowed;
-    border: solid 1px var(--grey-dark);
+    border: solid 1px var(--grey-3);
+    color: var(--grey-6);
   }
 </style>
 
 <button
   class:primary
   class:secondary
-  class:attention
-  class:error
-  class:warning
+  class:blue
+  class:red
+  class:yellow
+  class:orange
+  class:green
+  class:purple
   class:small
   class:medium
   class:wide

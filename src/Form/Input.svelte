@@ -32,7 +32,6 @@
 
 <style>
   .container {
-    min-width: 500px;
     display: flex;
     flex-direction: column;
     font-size: 14px;
@@ -55,18 +54,19 @@
   }
 
   input {
+    min-width: 0;
     box-sizing: border-box;
-    color: var(--font);
+    color: var(--ink);
     font-size: 18px;
     border-radius: 3px;
-    border: solid 1px var(--grey-medium);
+    border: solid 1px var(--grey-3);
     padding: 20px;
     margin: 0;
     background-color: white;
   }
 
   input::placeholder {
-    color: var(--grey-medium);
+    color: var(--ink);
   }
 
   input:focus {
@@ -74,7 +74,7 @@
   }
 
   input:disabled {
-    background: var(--grey-medium);
+    background: var(--grey-3);
   }
 
   .thin + input {
@@ -83,8 +83,8 @@
     letter-spacing: 0.12px;
   }
   input:disabled {
-    background: var(--grey);
-    border: 1px solid var(--grey);
+    background: var(--grey-2);
+    border: 1px solid var(--grey-2);
   }
 </style>
 
