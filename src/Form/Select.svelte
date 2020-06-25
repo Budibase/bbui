@@ -1,5 +1,6 @@
 <script>
   export let value;
+  export let thin = false;
   export let secondary = false;
 </script>
 
@@ -14,12 +15,17 @@
     font-size: 14px;
     padding-left: 12px;
   }
+  select.thin {
+    padding: 12px 9px;
+    font-size: 12px;
+    letter-spacing: 0.12px;
+  }
 
   .secondary {
     background: var(--grey);
   }
 </style>
 
-<select class:secondary on:change bind:value>
+<select class:thin class:secondary on:change bind:value>
   <slot />
 </select>
