@@ -89,19 +89,21 @@
 </style>
 
 <div class="container">
-  <label class:thin for={name}>
-    {label}
-    {#if edit}
-      <div class="right">
-        <Button small secondary disabled={editMode} on:click={enableEdit}>
-          Edit
-        </Button>
-        <Button small attention disabled={!editMode} on:click={save}>
-          Save
-        </Button>
-      </div>
-    {/if}
-  </label>
+  {#if label}
+    <label class:thin for={name}>
+      {label}
+      {#if edit}
+        <div class="right">
+          <Button small secondary disabled={editMode} on:click={enableEdit}>
+            Edit
+          </Button>
+          <Button small attention disabled={!editMode} on:click={save}>
+            Save
+          </Button>
+        </div>
+      {/if}
+    </label>
+  {/if}
   <input
     class:thin
     on:change
