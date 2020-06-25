@@ -5,8 +5,8 @@
 
 <style>
   select {
+    min-width: 0;
     height: 35px;
-    width: 220px;
     border-radius: 3px;
     border: 1px solid var(--grey-dark);
     text-align: left;

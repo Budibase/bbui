@@ -27,6 +27,7 @@
 
 <style>
   .container {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     font-size: 18px;
@@ -49,6 +50,7 @@
   }
 
   textarea {
+    min-width: 0;
     color: var(--font);
     font-size: 18px;
     border-radius: 3px;
