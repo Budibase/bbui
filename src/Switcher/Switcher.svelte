@@ -16,8 +16,8 @@
   span {
     margin-right: 20px;
     font-size: 18px;
-    font-weight: bold;
-    color: var(--ink-lighter);
+    font-weight: 600;
+    color: var(--grey-5);
   }
 
   span:hover {
