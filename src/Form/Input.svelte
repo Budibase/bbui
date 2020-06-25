@@ -32,6 +32,7 @@
 
 <style>
   .container {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     font-size: 14px;
