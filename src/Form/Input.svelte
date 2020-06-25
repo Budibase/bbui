@@ -78,7 +78,7 @@
     background: var(--grey-3);
   }
 
-  .thin + input {
+  input.thin {
     padding: 12px 9px;
     font-size: 12px;
     letter-spacing: 0.12px;
