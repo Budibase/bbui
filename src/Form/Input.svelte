@@ -111,7 +111,7 @@
     on:blur={updateValue}
     use:validator
     disabled={disabled || (edit && !editMode)}
-    {value}
+    value = {value || ""}
     {type}
     {name}
     {placeholder} />
