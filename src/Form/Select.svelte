@@ -2,6 +2,7 @@
   export let value;
   export let thin = false;
   export let secondary = false;
+  export let disabled = false;
 </script>
 
 <style>
@@ -20,12 +21,15 @@
     font-size: 12px;
     letter-spacing: 0.12px;
   }
-
   .secondary {
     background: var(--grey);
   }
+  select:disabled {
+    background: var(--grey-4);
+    border: 1px solid var(--grey-4);
+  }
 </style>
 
-<select class:thin class:secondary on:change bind:value>
+<select class:thin class:secondary {disabled} on:change bind:value>
   <slot />
 </select>
