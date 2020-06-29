@@ -71,7 +71,7 @@
     background: var(--grey-medium);
   }
 
-  .thin + textarea {
+  textarea.thin {
     padding: 12px 9px;
     font-size: 12px;
     letter-spacing: 0.12px;

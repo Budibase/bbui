@@ -16,6 +16,10 @@
   <TextArea disabled placeholder="Enter your name" label="Name" />
 </View>
 
+<View name="thin">
+  <TextArea thin disabled placeholder="Enter your name" label="Name" />
+</View>
+
 <View name="with buttons">
   <TextArea edit placeholder="Enter your name" label="Name" />
 </View>

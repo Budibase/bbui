@@ -2,11 +2,7 @@
   import { View } from "svench";
   import Select from "./Select.svelte";
 
-  const options = [
-    "Chocolate",
-    "Vanilla",
-    "Strawberry"
-  ]
+  const options = ["Chocolate", "Vanilla", "Strawberry"];
 </script>
 
 <View name="default">
@@ -19,6 +15,22 @@
 
 <View name="secondary">
   <Select secondary>
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+</View>
+
+<View name="disabled">
+  <Select disabled>
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+</View>
+
+<View name="thin">
+  <Select thin>
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}

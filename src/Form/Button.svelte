@@ -19,14 +19,14 @@
   button {
     font-family: Inter;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 5px;
     color: var(--white);
     padding: 0px 24px;
-    height: 32px;
+    height: 36px;
     transition: all 0.2s ease 0s;
     display: inline-block;
     text-rendering: optimizeLegibility;
@@ -131,17 +131,15 @@
   .large {
     width: 200px;
     height: 50px;
-    font-weight: 500;
     font-size: 18px;
     border-radius: 8px;
   }
   .wide {
     width: 100%;
     max-width: 260px;
-    height: 32px;
+    height: 36px;
     line-height: 22px;
     padding: 0px 10px;
-    font-weight: 500;
   }
   button:disabled {
     background-color: var(--grey-3);
