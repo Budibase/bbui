@@ -21,6 +21,14 @@
   </Select>
 </View>
 
+<View name="disabled">
+  <Select disabled>
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+</View>
+
 <View name="thin">
   <Select thin>
     {#each options as option}
