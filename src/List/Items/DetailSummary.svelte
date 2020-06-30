@@ -1,8 +1,19 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+  
+  const dispatch = createEventDispatcher();
+
   export let name,
     show = false;
 
   const capitalize = name => name[0].toUpperCase() + name.slice(1);
+
+  const onHeaderClick = () => {
+    show = !show
+    if (show) {
+      dispatch("open")
+    }
+  }
 </script>
 
 <style>
@@ -53,7 +64,7 @@
 </style>
 
 <div class="property-group-container">
-  <div class="property-group-name" on:click={() => (show = !show)}>
+  <div class="property-group-name" on:click={onHeaderClick}>
     <div class="name">{capitalize(name)}</div>
     <div class="icon">
       <i class={show ? 'ri-arrow-down-s-fill' : 'ri-arrow-left-s-fill'} />
