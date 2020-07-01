@@ -25,7 +25,7 @@
     overflow: hidden;
     border-radius: 5px;
     color: var(--white);
-    padding: 0px 24px;
+    padding: 8px 24px;
     height: 36px;
     transition: all 0.2s ease 0s;
     display: inline-block;
@@ -36,6 +36,7 @@
     -webkit-box-align: center;
     user-select: none;
     flex-shrink: 0;
+    align-items: center;
   }
 
   .primary {
@@ -43,7 +44,7 @@
     background-color: var(--ink);
   }
   button.primary:hover:not([disabled]) {
-    border: solid 1px var(--grey);
+    border: solid 1px var(--grey-4);
     background-color: var(--white);
     color: var(--ink);
   }
@@ -117,21 +118,16 @@
     color: var(--purple);
   }
   .small {
-    width: 100px;
     height: 24px;
     line-height: 22px;
     padding: 0px 10px;
     font-weight: 500;
   }
-  .medium {
-    width: 200px;
-    height: 40px;
-  }
+
   .large {
-    width: 200px;
     height: 50px;
     font-size: 18px;
-    border-radius: 8px;
+    border-radius: 5px;
   }
   .wide {
     width: 100%;
