@@ -18,7 +18,7 @@
   }
 
   .nav-item:hover {
-    background-color: var(--grey-light);
+    background-color: var(--grey-7);
   }
 
   .nav-item-title {
