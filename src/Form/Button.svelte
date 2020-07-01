@@ -19,7 +19,7 @@
   button {
     font-family: Inter;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     box-sizing: border-box;
     overflow: hidden;
@@ -30,7 +30,6 @@
     transition: all 0.2s ease 0s;
     display: inline-block;
     text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
     min-width: auto;
     outline: none;
     font-feature-settings: "case" 1,"rlig" 1,"calt" 0;
@@ -142,10 +141,10 @@
     padding: 0px 10px;
   }
   button:disabled {
-    background-color: var(--grey-3);
+    background-color: var(--grey-4);
     cursor: not-allowed;
     border: solid 1px var(--grey-3);
-    color: var(--grey-6);
+    color: var(--grey-5);
   }
 </style>
 

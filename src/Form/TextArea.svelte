@@ -30,14 +30,12 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.17;
   }
 
   label {
-    color: var(--font);
+    color: var(--ink);
     margin-bottom: 12px;
+    font-family: sans-serif;
     display: flex;
   }
 
@@ -51,16 +49,18 @@
 
   textarea {
     min-width: 0;
-    color: var(--font);
+    color: var(--ink);
     font-size: 18px;
-    border-radius: 3px;
-    border: solid 1px var(--grey-medium);
+    font-family: sans-serif;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--grey-2);
     padding: 20px;
     margin: 0;
   }
 
   textarea::placeholder {
-    color: var(--grey-dark);
+    color: var(--grey-6);
   }
 
   textarea:focus {
@@ -68,17 +68,19 @@
   }
 
   textarea:disabled {
-    background: var(--grey-medium);
+    background: var(--grey-4);
   }
 
   textarea.thin {
-    padding: 12px 9px;
-    font-size: 12px;
-    letter-spacing: 0.12px;
+    padding: 12px;
+    font-size: 14px;
   }
   textarea:disabled {
-    background: var(--grey);
-    border: 1px solid var(--grey);
+    background: var(--grey-4);
+    border: none;
+  }
+  textarea:disabled::placeholder {
+    color: var(--grey-6);
   }
 </style>
 
