@@ -18,7 +18,7 @@
   }
 
   .nav-item:hover {
-    background-color: var(--grey-7);
+    background-color: var(--grey-1);
   }
 
   .nav-item-title {
@@ -29,7 +29,7 @@
   }
 
   .nav-item-icon {
-    color: var(--ink-light);
+    color: var(--grey-7);
   }
 
   .active {
