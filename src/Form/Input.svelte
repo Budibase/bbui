@@ -36,8 +36,8 @@
     display: flex;
     flex-direction: column;
     font-size: 14px;
+    font-family: sans-serif;
     font-weight: 500;
-    line-height: 1.17;
   }
 
   label {
@@ -59,15 +59,16 @@
     box-sizing: border-box;
     color: var(--ink);
     font-size: 18px;
-    border-radius: 3px;
-    border: solid 1px var(--grey-3);
+    border-radius: 5px;
+    border: none;
+    background-color: var(--grey-2);
     padding: 20px;
     margin: 0;
-    background-color: white;
+    outline-color: var(--purple);
   }
 
   input::placeholder {
-    color: var(--ink);
+    color: var(--grey-6);
   }
 
   input:focus {
@@ -75,17 +76,17 @@
   }
 
   input:disabled {
-    background: var(--grey-3);
+    background: var(--grey-4);
   }
 
   input.thin {
-    padding: 12px 9px;
+    padding: 12px;
     font-size: 12px;
-    letter-spacing: 0.12px;
   }
+
   input:disabled {
-    background: var(--grey-2);
-    border: 1px solid var(--grey-2);
+    background: var(--grey-4);
+    color: var(--grey-5);
   }
 </style>
 
