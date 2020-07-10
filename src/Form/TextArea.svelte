@@ -82,6 +82,9 @@
   textarea:disabled::placeholder {
     color: var(--grey-6);
   }
+  .right :global(button) {
+    min-width: 100px;
+  }
 </style>
 
 <div class="container">
