@@ -45,6 +45,7 @@
     grid-template-columns: auto auto;
     grid-gap: 12px;
     margin-left: auto;
+    padding-left: 12px;
   }
 
   textarea {
@@ -84,6 +85,7 @@
   }
   .right :global(button) {
     min-width: 100px;
+    font-size: var(--font-size-sm);
   }
 </style>
 
