@@ -92,6 +92,7 @@
   .right :global(button) {
     min-width: 100px;
     font-size: var(--font-size-sm);
+    border-radius: var(--rounded-small);
   }
 </style>
 
