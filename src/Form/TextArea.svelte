@@ -92,9 +92,7 @@
         <Button small secondary disabled={editMode} on:click={enableEdit}>
           Edit
         </Button>
-        <Button small attention disabled={!editMode} on:click={save}>
-          Save
-        </Button>
+        <Button small blue disabled={!editMode} on:click={save}>Save</Button>
       </div>
     {/if}
   </label>
