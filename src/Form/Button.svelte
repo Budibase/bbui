@@ -1,6 +1,5 @@
 <script>
-  export let 
-    primary = false,
+  export let primary = false,
     secondary = false,
     blue = false,
     disabled = false,
@@ -23,7 +22,7 @@
     font-size: 14px;
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: var(--rounded);
     color: var(--white);
     padding: 8px 24px;
     height: 36px;
@@ -32,7 +31,7 @@
     text-rendering: optimizeLegibility;
     min-width: auto;
     outline: none;
-    font-feature-settings: "case" 1,"rlig" 1,"calt" 0;
+    font-feature-settings: "case" 1, "rlig" 1, "calt" 0;
     -webkit-box-align: center;
     user-select: none;
     flex-shrink: 0;
@@ -127,7 +126,7 @@
   .large {
     height: 50px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: var(--rounded);
   }
   .wide {
     width: 100%;
