@@ -52,6 +52,7 @@
     grid-template-columns: auto auto;
     grid-gap: 12px;
     margin-left: auto;
+    padding-left: 12px;
   }
 
   input {
@@ -88,6 +89,9 @@
     background: var(--grey-4);
     color: var(--grey-5);
   }
+  .right :global(button) {
+    min-width: 100px;
+  }
 </style>
 
 <div class="container">
@@ -99,9 +103,7 @@
           <Button small secondary disabled={editMode} on:click={enableEdit}>
             Edit
           </Button>
-          <Button small attention disabled={!editMode} on:click={save}>
-            Save
-          </Button>
+          <Button small blue disabled={!editMode} on:click={save}>Save</Button>
         </div>
       {/if}
     </label>
@@ -115,7 +117,7 @@
     on:blur={updateValue}
     use:validator
     disabled={disabled || (edit && !editMode)}
-    value = {value || ""}
+    value={value || ''}
     {type}
     {name}
     {placeholder} />
