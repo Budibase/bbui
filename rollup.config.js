@@ -1,12 +1,10 @@
 import * as path from 'path'
-import * as fs from 'fs'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import hmr from 'rollup-plugin-hot'
 import del from 'rollup-plugin-delete'
 import postcss from 'rollup-plugin-postcss-hot'
 import { plugin as Svench } from 'svench/rollup'
-import addClasses from 'rehype-add-classes'
 
 import pkg from './package.json'
 
@@ -20,12 +18,23 @@ const SVENCH = !!process.env.SVENCH
 const HOT = WATCH
 const PRODUCTION = !WATCH
 
-// let $
 const svench = Svench({
   // The root dir that Svench will parse and watch.
-  dir: 'src',
+  //
+  // NOTE Watching the root of the project, to let Svench render *.md for us.
+  //
+  // NOTE By default, `node_modules` and `.git` dirs are ignored. This can be
+  // customized by passing a function to `ignore` option. Default ignore is:
+  //
+  //     ignore: path => /(?:^|\/)(?:node_modules|\.git)\//.test(path),
+  //
+  dir: '.',
 
-  extensions: ['.svench', '.svench.svelte', '.svench.svx'],
+  // Make `src` dir a section (that is, it will always be "expanded" in the
+  // menu).
+  autoSections: ['src'],
+
+  extensions: ['.svench', '.svench.svelte', '.svench.svx', '.md'],
 
   serve: WATCH && {
     host: 'localhost',
@@ -67,7 +76,7 @@ const configs = {
         css: css => {
           css.write('public/svench/svench.css')
         },
-        extensions: ['.svelte', '.svench', '.svx'],
+        extensions: ['.svelte', '.svench', '.svx', '.md'],
         // Svench's "combined" preprocessor wraps both Mdsvex preprocessors
         // (configured for Svench), and its own preprocessor (for static
         // analysis -- eg extract source from views)
