@@ -13,4 +13,5 @@ export { default as Select } from './Form/Select.svelte';
 export { default as Button } from './Form/Button.svelte';
 export { default as Home } from './Links/Home.svelte';
 export { default as DetailSummary } from './List/Items/DetailSummary.svelte';
-export { default as Switcher } from './Switcher/Switcher.svelte';
+export { default as Switcher } from "./Switcher/Switcher.svelte";
+export { default as DropdownMenu } from "./DropdownMenu/DropdownMenu.svelte";

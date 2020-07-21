@@ -1,0 +1,39 @@
+<script>
+  import { View } from "svench";
+  import DropdownMenu from "./DropdownMenu.svelte";
+  import Button from "../Form/Button.svelte";
+
+  let anchor;
+  let dropdown;
+</script>
+
+<View name="Default">
+  <Button bind:this={anchor} secondary on:click={}>Click Me</Button>
+  <DropdownMenu bind:this={dropdown} {anchor}>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </DropdownMenu>
+</View>
+
+<style>
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  padding: 0px 5px 0px 15px;
+  margin: auto 0px;
+  border-radius: 5px;
+  height: 36px;
+  align-items: center;
+}
+
+</style>
