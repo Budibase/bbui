@@ -3,13 +3,30 @@
   import DropdownMenu from "./DropdownMenu.svelte";
   import Button from "../Form/Button.svelte";
 
-  let anchor;
-  let dropdown;
+  let anchorRight;
+  let anchorLeft;
+  let dropdownRight;
+  let dropdownLeft;
 </script>
 
-<View name="Default">
-  <Button bind:this={anchor} secondary on:click={}>Click Me</Button>
-  <DropdownMenu bind:this={dropdown} {anchor}>
+<View name="Right Align (default)">
+  <div bind:this={anchorRight}>
+    <Button primary on:click={dropdownRight.show}>Right Align</Button>
+  </div>
+  <DropdownMenu bind:this={dropdownRight} anchor={anchorRight}>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </DropdownMenu>
+</View>
+
+<View name="Left Align">
+  <div bind:this={anchorLeft}>
+    <Button primary on:click={dropdownLeft.show}>Left Align</Button>
+  </div>
+  <DropdownMenu bind:this={dropdownLeft} anchor={anchorLeft} align="left">
     <ul>
       <li>Item 1</li>
       <li>Item 2</li>
