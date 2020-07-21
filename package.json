@@ -30,7 +30,7 @@
     "rollup-plugin-svelte-hot": "^0.8.0",
     "semantic-release": "^17.0.8",
     "svelte": "^3.22.0",
-    "svench": "^0.0.9-10"
+    "svench": "^0.0.10-4"
   },
   "keywords": [
     "svelte"

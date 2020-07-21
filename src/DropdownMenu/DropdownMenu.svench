@@ -1,0 +1,56 @@
+<script>
+  import { View } from "svench";
+  import DropdownMenu from "./DropdownMenu.svelte";
+  import Button from "../Form/Button.svelte";
+
+  let anchorRight;
+  let anchorLeft;
+  let dropdownRight;
+  let dropdownLeft;
+</script>
+
+<View name="Right Align (default)">
+  <div bind:this={anchorRight}>
+    <Button primary on:click={dropdownRight.show}>Right Align</Button>
+  </div>
+  <DropdownMenu bind:this={dropdownRight} anchor={anchorRight}>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </DropdownMenu>
+</View>
+
+<View name="Left Align">
+  <div bind:this={anchorLeft}>
+    <Button primary on:click={dropdownLeft.show}>Left Align</Button>
+  </div>
+  <DropdownMenu bind:this={dropdownLeft} anchor={anchorLeft} align="left">
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </DropdownMenu>
+</View>
+
+<style>
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  padding: 0px 5px 0px 15px;
+  margin: auto 0px;
+  border-radius: 5px;
+  height: 36px;
+  align-items: center;
+}
+
+</style>
