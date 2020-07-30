@@ -99,8 +99,6 @@
     margin-top: 10px;
     font-size: 12px;
     line-height: 1.17;
-    letter-spacing: normal;
-    text-align: left;
     color: var(--red);
   }
 </style>
