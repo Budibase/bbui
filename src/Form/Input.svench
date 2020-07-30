@@ -24,3 +24,10 @@
     label="Name"
     on:save={console.log} />
 </View>
+<View name="with error message">
+  <Input
+    placeholder="Enter your name"
+    label="Name"
+    error="This is an error message!"
+    on:save={console.log} />
+</View>

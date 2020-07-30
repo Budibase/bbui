@@ -11,12 +11,13 @@
     type,
     placeholder,
     value,
+    error,
     validator = () => {};
 
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
 
-  const updateValue = e => {
+  const updateValue = (e) => {
     value = e.target.value;
   };
 
@@ -94,6 +95,14 @@
     font-size: var(--font-size-sm);
     border-radius: var(--rounded-small);
   }
+  .error {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--red);
+  }
 </style>
 
 <div class="container">
@@ -123,4 +132,7 @@
     {type}
     {name}
     {placeholder} />
+  {#if error}
+    <div class="error">{error}</div>
+  {/if}
 </div>
