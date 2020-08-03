@@ -1,5 +1,6 @@
 <script>
   export let value;
+  export let name;
   export let thin = false;
   export let secondary = false;
   export let disabled = false;
@@ -30,6 +31,6 @@
   }
 </style>
 
-<select class:thin class:secondary {disabled} on:change bind:value>
+<select {name} class:thin class:secondary {disabled} on:change bind:value>
   <slot />
 </select>

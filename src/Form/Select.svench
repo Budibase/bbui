@@ -6,7 +6,7 @@
 </script>
 
 <View name="default">
-  <Select>
+  <Select name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -14,7 +14,7 @@
 </View>
 
 <View name="secondary">
-  <Select secondary>
+  <Select secondary name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -22,7 +22,7 @@
 </View>
 
 <View name="disabled">
-  <Select disabled>
+  <Select disabled name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -30,7 +30,7 @@
 </View>
 
 <View name="thin">
-  <Select thin>
+  <Select thin name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
