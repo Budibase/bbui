@@ -1,0 +1,12 @@
+<script>
+  import { View } from "svench";
+  import Icon from "./Icon.svelte";
+</script>
+
+<View name="arrow icon">
+  <Icon name="arrow" />
+</View>
+
+<View name="arrow rotated south-est">
+  <Icon name="arrow" direction="se" />
+</View>
