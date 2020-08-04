@@ -68,10 +68,9 @@ h6.svench-content {
   --purple: #806FDE;
   --purple-dark: #130080;
 
-  --rounded: 5px;
-  --rounded-small: 3px;
-  --rounded-medium: 5px;
-  --rounded-large: 10px;
+  --rounded-small: 4px;
+  --rounded-medium: 8px;
+  --rounded-large: 16px;
 
   --font-normal: "Inter";
   --font-black: "Inter Black";
@@ -83,15 +82,14 @@ h6.svench-content {
   --font-serif: "Georgia", Cambria, Times New Roman, Times, serif;
   --font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  font-size: 14px;
+  font-size: 16px;
   --font-size-xs: .75rem;
-  --font-size-sm: .875rem;
-  --font-size: 1rem;
-  --font-size-md: 1.15rem;
-  --font-size-lg: 1.3rem;
-  --font-size-xl: 1.45rem;
-  --font-size-2xl: 1.7rem;
-  --font-size-3xl: 2.3rem;
+  --font-size-s: .875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.15rem;
+  --font-size-xl: 1.3rem;
+  --font-size-2xl: 1.45rem;
+  --font-size-3xl: 1.7rem;
 
   --font-render: optimizeLegibility;
   --font-smooth: antialiased;
@@ -123,6 +121,17 @@ h6.svench-content {
   --text-mono: var(--font-mono) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
   --text-serif: var(--font-serif) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
 
+--spacing-xs: .25rem;
+--spacing-s: 0.5rem;
+--spacing-m: 0.75rem;
+--spacing-l: 1rem;
+--spacing-xl: 1.25rem;
+
+--layout-xs: 1rem;
+--layout-s: 1.5rem;
+--layout-m: 2rem;
+--layout-l: 3rem;
+--layout-xl: 4rem;
 
 }
 
@@ -189,4 +198,8 @@ p {
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
+
+
+
+
 
