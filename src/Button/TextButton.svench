@@ -1,0 +1,34 @@
+<script>
+  import { View } from "svench";
+  import Button from "./TextButton.svelte";
+  import Icon from "../Icons/Icon.svelte";
+</script>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+</style>
+
+<View name="Text">
+  <div>
+    <Button text small on:click={() => alert('Clicked!')}>
+      <Icon name="view" />
+      Add View
+    </Button>
+    <Button text medium on:click={() => alert('Clicked!')}>
+      <Icon name="addcolumn" />
+      Add Column
+    </Button>
+    <Button text large on:click={() => alert('Clicked!')}>
+      <Icon name="addrow" />
+      Add Row
+    </Button>
+    <Button text disabled on:click={() => alert('Clicked!')}>
+      <Icon name="arrow" direction="w" />
+      Disabled Text Button
+    </Button>
+  </div>
+</View>

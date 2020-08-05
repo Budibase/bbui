@@ -127,11 +127,19 @@ h6.svench-content {
 --spacing-l: 1rem;
 --spacing-xl: 1.25rem;
 
---layout-xs: 1rem;
+--layout-xs: 1.25rem;
 --layout-s: 1.5rem;
 --layout-m: 2rem;
 --layout-l: 3rem;
 --layout-xl: 4rem;
+
+--border-radius-xs: .125rem;
+--border-radius-s: 0.35rem;
+--border-radius-m: 0.5rem;
+--border-radius-l: 1rem;
+--border-radius-xl: 10rem;
+
+
 
 }
 
