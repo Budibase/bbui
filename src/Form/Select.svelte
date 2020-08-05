@@ -5,7 +5,7 @@
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
-  import Icon from "../TempIcons/Icon.svelte";
+  import Icon from "../Icons/Icon.svelte";
 </script>
 
 <style>
