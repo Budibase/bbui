@@ -1,7 +1,7 @@
 <script>
   import { View } from "svench";
   import Button from "./Button.svelte";
-  import Icon from "../Icons/Icon.svelte";
+  import Icon from "../TempIcons/Icon.svelte";
 </script>
 
 <View name="Primary">
@@ -78,10 +78,10 @@
   </Button>
   <Button primary large on:click={() => alert('Clicked!')}>
     <Icon name="copy" direction="n" />
-     Large
+    Large
   </Button>
   <Button primary wide on:click={() => alert('Clicked!')}>
-  <Icon name="view" direction="n" />
+    <Icon name="view" direction="n" />
     Wide
   </Button>
 </View>
