@@ -53,9 +53,6 @@
     font-size: var(--font-size-m);
   }
 
-  .nav-item-icon {
-    color: var(--grey-7);
-  }
 </style>
 
 <button
