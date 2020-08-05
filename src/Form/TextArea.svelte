@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import Button from "./Button.svelte";
+  import Button from "../Button/Button.svelte";
   const dispatch = createEventDispatcher();
   import { text_area_resize } from "../actions/autoresize_textarea.js";
   export let name,

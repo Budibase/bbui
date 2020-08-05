@@ -2,7 +2,7 @@
   import { View } from "svench";
   import TextArea from "./TextArea.svelte";
 
-  import Button from "./Button.svelte";
+  import Button from "../Button/Button.svelte";
 
   let value;
   $: console.log(value);
