@@ -1,0 +1,84 @@
+<script>
+  import { View } from "svench";
+</script>
+
+<style>
+  .typography-container {
+    display: flex;
+  }
+</style>
+
+<h1>Typography</h1>
+<p>
+  Budibase uses Inter as its typeface and two types can be used,
+  <strong>heading</strong>
+  and
+  <strong>body</strong>
+</p>
+<p>Each type has three sizes, small, medium and large.</p>
+<p>Two font weights can be used, light and dark.</p>
+<p>Three colors can be used, white, light and dark.</p>
+
+<View name="Heading">
+
+  <div class="typography-container">
+    <div class="heading-large">
+
+      <h1>Heading Large Dark Font</h1>
+      <h1>Heading Large Light Font</h1>
+      <h1>Heading Large White</h1>
+      <h1>Heading Large Light</h1>
+      <h1>Heading Large Dark</h1>
+    </div>
+
+    <div class="heading-medium">
+
+      <h1>Heading Medium Dark Font</h1>
+      <h1>Heading Medium Light Font</h1>
+      <h1>Heading Medium White</h1>
+      <h1>Heading Medium Light</h1>
+      <h1>Heading Medium Dark</h1>
+    </div>
+
+    <div class="heading-small">
+
+      <h1>Heading Small Dark Font</h1>
+      <h1>Heading Small Light Font</h1>
+      <h1>Heading Small White</h1>
+      <h1>Heading Small Light</h1>
+      <h1>Heading Small Dark</h1>
+    </div>
+  </div>
+
+</View>
+
+<View name="Body">
+  <div class="typography-container">
+    <div class="body-large">
+
+      <p>Body Large Dark Font</p>
+      <p>Body Large Light Font</p>
+      <p>Body Large White</p>
+      <p>Body Large Light</p>
+      <p>Body Large Dark</p>
+    </div>
+
+    <div class="body-medium">
+
+      <p>Body Medium Dark Font</p>
+      <p>Body Medium Light Font</p>
+      <p>Body Medium White</p>
+      <p>Body Medium Light</p>
+      <p>Body Medium Dark</p>
+    </div>
+
+    <div class="body-small">
+
+      <p>Body Small Dark Font</p>
+      <p>Body Small Light Font</p>
+      <p>Body Small White</p>
+      <p>Body Small Light</p>
+      <p>Body Small Dark</p>
+    </div>
+  </div>
+</View>
