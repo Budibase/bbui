@@ -2,7 +2,7 @@
   import { View } from "svench";
   import Select from "./Select.svelte";
 
-  const options = ["Chocolate", "Vanilla", "Strawberry"];
+  const options = ["Chocolate", "Vanilla", "Strawberry Cheesecake"];
 </script>
 
 <View name="default">
@@ -15,6 +15,14 @@
 
 <View name="secondary">
   <Select secondary name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+</View>
+
+<View name="outline">
+  <Select outline name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -36,3 +44,5 @@
     {/each}
   </Select>
 </View>
+
+

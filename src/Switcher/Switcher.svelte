@@ -9,13 +9,14 @@
 
 <style>
   header {
+    font-family: var(--font-sans);
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-l);
   }
 
   span {
-    margin-right: 20px;
-    font-size: 18px;
+    margin-right: var(--spacing-xl);
+    font-size: var(--font-size-m);
     font-weight: 600;
     color: var(--grey-5);
   }
