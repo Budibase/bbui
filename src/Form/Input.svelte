@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import Button from "./Button.svelte";
+  import Button from "../Button/Button.svelte";
   const dispatch = createEventDispatcher();
 
   export let name,
