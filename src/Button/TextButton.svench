@@ -1,7 +1,7 @@
 <script>
   import { View } from "svench";
   import Button from "./TextButton.svelte";
-  import Icon from "../Icons/Icon.svelte";
+  import Icon from "../TempIcons/Icon.svelte";
 </script>
 
 <style>

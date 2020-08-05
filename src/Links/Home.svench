@@ -1,7 +1,7 @@
 <script>
   import { View } from "svench";
   import Home from "./Home.svelte";
-  import Contribution from "../icons/Contribution.svelte";
+  import Contribution from "../TempIcons/Contribution.svelte";
 </script>
 
 <View name="default">
