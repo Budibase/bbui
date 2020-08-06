@@ -112,7 +112,7 @@
     outline: none;
     box-sizing: border-box;
     opacity: 0;
-    width: 160px;
+    min-width: 160px;
     z-index: 2;
     color: var(--ink);
     font-weight: 400;
