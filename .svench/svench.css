@@ -135,7 +135,7 @@ h6.svench-content {
   --text-lg-700: var(--font-sans) var(--font-700) "regular" var(--ink)
     var(--font-size-lg) var(--font-render) var(--font-smooth);
 
-  --heading: var(--font-sans) var(--font-600) "regular" var(--grey-1)
+  --heading: var(--font-sans) var(--font-600) "regular" var(--ink)
     var(--font-size-lg) var(--text-render) var(--text-smooth);
   --heading-sm: var(--font-sans) var(--font-600) "regular" var(--ink)
     var(--font-size-md) var(--text-render) var(--text-smooth);
@@ -157,11 +157,20 @@ h6.svench-content {
   --spacing-l: 1rem;
   --spacing-xl: 1.25rem;
 
-  --layout-xs: 1rem;
+  --layout-xs: 1.25rem;
   --layout-s: 1.5rem;
   --layout-m: 2rem;
   --layout-l: 3rem;
   --layout-xl: 4rem;
+
+  --border-radius-xs: 0.125rem;
+  --border-radius-s: 0.35rem;
+  --border-radius-m: 0.5rem;
+  --border-radius-l: 1rem;
+  --border-radius-xl: 100rem;
+
+  --border-dark: 1.5px var(--grey-7) solid;
+  --border-light: 1px var(--grey-3) solid;
 }
 
 h1 {

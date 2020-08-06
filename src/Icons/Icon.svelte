@@ -14,18 +14,18 @@
 
 <style>
   .c {
-    width: 1em;
-    height: 1em;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: currentColor;
-    transition: all 0.3s ease-out;
     overflow: visible;
+    margin-right: var(--spacing-s);
   }
 </style>
 
 
 <svg
   class="c"
-  viewBox="0 0 25 25"
+  viewBox="0 0 24 24"
   fill-rule="evenodd"
   clip-rule="evenodd"
   style={`transform: rotate(${rotation}deg)`}>

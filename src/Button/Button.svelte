@@ -3,6 +3,7 @@
     secondary = false,
     blue = false,
     disabled = false,
+    text = false,
     red = false,
     yellow = false,
     orange = false,
@@ -16,18 +17,16 @@
 
 <style>
   button {
-    font-family: Inter;
+    font-family: var(--font-sans);
     cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 600;
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: var(--rounded);
+    border-radius: var(--border-radius-s);
     color: var(--white);
-    padding: 8px 24px;
-    height: 36px;
+    padding: var(--spacing-s) var(--spacing-l);
     transition: all 0.2s ease 0s;
-    display: inline-block;
+    display: inline-flex;
     text-rendering: optimizeLegibility;
     min-width: auto;
     outline: none;
@@ -36,109 +35,116 @@
     user-select: none;
     flex-shrink: 0;
     align-items: center;
+    justify-content: center;
+    margin: 0;
   }
 
   .primary {
-    border: solid 1px var(--ink);
+    border: solid 1.5px var(--ink);
     background-color: var(--ink);
   }
   button.primary:hover:not([disabled]) {
-    border: solid 1px var(--grey-4);
     background-color: var(--white);
     color: var(--ink);
   }
   .secondary {
-    border: solid 1px var(--grey-4);
+    border: solid 1.5px var(--grey-7);
     background-color: white;
     color: var(--ink);
   }
   button.secondary:hover:not([disabled]) {
-    border: solid 1px var(--grey-4);
-    background-color: var(--grey-1);
+    background-color: var(--grey-2);
     color: var(--ink);
   }
   .blue {
     background-color: var(--blue);
-    border: solid 1px var(--blue);
+    border: solid 1.5px var(--blue);
   }
   button.blue:hover:not([disabled]) {
-    border: solid 1px var(--blue);
     background-color: var(--blue-light);
     color: var(--blue);
   }
   .red {
-    border: solid 1px var(--red);
+    border: solid 1.5px var(--red);
     background-color: var(--red);
     color: white;
   }
   button.red:hover:not([disabled]) {
-    border: solid 1px var(--red);
     background-color: var(--red-light);
     color: var(--red);
   }
   .yellow {
-    border: solid 1px var(--yellow);
+    border: solid 1.5px var(--yellow);
     background-color: var(--yellow);
     color: white;
   }
   button.yellow:hover:not([disabled]) {
-    border: solid 1px var(--yellow);
     background-color: var(--yellow-light);
     color: var(--yellow);
   }
   .orange {
-    border: solid 1px var(--orange);
+    border: solid 1.5px var(--orange);
     background-color: var(--orange);
     color: white;
   }
   button.orange:hover:not([disabled]) {
-    border: solid 1px var(--orange);
     background-color: var(--orange-light);
     color: var(--orange);
   }
   .green {
-    border: solid 1px var(--green);
+    border: solid 1.5px var(--green);
     background-color: var(--green);
     color: white;
   }
   button.green:hover:not([disabled]) {
-    border: solid 1px var(--green);
     background-color: var(--green-light);
     color: var(--green);
   }
   .purple {
-    border: solid 1px var(--purple);
+    border: solid 1.5px var(--purple);
     background-color: var(--purple);
     color: white;
   }
   button.purple:hover:not([disabled]) {
-    border: solid 1px var(--purple);
     background-color: var(--purple-light);
     color: var(--purple);
   }
+  .text {
+    background-color: transparent;
+    color: var(--grey-7);
+    border: none;
+    padding: 0;
+  }
+  button.text:hover:not([disabled]) {
+    color: var(--ink);
+  }
+  button.text:active:not([disabled]) {
+    color: var(--blue);
+  }
+
   .small {
-    height: 24px;
-    line-height: 22px;
-    padding: 0px 10px;
-    font-weight: 500;
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-m);
+  }
+
+  .medium {
+    font-size: var(--font-size-m);
+    padding: var(--spacing-s) var(--spacing-l);
   }
 
   .large {
-    height: 50px;
-    font-size: 18px;
-    border-radius: var(--rounded);
+    font-size: var(--font-size-l);
+    padding: var(--spacing-m) var(--layout-l);
   }
   .wide {
     width: 100%;
-    max-width: 260px;
-    height: 36px;
-    line-height: 22px;
-    padding: 0px 10px;
+    display: flex;
   }
+
   button:disabled {
     background-color: var(--grey-4);
     cursor: not-allowed;
-    border: solid 1px var(--grey-3);
+    border: solid 1.5px var(--grey-4);
     color: var(--grey-5);
   }
 </style>
@@ -156,6 +162,7 @@
   class:medium
   class:wide
   class:large
+  class:text
   {disabled}
   on:click|preventDefault>
   <slot />

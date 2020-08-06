@@ -1,12 +1,13 @@
 <script>
   import { View } from "svench";
   import Button from "./Button.svelte";
+  import Icon from "../Icons/Icon.svelte";
 </script>
 
 <View name="Primary">
   <Button primary small on:click={() => alert('Clicked!')}>Small</Button>
   <Button primary on:click={() => alert('Clicked!')}>Default</Button>
-  <Button primary medium on:click={() => alert('Clicked!')}>Large</Button>
+  <Button primary medium on:click={() => alert('Clicked!')}>Medium</Button>
   <Button primary large on:click={() => alert('Clicked!')}>Large</Button>
   <Button primary wide on:click={() => alert('Clicked!')}>Wide</Button>
 </View>
@@ -62,9 +63,38 @@
 <View name="Disabled">
   <Button primary disabled on:click={() => alert('Clicked!')}>Disabled</Button>
 </View>
+<View name="Button With Icon">
+  <Button primary small on:click={() => alert('Clicked!')}>
+    <Icon name="addrow" direction="n" />
+    Small
+  </Button>
+  <Button primary on:click={() => alert('Clicked!')}>
+    <Icon name="add" direction="n" />
+    Default
+  </Button>
+  <Button primary medium on:click={() => alert('Clicked!')}>
+    <Icon name="addcolumn" direction="n" />
+    Medium
+  </Button>
+  <Button primary large on:click={() => alert('Clicked!')}>
+    <Icon name="copy" direction="n" />
+    Large
+  </Button>
+  <Button primary wide on:click={() => alert('Clicked!')}>
+    <Icon name="view" direction="n" />
+    Wide
+  </Button>
+</View>
+<View name="Button with symbols">
+  <Button primary small on:click={() => alert('Clicked!')}>⊗ Small</Button>
+  <Button primary on:click={() => alert('Clicked!')}>↓ Default</Button>
+  <Button primary medium on:click={() => alert('Clicked!')}>+ Medium</Button>
+  <Button primary large on:click={() => alert('Clicked!')}>⋯ Large</Button>
+  <Button primary wide on:click={() => alert('Clicked!')}>⊕ Wide</Button>
+</View>
 <View
   name="use Knobs"
-  knobs={{ primary: true, secondary: false, blue: false, red: false, yellow: false, orange: false, green: false, purple: false, disabled: false, small: false, medium: false, large: false, wide: false }}
+  knobs={{ primary: true, secondary: false, blue: false, red: false, yellow: false, orange: false, green: false, purple: false, disabled: false, small: false, medium: false, large: false, wide: false, text: false }}
   let:knobs>
   <Button {...knobs} on:click={() => alert('Clicked!')}>Knooby</Button>
 </View>

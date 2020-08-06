@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import Button from "./Button.svelte";
+  import Button from "../Button/Button.svelte";
   const dispatch = createEventDispatcher();
 
   export let name,
@@ -42,7 +42,7 @@
   }
 
   label {
-    color: var(--font);
+    color: var(--ink);
     margin-bottom: 12px;
     display: flex;
   }
@@ -66,7 +66,7 @@
     background-color: var(--grey-2);
     padding: 20px;
     margin: 0;
-    outline-color: var(--purple);
+    outline-color: var(--blue);
   }
 
   input::placeholder {
@@ -82,8 +82,8 @@
   }
 
   input.thin {
-    padding: 12px;
-    font-size: 12px;
+    padding: var(--spacing-m);
+    font-size: var(--font-size-xs);
   }
 
   input:disabled {
