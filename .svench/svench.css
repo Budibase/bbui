@@ -1,7 +1,7 @@
 .svench-content {
   color: #666;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, 'Roboto',
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Roboto",
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 h1.svench-content {
@@ -27,11 +27,10 @@ h6.svench-content {
   font-style: italic;
 }
 
-
-:root { 
-  --white: #FFFFFF;
+:root {
+  --white: #ffffff;
   --black: #000000;
-  
+
   --ink: #000000;
 
   --grey-1: #fafafa;
@@ -44,28 +43,28 @@ h6.svench-content {
   --grey-8: #616161;
   --grey-9: #424242;
 
-  --blue-light: #F1F4FC;
+  --blue-light: #f1f4fc;
   --blue: #4285f4;
-  --blue-dark: #2F4C9B;
+  --blue-dark: #2f4c9b;
 
-  --red-light: #FFE6E6;
-  --red: #E26D69;
+  --red-light: #ffe6e6;
+  --red: #e26d69;
   --red-dark: #800400;
-  
-  --yellow-light: #FFF7E6;
-  --yellow: #FFD26A;
+
+  --yellow-light: #fff7e6;
+  --yellow: #ffd26a;
   --yellow-dark: #805900;
 
-  --orange-light: #FFF0E6;
-  --orange: #F0955A;
+  --orange-light: #fff0e6;
+  --orange: #f0955a;
   --orange-dark: #803300;
 
-  --green-light: #E6FFEB;
-  --green: #84C991;
+  --green-light: #e6ffeb;
+  --green: #84c991;
   --green-dark: #008017;
 
-  --purple-light: #E9E6FF;
-  --purple: #806FDE;
+  --purple-light: #e9e6ff;
+  --purple: #806fde;
   --purple-dark: #130080;
 
   --rounded-small: 4px;
@@ -76,71 +75,100 @@ h6.svench-content {
   --font-black: "Inter Black";
   --font-bold: "Inter Bold";
   --font-medium: "Inter Medium";
-  --font-light: "Inter Light"; 
+  --font-light: "Inter Light";
 
-  --font-sans: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, "Inter", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, "Inter",
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: "Georgia", Cambria, Times New Roman, Times, serif;
-  --font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 
   font-size: 16px;
-  --font-size-xs: .75rem;
-  --font-size-s: .875rem;
+  --font-size-xs: 0.75rem;
+  --font-size-s: 0.875rem;
   --font-size-m: 1rem;
   --font-size-l: 1.15rem;
   --font-size-xl: 1.3rem;
   --font-size-2xl: 1.45rem;
   --font-size-3xl: 1.7rem;
 
+  --heading-font-size-l: 2.6rem;
+  --heading-font-size-m: 1.5rem;
+  --heading-font-size-s: 1.12rem;
+
   --font-render: optimizeLegibility;
   --font-smooth: antialiased;
 
-  --text: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
-  --text-sm: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-md: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-lg: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --quotation: var(--font-sans) var(--font-400) "italics" var(--ink) var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-sm-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-sm-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-sm-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-md-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-md-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-md-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-lg-500: var(--font-sans) var(--font-500) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-lg-600: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-lg-700: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size)
+    var(--font-render) var(--font-smooth);
+  --text-sm: var(--font-sans) var(--font-400) "regular" var(--ink)
+    var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-md: var(--font-sans) var(--font-400) "regular" var(--ink)
+    var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-lg: var(--font-sans) var(--font-400) "regular" var(--ink)
+    var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text-500: var(--font-sans) var(--font-500) "regular" var(--ink)
+    var(--font-size-base) var(--font-render) var(--font-smooth);
+  --text-600: var(--font-sans) var(--font-600) "regular" var(--ink)
+    var(--font-size-base) var(--font-render) var(--font-smooth);
+  --text-700: var(--font-sans) var(--font-700) "regular" var(--ink)
+    var(--font-size-base) var(--font-render) var(--font-smooth);
+  --quotation: var(--font-sans) var(--font-400) "italics" var(--ink)
+    var(--font-size-base) var(--font-render) var(--font-smooth);
+  --text-sm-500: var(--font-sans) var(--font-500) "regular" var(--ink)
+    var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-sm-600: var(--font-sans) var(--font-600) "regular" var(--ink)
+    var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-sm-700: var(--font-sans) var(--font-700) "regular" var(--ink)
+    var(--font-size-sm) var(--font-render) var(--font-smooth);
+  --text-md-500: var(--font-sans) var(--font-500) "regular" var(--ink)
+    var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-md-600: var(--font-sans) var(--font-600) "regular" var(--ink)
+    var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-md-700: var(--font-sans) var(--font-700) "regular" var(--ink)
+    var(--font-size-md) var(--font-render) var(--font-smooth);
+  --text-lg-500: var(--font-sans) var(--font-500) "regular" var(--ink)
+    var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text-lg-600: var(--font-sans) var(--font-600) "regular" var(--ink)
+    var(--font-size-lg) var(--font-render) var(--font-smooth);
+  --text-lg-700: var(--font-sans) var(--font-700) "regular" var(--ink)
+    var(--font-size-lg) var(--font-render) var(--font-smooth);
 
-  --heading: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-lg) var(--text-render) var(--text-smooth);
-  --heading-sm: var(--font-sans) var(--font-600) "regular" var(--ink) var(--font-size-md) var(--text-render) var(--text-smooth);
-  --heading-lg: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-xl) var(--text-render) var(--text-smooth);
-  --heading-xl: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-2xl) var(--text-render) var(--text-smooth);
-  --heading-2xl: var(--font-sans) var(--font-700) "regular" var(--ink) var(--font-size-3xl) var(--text-render) var(--text-smooth);
+  --heading: var(--font-sans) var(--font-600) "regular" var(--grey-1)
+    var(--font-size-lg) var(--text-render) var(--text-smooth);
+  --heading-sm: var(--font-sans) var(--font-600) "regular" var(--ink)
+    var(--font-size-md) var(--text-render) var(--text-smooth);
+  --heading-lg: var(--font-sans) var(--font-700) "regular" var(--ink)
+    var(--font-size-xl) var(--text-render) var(--text-smooth);
+  --heading-xl: var(--font-sans) var(--font-700) "regular" var(--ink)
+    var(--font-size-2xl) var(--text-render) var(--text-smooth);
+  --heading-2xl: var(--font-sans) var(--font-700) "regular" var(--ink)
+    var(--font-size-3xl) var(--text-render) var(--text-smooth);
 
-  --text-mono: var(--font-mono) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
-  --text-serif: var(--font-serif) var(--font-400) "regular" var(--ink) var(--font-size) var(--font-render) var(--font-smooth);
+  --text-mono: var(--font-mono) var(--font-400) "regular" var(--ink)
+    var(--font-size) var(--font-render) var(--font-smooth);
+  --text-serif: var(--font-serif) var(--font-400) "regular" var(--ink)
+    var(--font-size) var(--font-render) var(--font-smooth);
 
---spacing-xs: .25rem;
---spacing-s: 0.5rem;
---spacing-m: 0.75rem;
---spacing-l: 1rem;
---spacing-xl: 1.25rem;
+  --spacing-xs: 0.25rem;
+  --spacing-s: 0.5rem;
+  --spacing-m: 0.75rem;
+  --spacing-l: 1rem;
+  --spacing-xl: 1.25rem;
 
---layout-xs: 1rem;
---layout-s: 1.5rem;
---layout-m: 2rem;
---layout-l: 3rem;
---layout-xl: 4rem;
-
+  --layout-xs: 1rem;
+  --layout-s: 1.5rem;
+  --layout-m: 2rem;
+  --layout-l: 3rem;
+  --layout-xl: 4rem;
 }
-
 
 h1 {
   font-size: 3rem;
   font-family: var(--font-sans);
   font-weight: 700;
-  text-rendering: var(--text-render); 
+  text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
@@ -149,7 +177,7 @@ h2 {
   font-size: 2.25rem;
   font-family: var(--font-sans);
   font-weight: 600;
-  text-rendering: var(--text-render); 
+  text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
@@ -158,7 +186,7 @@ h3 {
   font-size: 1.7rem;
   font-family: var(--font-sans);
   font-weight: 600;
-  text-rendering: var(--text-render); 
+  text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
@@ -167,7 +195,7 @@ h4 {
   font-size: var(--font-size-xl);
   font-family: var(--font-sans);
   font-weight: 500;
-  text-rendering: var(--text-render); 
+  text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
@@ -176,7 +204,7 @@ h5 {
   font-size: var(--font-size-lg);
   font-family: var(--font-sans);
   font-weight: 500;
-  text-rendering: var(--text-render); 
+  text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
@@ -185,7 +213,7 @@ h6 {
   font-size: var(--font-size-md);
   font-family: var(--font-sans);
   font-weight: 500;
-  text-rendering: var(--text-render); 
+  text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
@@ -194,12 +222,87 @@ p {
   font-size: var(--font-size);
   font-family: var(--font-sans);
   font-weight: 400;
-  text-rendering: var(--text-render); 
+  text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
 }
 
+.bb-heading {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-rendering: var(--text-render);
+  color: var(--ink);
+}
 
+.bb-heading--small {
+  font-size: var(--heading-font-size-s);
+}
 
+.bb-heading--medium {
+  font-size: var(--heading-font-size-m);
+}
 
+.bb-heading--large {
+  font-size: var(--heading-font-size-l);
+}
 
+.bb-heading--light {
+  font-weight: 300;
+}
+
+.bb-heading--heavy {
+  font-weight: 700;
+}
+
+.bb-heading--color-white {
+  color: var(--white);
+}
+
+.bb-heading--color-light {
+  color: var(--grey-5);
+}
+
+.bb-heading--color-dark {
+  color: var(--ink);
+}
+
+/* END OF HEADER */
+
+.bb-body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-rendering: var(--text-render);
+  color: var(--ink);
+}
+
+.bb-body--small {
+  font-size: var(--font-size-s);
+}
+
+.bb-body--medium {
+  font-size: var(--font-size-m);
+}
+
+.bb-body--large {
+  font-size: var(--font-size-l);
+}
+
+.bb-body--light {
+  font-weight: 300;
+}
+
+.bb-body--heavy {
+  font-weight: 700;
+}
+
+.bb-body--color-white {
+  color: var(--white);
+}
+
+.bb-body--color-light {
+  color: var(--grey-5);
+}
+
+.bb-body--color-dark {
+  color: var(--ink);
+}

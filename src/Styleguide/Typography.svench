@@ -1,5 +1,6 @@
 <script>
   import { View } from "svench";
+  import Typography from "./Typography.svelte";
 </script>
 
 <style>
@@ -8,7 +9,7 @@
   }
 </style>
 
-<h1>Typography</h1>
+<h1 class="bb-heading bb-heading--large bb-heading--heavy">Typography</h1>
 <p>
   Budibase uses Inter as its typeface and two types can be used,
   <strong>heading</strong>
@@ -21,64 +22,135 @@
 
 <View name="Heading">
 
+  <Typography variant="body">Body text</Typography>
+
   <div class="typography-container">
-    <div class="heading-large">
 
-      <h1>Heading Large Dark Font</h1>
-      <h1>Heading Large Light Font</h1>
-      <h1>Heading Large White</h1>
-      <h1>Heading Large Light</h1>
-      <h1>Heading Large Dark</h1>
+    <div class="content">
+      <Typography type="heading" size="large" fontWeight="light">
+        Heading Large Light
+      </Typography>
+
+      <Typography type="heading" size="medium" fontWeight="light">
+        Heading Medium Light
+      </Typography>
+
+      <Typography type="heading" size="small" fontWeight="light">
+        Heading Small Light
+      </Typography>
     </div>
 
-    <div class="heading-medium">
+    <div class="content">
 
-      <h1>Heading Medium Dark Font</h1>
-      <h1>Heading Medium Light Font</h1>
-      <h1>Heading Medium White</h1>
-      <h1>Heading Medium Light</h1>
-      <h1>Heading Medium Dark</h1>
+      <Typography type="heading" size="large" fontWeight="heavy">
+        Heading Large Heavy
+      </Typography>
+
+      <Typography type="heading" size="medium" fontWeight="heavy">
+        Heading Medium Heavy
+      </Typography>
+
+      <Typography type="heading" size="small" fontWeight="heavy">
+        Heading Small Heavy
+      </Typography>
+
     </div>
 
-    <div class="heading-small">
+    <div class="content">
+      <Typography type="heading" size="large" color="white">
+        Heading Large Color White
+      </Typography>
+      <Typography type="heading" size="medium" color="white">
+        Heading Medium Color White
+      </Typography>
+      <Typography type="heading" size="small" color="white">
+        Heading Small Color White
+      </Typography>
+    </div>
 
-      <h1>Heading Small Dark Font</h1>
-      <h1>Heading Small Light Font</h1>
-      <h1>Heading Small White</h1>
-      <h1>Heading Small Light</h1>
-      <h1>Heading Small Dark</h1>
+    <div class="content">
+
+      <Typography type="heading" size="large" color="light">
+        Heading Medium Color Light
+      </Typography>
+      <Typography type="heading" size="medium" color="light">
+        Heading Medium Color Light
+      </Typography>
+
+      <Typography type="heading" size="small" color="light">
+        Heading Small Color Light
+      </Typography>
+    </div>
+
+    <div class="bb-color-dark">
+
+      <Typography type="heading" size="large" color="dark">
+        Heading Large Color Dark
+      </Typography>
+
+      <Typography type="heading" size="medium" color="dark">
+        Heading Medium Color Dark
+      </Typography>
+
+      <Typography type="heading" size="small" color="dark">
+        Heading Small Color Dark
+      </Typography>
     </div>
   </div>
-
 </View>
 
 <View name="Body">
   <div class="typography-container">
-    <div class="body-large">
 
-      <p>Body Large Dark Font</p>
-      <p>Body Large Light Font</p>
-      <p>Body Large White</p>
-      <p>Body Large Light</p>
-      <p>Body Large Dark</p>
+    <div class="bb-light">
+      <h1 class="bb-body bb-body--large bb-body--light">Body Large Light</h1>
+
+      <h1 class="bb-body bb-body--medium bb-body--light">Body Medium Light</h1>
+      <h1 class="bb-body bb-body--small bb-body--light">Body Small Light</h1>
     </div>
 
-    <div class="body-medium">
-
-      <p>Body Medium Dark Font</p>
-      <p>Body Medium Light Font</p>
-      <p>Body Medium White</p>
-      <p>Body Medium Light</p>
-      <p>Body Medium Dark</p>
+    <div class="bb-heavy">
+      <h1 class="bb-body bb-body--large bb-body--heavy">Body Large Heavy</h1>
+      <h1 class="bb-body bb-body--medium bb-body--heavy">Body Medium Heavy</h1>
+      <h1 class="bb-body bb-body--small bb-body--heavy">Body Small Heavy</h1>
     </div>
 
-    <div class="body-small">
-
-      <p>Body Small Dark Font</p>
-      <p>Body Small Light Font</p>
-      <p>Body Small White</p>
-      <p>Body Small Light</p>
-      <p>Body Small Dark</p>
+    <div class="bb-white">
+      <h1 class="bb-body bb-body--large bb-body--color-white">
+        Body Large Color White
+      </h1>
+      <h1 class="bb-body bb-body--medium bb-body--color-white">
+        Body Medium Color White
+      </h1>
+      <h1 class="bb-body bb-body--small bb-body--color-white">
+        Body Small Color White
+      </h1>
     </div>
+
+    <div class="bb-color-light">
+      <h1 class="bb-body bb-body--large bb-body--color-light">
+        Body Large Color Light
+      </h1>
+      <h1 class="bb-body bb-body--medium bb-body--color-light">
+        Body Medium Color Light
+      </h1>
+      <h1 class="bb-body bb-body--small bb-body--color-light">
+        Body Small Color Light
+      </h1>
+    </div>
+
+    <div class="bb-color-dark">
+      <h1 class="bb-body bb-body--large bb-body--color-dark">
+        Body Large Color Dark
+      </h1>
+      <h1 class="bb-body bb-body--medium bb-body--color-dark">
+        Body Medium Color Dark
+      </h1>
+      <h1 class="bb-body bb-body--small bb-body--color-dark">
+        Body Small Color Dark
+      </h1>
+    </div>
+
   </div>
+
 </View>
