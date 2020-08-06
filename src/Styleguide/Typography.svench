@@ -14,7 +14,7 @@
   Budibase uses Inter as its typeface and two types can be used,
   <strong>heading</strong>
   and
-  <strong>body</strong>
+  <strong>body.</strong>
 </p>
 <p>Each type has three sizes, small, medium and large.</p>
 <p>Two font weights can be used, light and dark.</p>
@@ -82,7 +82,7 @@
       </Typography>
     </div>
 
-    <div class="bb-color-dark">
+    <div class="content">
 
       <Typography type="heading" size="large" color="dark">
         Heading Large Color Dark
@@ -101,54 +101,74 @@
 
 <View name="Body">
   <div class="typography-container">
+    <div class="content">
+      <Typography type="body" size="large" fontWeight="light">
+        Body Large Light
+      </Typography>
 
-    <div class="bb-light">
-      <h1 class="bb-body bb-body--large bb-body--light">Body Large Light</h1>
+      <Typography type="body" size="medium" fontWeight="light">
+        Body Medium Light
+      </Typography>
 
-      <h1 class="bb-body bb-body--medium bb-body--light">Body Medium Light</h1>
-      <h1 class="bb-body bb-body--small bb-body--light">Body Small Light</h1>
+      <Typography type="body" size="small" fontWeight="light">
+        Body Small Light
+      </Typography>
     </div>
 
-    <div class="bb-heavy">
-      <h1 class="bb-body bb-body--large bb-body--heavy">Body Large Heavy</h1>
-      <h1 class="bb-body bb-body--medium bb-body--heavy">Body Medium Heavy</h1>
-      <h1 class="bb-body bb-body--small bb-body--heavy">Body Small Heavy</h1>
+    <div class="content">
+
+      <Typography type="body" size="large" fontWeight="heavy">
+        Body Large Heavy
+      </Typography>
+
+      <Typography type="body" size="medium" fontWeight="heavy">
+        Body Medium Heavy
+      </Typography>
+
+      <Typography type="body" size="small" fontWeight="heavy">
+        Body Small Heavy
+      </Typography>
     </div>
 
-    <div class="bb-white">
-      <h1 class="bb-body bb-body--large bb-body--color-white">
+    <div class="content">
+      <Typography type="body" size="large" color="white">
         Body Large Color White
-      </h1>
-      <h1 class="bb-body bb-body--medium bb-body--color-white">
+      </Typography>
+      <Typography type="body" size="medium" color="white">
         Body Medium Color White
-      </h1>
-      <h1 class="bb-body bb-body--small bb-body--color-white">
+      </Typography>
+      <Typography type="body" size="small" color="white">
         Body Small Color White
-      </h1>
+      </Typography>
     </div>
 
-    <div class="bb-color-light">
-      <h1 class="bb-body bb-body--large bb-body--color-light">
-        Body Large Color Light
-      </h1>
-      <h1 class="bb-body bb-body--medium bb-body--color-light">
+    <div class="content">
+
+      <Typography type="body" size="large" color="light">
         Body Medium Color Light
-      </h1>
-      <h1 class="bb-body bb-body--small bb-body--color-light">
+      </Typography>
+      <Typography type="body" size="medium" color="light">
+        Body Medium Color Light
+      </Typography>
+
+      <Typography type="body" size="small" color="light">
         Body Small Color Light
-      </h1>
+      </Typography>
     </div>
 
-    <div class="bb-color-dark">
-      <h1 class="bb-body bb-body--large bb-body--color-dark">
+    <div class="content">
+
+      <Typography type="body" size="large" color="dark">
         Body Large Color Dark
-      </h1>
-      <h1 class="bb-body bb-body--medium bb-body--color-dark">
+      </Typography>
+
+      <Typography type="body" size="medium" color="dark">
         Body Medium Color Dark
-      </h1>
-      <h1 class="bb-body bb-body--small bb-body--color-dark">
+      </Typography>
+
+      <Typography type="body" size="small" color="dark">
         Body Small Color Dark
-      </h1>
+      </Typography>
     </div>
 
   </div>

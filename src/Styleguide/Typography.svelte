@@ -14,5 +14,7 @@
 {/if}
 
 {#if type === 'body'}
-  <p class={classname} />
+  <p class={classname}>
+    <slot />
+  </p>
 {/if}
