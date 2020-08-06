@@ -232,6 +232,7 @@ p {
   font-weight: 500;
   text-rendering: var(--text-render);
   color: var(--ink);
+  line-height: 1.5;
 }
 
 .bb-heading--small {
@@ -266,13 +267,12 @@ p {
   color: var(--ink);
 }
 
-/* END OF HEADER */
-
 .bb-body {
   font-family: var(--font-sans);
   font-weight: 500;
   text-rendering: var(--text-render);
   color: var(--ink);
+  line-height: 1.5;
 }
 
 .bb-body--small {

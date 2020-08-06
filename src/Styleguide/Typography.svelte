@@ -1,8 +1,8 @@
 <script>
-  export let type;
-  export let color;
-  export let size;
-  export let fontWeight;
+  export let type = "heading";
+  export let color = "dark";
+  export let size = "medium";
+  export let fontWeight = "";
 
   const classname = `bb-${type} bb-${type}--${size} bb-${type}--${fontWeight} bb-${type}--color-${color}`;
 </script>
