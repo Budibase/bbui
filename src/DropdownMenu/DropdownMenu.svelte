@@ -109,21 +109,21 @@
 
   .menu-container {
     position: fixed;
+    margin-top: var(--spacing-xs);
     outline: none;
     box-sizing: border-box;
     opacity: 0;
-    min-width: 160px;
+    min-width: 200px;
     z-index: 2;
     color: var(--ink);
     font-weight: 400;
     height: fit-content !important;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border: var(--border-dark);
+    border-radius: var(--border-radius-m);
     transform: scale(0);
     transition: opacity 0.13s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);
     overflow-y: auto;
     background: #fff;
-    color: #666;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
   }
 
