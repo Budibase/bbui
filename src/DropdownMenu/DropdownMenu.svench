@@ -65,7 +65,7 @@
   </DropdownMenu>
 </View>
 
-<View name="Left Align, TextButton, Small">
+<View name="Left Align, TextButton, Small, Icons">
   <div bind:this={anchorLeft}>
     <Button text on:click={dropdownLeft.show}>
       Field Name
