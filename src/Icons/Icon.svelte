@@ -14,8 +14,8 @@
 
 <style>
   .c {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25em;
+    height: 1.25em;
     fill: currentColor;
     overflow: visible;
     margin-right: var(--spacing-s);
