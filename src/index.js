@@ -17,3 +17,5 @@ export { default as Home } from './Links/Home.svelte';
 export { default as DetailSummary } from './List/Items/DetailSummary.svelte';
 export { default as Switcher } from "./Switcher/Switcher.svelte";
 export { default as DropdownMenu } from "./DropdownMenu/DropdownMenu.svelte";
+export { default as Popover } from "./DropdownMenu/Popover.svelte";
+
