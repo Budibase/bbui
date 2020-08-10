@@ -70,7 +70,7 @@
 
     <div class="typography-column">
       <Typography type="heading" size="large" color="light">
-        Heading Medium Color Light
+        Heading Large Color Light
       </Typography>
 
       <Typography type="heading" size="medium" color="light">
@@ -144,7 +144,7 @@
 
     <div class="typography-column">
       <Typography type="body" size="large" color="light">
-        Body Medium Color Light
+        Body Large Color Light
       </Typography>
 
       <Typography type="body" size="medium" color="light">
