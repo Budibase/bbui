@@ -19,6 +19,8 @@
     font-size: var(--font-size-m);
     padding: var(--spacing-m) 2rem var(--spacing-m) var(--spacing-m) !important;
     appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
     align-items: center;
     white-space: pre;
     outline-color: var(--blue);
