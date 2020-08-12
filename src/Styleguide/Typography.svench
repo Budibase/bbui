@@ -1,6 +1,7 @@
 <script>
   import { View } from "svench";
-  import Typography from "./Typography.svelte";
+  import Heading from "./Heading.svelte";
+  import Body from "./Body.svelte";
 </script>
 
 <style>
@@ -41,73 +42,43 @@
 <View name="Heading">
   <div class="typography-container">
     <div class="typography-column">
-      <Typography type="heading" size="large" fontWeight="light">
-        Heading Large Light
-      </Typography>
+      <Heading size="large" fontWeight="light">Heading Large Light</Heading>
 
-      <Typography type="heading" size="medium" fontWeight="light">
-        Heading Medium Light
-      </Typography>
+      <Heading size="medium" fontWeight="light">Heading Medium Light</Heading>
 
-      <Typography type="heading" size="small" fontWeight="light">
-        Heading Small Light
-      </Typography>
+      <Heading size="small" fontWeight="light">Heading Small Light</Heading>
     </div>
 
     <div class="typography-column">
-      <Typography type="heading" size="large" fontWeight="heavy">
-        Heading Large Heavy
-      </Typography>
+      <Heading size="large" fontWeight="heavy">Heading Large Heavy</Heading>
 
-      <Typography type="heading" size="medium" fontWeight="heavy">
-        Heading Medium Heavy
-      </Typography>
+      <Heading size="medium" fontWeight="heavy">Heading Medium Heavy</Heading>
 
-      <Typography type="heading" size="small" fontWeight="heavy">
-        Heading Small Heavy
-      </Typography>
+      <Heading size="small" fontWeight="heavy">Heading Small Heavy</Heading>
     </div>
 
     <div class="typography-column">
-      <Typography type="heading" size="large" color="light">
-        Heading Large Color Light
-      </Typography>
+      <Heading size="large" color="light">Heading Large Color Light</Heading>
 
-      <Typography type="heading" size="medium" color="light">
-        Heading Medium Color Light
-      </Typography>
+      <Heading size="medium" color="light">Heading Medium Color Light</Heading>
 
-      <Typography type="heading" size="small" color="light">
-        Heading Small Color Light
-      </Typography>
+      <Heading size="small" color="light">Heading Small Color Light</Heading>
     </div>
 
     <div class="typography-column">
-      <Typography type="heading" size="large" color="dark">
-        Heading Large Color Dark
-      </Typography>
+      <Heading size="large" color="dark">Heading Large Color Dark</Heading>
 
-      <Typography type="heading" size="medium" color="dark">
-        Heading Medium Color Dark
-      </Typography>
+      <Heading size="medium" color="dark">Heading Medium Color Dark</Heading>
 
-      <Typography type="heading" size="small" color="dark">
-        Heading Small Color Dark
-      </Typography>
+      <Heading size="small" color="dark">Heading Small Color Dark</Heading>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Typography type="heading" size="large" color="white">
-        Heading Large Color White
-      </Typography>
+      <Heading size="large" color="white">Heading Large Color White</Heading>
 
-      <Typography type="heading" size="medium" color="white">
-        Heading Medium Color White
-      </Typography>
+      <Heading size="medium" color="white">Heading Medium Color White</Heading>
 
-      <Typography type="heading" size="small" color="white">
-        Heading Small Color White
-      </Typography>
+      <Heading size="small" color="white">Heading Small Color White</Heading>
     </div>
   </div>
 </View>
@@ -115,74 +86,43 @@
 <View name="Body">
   <div class="typography-container">
     <div class="typography-column">
-      <Typography type="body" size="large" fontWeight="light">
-        Body Large Light
-      </Typography>
+      <Body size="large" fontWeight="light">Body Large Light</Body>
 
-      <Typography type="body" size="medium" fontWeight="light">
-        Body Medium Light
-      </Typography>
+      <Body size="medium" fontWeight="light">Body Medium Light</Body>
 
-      <Typography type="body" size="small" fontWeight="light">
-        Body Small Light
-      </Typography>
+      <Body size="small" fontWeight="light">Body Small Light</Body>
     </div>
 
     <div class="typography-column">
-      <Typography type="body" size="large" fontWeight="heavy">
-        Body Large Heavy
-      </Typography>
+      <Body size="large" fontWeight="heavy">Body Large Heavy</Body>
 
-      <Typography type="body" size="medium" fontWeight="heavy">
-        Body Medium Heavy
-      </Typography>
+      <Body size="medium" fontWeight="heavy">Body Medium Heavy</Body>
 
-      <Typography type="body" size="small" fontWeight="heavy">
-        Body Small Heavy
-      </Typography>
+      <Body size="small" fontWeight="heavy">Body Small Heavy</Body>
     </div>
 
     <div class="typography-column">
-      <Typography type="body" size="large" color="light">
-        Body Large Color Light
-      </Typography>
+      <Body size="large" color="light">Body Large Color Light</Body>
 
-      <Typography type="body" size="medium" color="light">
-        Body Medium Color Light
-      </Typography>
+      <Body size="medium" color="light">Body Medium Color Light</Body>
 
-      <Typography type="body" size="small" color="light">
-        Body Small Color Light
-      </Typography>
+      <Body size="small" color="light">Body Small Color Light</Body>
     </div>
 
     <div class="typography-column">
-      <Typography type="body" size="large" color="dark">
-        Body Large Color Dark
-      </Typography>
+      <Body size="large" color="dark">Body Large Color Dark</Body>
 
-      <Typography type="body" size="medium" color="dark">
-        Body Medium Color Dark
-      </Typography>
+      <Body size="medium" color="dark">Body Medium Color Dark</Body>
 
-      <Typography type="body" size="small" color="dark">
-        Body Small Color Dark
-      </Typography>
+      <Body size="small" color="dark">Body Small Color Dark</Body>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Typography type="body" size="large" color="white">
-        Body Large Color White
-      </Typography>
+      <Body size="large" color="white">Body Large Color White</Body>
 
-      <Typography type="body" size="medium" color="white">
-        Body Medium Color White
-      </Typography>
+      <Body size="medium" color="white">Body Medium Color White</Body>
 
-      <Typography type="body" size="small" color="white">
-        Body Small Color White
-      </Typography>
+      <Body size="small" color="white">Body Small Color White</Body>
     </div>
   </div>
-
 </View>
