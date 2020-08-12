@@ -42,43 +42,63 @@
 <View name="Heading">
   <div class="typography-container">
     <div class="typography-column">
-      <Heading size="large" fontWeight="light">Heading Large Light</Heading>
+      <Heading size="xl" fontWeight="light">Heading Extra Large Light</Heading>
 
-      <Heading size="medium" fontWeight="light">Heading Medium Light</Heading>
+      <Heading size="l" fontWeight="light">Heading Large Light</Heading>
 
-      <Heading size="small" fontWeight="light">Heading Small Light</Heading>
+      <Heading size="m" fontWeight="light">Heading Medium Light</Heading>
+
+      <Heading size="s" fontWeight="light">Heading Small Light</Heading>
+
+      <Heading size="xs" fontWeight="light">Heading Extra Small Light</Heading>
     </div>
 
     <div class="typography-column">
-      <Heading size="large" fontWeight="heavy">Heading Large Heavy</Heading>
+      <Heading size="xl" fontWeight="heavy">Heading Extra Large Heavy</Heading>
 
-      <Heading size="medium" fontWeight="heavy">Heading Medium Heavy</Heading>
+      <Heading size="l" fontWeight="heavy">Heading Large Heavy</Heading>
 
-      <Heading size="small" fontWeight="heavy">Heading Small Heavy</Heading>
+      <Heading size="m" fontWeight="heavy">Heading Medium Heavy</Heading>
+
+      <Heading size="s" fontWeight="heavy">Heading Small Heavy</Heading>
+
+      <Heading size="xs" fontWeight="heavy">Heading Extra Small Heavy</Heading>
     </div>
 
     <div class="typography-column">
-      <Heading size="large" color="light">Heading Large Color Light</Heading>
+      <Heading size="xl" color="light">Heading Extra Large Color Light</Heading>
 
-      <Heading size="medium" color="light">Heading Medium Color Light</Heading>
+      <Heading size="l" color="light">Heading Large Color Light</Heading>
 
-      <Heading size="small" color="light">Heading Small Color Light</Heading>
+      <Heading size="m" color="light">Heading Medium Color Light</Heading>
+
+      <Heading size="s" color="light">Heading Small Color Light</Heading>
+
+      <Heading size="xs" color="light">Heading Extra Small Light</Heading>
     </div>
 
     <div class="typography-column">
-      <Heading size="large" color="dark">Heading Large Color Dark</Heading>
+      <Heading size="xl" color="dark">Heading Extra Large Color Dark</Heading>
 
-      <Heading size="medium" color="dark">Heading Medium Color Dark</Heading>
+      <Heading size="l" color="dark">Heading Large Color Dark</Heading>
 
-      <Heading size="small" color="dark">Heading Small Color Dark</Heading>
+      <Heading size="m" color="dark">Heading Medium Color Dark</Heading>
+
+      <Heading size="s" color="dark">Heading Small Color Dark</Heading>
+
+      <Heading size="xs" color="dark">Heading Extra Small Color Dark</Heading>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Heading size="large" color="white">Heading Large Color White</Heading>
+      <Heading size="xl" color="white">Heading Extra Large Color White</Heading>
 
-      <Heading size="medium" color="white">Heading Medium Color White</Heading>
+      <Heading size="l" color="white">Heading Large Color White</Heading>
 
-      <Heading size="small" color="white">Heading Small Color White</Heading>
+      <Heading size="m" color="white">Heading Medium Color White</Heading>
+
+      <Heading size="s" color="white">Heading Small Color White</Heading>
+
+      <Heading size="xs" color="white">Heading Small Color White</Heading>
     </div>
   </div>
 </View>
@@ -86,43 +106,63 @@
 <View name="Body">
   <div class="typography-container">
     <div class="typography-column">
-      <Body size="large" fontWeight="light">Body Large Light</Body>
+      <Body size="xl" fontWeight="light">Body Extra Large Light</Body>
 
-      <Body size="medium" fontWeight="light">Body Medium Light</Body>
+      <Body size="l" fontWeight="light">Body Large Light</Body>
 
-      <Body size="small" fontWeight="light">Body Small Light</Body>
+      <Body size="m" fontWeight="light">Body Medium Light</Body>
+
+      <Body size="s" fontWeight="light">Body Small Light</Body>
+
+      <Body size="xs" fontWeight="light">Body Extra Small Light</Body>
     </div>
 
     <div class="typography-column">
-      <Body size="large" fontWeight="heavy">Body Large Heavy</Body>
+      <Body size="xl" fontWeight="heavy">Body Extra Large Heavy</Body>
 
-      <Body size="medium" fontWeight="heavy">Body Medium Heavy</Body>
+      <Body size="l" fontWeight="heavy">Body Large Heavy</Body>
 
-      <Body size="small" fontWeight="heavy">Body Small Heavy</Body>
+      <Body size="m" fontWeight="heavy">Body Medium Heavy</Body>
+
+      <Body size="s" fontWeight="heavy">Body Small Heavy</Body>
+
+      <Body size="xs" fontWeight="heavy">Body Extra Small Heavy</Body>
     </div>
 
     <div class="typography-column">
-      <Body size="large" color="light">Body Large Color Light</Body>
+      <Body size="xl" color="light">Body Extra Large Color Light</Body>
 
-      <Body size="medium" color="light">Body Medium Color Light</Body>
+      <Body size="l" color="light">Body Large Color Light</Body>
 
-      <Body size="small" color="light">Body Small Color Light</Body>
+      <Body size="m" color="light">Body Medium Color Light</Body>
+
+      <Body size="s" color="light">Body Small Color Light</Body>
+
+      <Body size="xs" color="light">Body Extra Small Color Light</Body>
     </div>
 
     <div class="typography-column">
-      <Body size="large" color="dark">Body Large Color Dark</Body>
+      <Body size="xl" color="dark">Body Extra Large Color Dark</Body>
 
-      <Body size="medium" color="dark">Body Medium Color Dark</Body>
+      <Body size="l" color="dark">Body Large Color Dark</Body>
 
-      <Body size="small" color="dark">Body Small Color Dark</Body>
+      <Body size="m" color="dark">Body Medium Color Dark</Body>
+
+      <Body size="s" color="dark">Body Small Color Dark</Body>
+
+      <Body size="xs" color="dark">Body Extra Small Color Dark</Body>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Body size="large" color="white">Body Large Color White</Body>
+      <Body size="xl" color="white">Body Extra Large Color White</Body>
 
-      <Body size="medium" color="white">Body Medium Color White</Body>
+      <Body size="l" color="white">Body Large Color White</Body>
 
-      <Body size="small" color="white">Body Small Color White</Body>
+      <Body size="m" color="white">Body Medium Color White</Body>
+
+      <Body size="s" color="white">Body Small Color White</Body>
+
+      <Body size="xs" color="white">Body Small Color White</Body>
     </div>
   </div>
 </View>

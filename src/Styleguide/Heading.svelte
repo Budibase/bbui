@@ -1,6 +1,6 @@
 <script>
   export let color = "dark";
-  export let size = "medium";
+  export let size = "m";
   export let fontWeight = "";
 
   const classname = `bb-heading bb-heading--${size} bb-heading--${fontWeight} bb-heading--color-${color}`;

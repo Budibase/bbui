@@ -90,66 +90,15 @@ h6.svench-content {
   --font-size-m: 1rem;
   --font-size-l: 1.15rem;
   --font-size-xl: 1.3rem;
-  --font-size-2xl: 1.45rem;
-  --font-size-3xl: 1.7rem;
 
-  --heading-font-size-l: 2.6rem;
-  --heading-font-size-m: 1.5rem;
+  --heading-font-size-xs: 0.875rem;
   --heading-font-size-s: 1.12rem;
+  --heading-font-size-m: 1.5rem;
+  --heading-font-size-l: 2.6rem;
+  --heading-font-size-xl: 3rem;
 
   --font-render: optimizeLegibility;
   --font-smooth: antialiased;
-
-  --text: var(--font-sans) var(--font-400) "regular" var(--ink) var(--font-size)
-    var(--font-render) var(--font-smooth);
-  --text-sm: var(--font-sans) var(--font-400) "regular" var(--ink)
-    var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-md: var(--font-sans) var(--font-400) "regular" var(--ink)
-    var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-lg: var(--font-sans) var(--font-400) "regular" var(--ink)
-    var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-500: var(--font-sans) var(--font-500) "regular" var(--ink)
-    var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-600: var(--font-sans) var(--font-600) "regular" var(--ink)
-    var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-700: var(--font-sans) var(--font-700) "regular" var(--ink)
-    var(--font-size-base) var(--font-render) var(--font-smooth);
-  --quotation: var(--font-sans) var(--font-400) "italics" var(--ink)
-    var(--font-size-base) var(--font-render) var(--font-smooth);
-  --text-sm-500: var(--font-sans) var(--font-500) "regular" var(--ink)
-    var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-sm-600: var(--font-sans) var(--font-600) "regular" var(--ink)
-    var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-sm-700: var(--font-sans) var(--font-700) "regular" var(--ink)
-    var(--font-size-sm) var(--font-render) var(--font-smooth);
-  --text-md-500: var(--font-sans) var(--font-500) "regular" var(--ink)
-    var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-md-600: var(--font-sans) var(--font-600) "regular" var(--ink)
-    var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-md-700: var(--font-sans) var(--font-700) "regular" var(--ink)
-    var(--font-size-md) var(--font-render) var(--font-smooth);
-  --text-lg-500: var(--font-sans) var(--font-500) "regular" var(--ink)
-    var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-lg-600: var(--font-sans) var(--font-600) "regular" var(--ink)
-    var(--font-size-lg) var(--font-render) var(--font-smooth);
-  --text-lg-700: var(--font-sans) var(--font-700) "regular" var(--ink)
-    var(--font-size-lg) var(--font-render) var(--font-smooth);
-
-  --heading: var(--font-sans) var(--font-600) "regular" var(--ink)
-    var(--font-size-lg) var(--text-render) var(--text-smooth);
-  --heading-sm: var(--font-sans) var(--font-600) "regular" var(--ink)
-    var(--font-size-md) var(--text-render) var(--text-smooth);
-  --heading-lg: var(--font-sans) var(--font-700) "regular" var(--ink)
-    var(--font-size-xl) var(--text-render) var(--text-smooth);
-  --heading-xl: var(--font-sans) var(--font-700) "regular" var(--ink)
-    var(--font-size-2xl) var(--text-render) var(--text-smooth);
-  --heading-2xl: var(--font-sans) var(--font-700) "regular" var(--ink)
-    var(--font-size-3xl) var(--text-render) var(--text-smooth);
-
-  --text-mono: var(--font-mono) var(--font-400) "regular" var(--ink)
-    var(--font-size) var(--font-render) var(--font-smooth);
-  --text-serif: var(--font-serif) var(--font-400) "regular" var(--ink)
-    var(--font-size) var(--font-render) var(--font-smooth);
 
   --spacing-xs: 0.25rem;
   --spacing-s: 0.5rem;
@@ -244,16 +193,24 @@ p {
   line-height: 1.5;
 }
 
-.bb-heading--small {
+.bb-heading--xs {
+  font-size: var(--heading-font-size-xs);
+}
+
+.bb-heading--s {
   font-size: var(--heading-font-size-s);
 }
 
-.bb-heading--medium {
+.bb-heading--m {
   font-size: var(--heading-font-size-m);
 }
 
-.bb-heading--large {
+.bb-heading--l {
   font-size: var(--heading-font-size-l);
+}
+
+.bb-heading--xl {
+  font-size: var(--heading-font-size-xl);
 }
 
 .bb-heading--light {
@@ -284,16 +241,24 @@ p {
   line-height: 1.5;
 }
 
-.bb-body--small {
+.bb-body--xs {
+  font-size: var(--font-size-xs);
+}
+
+.bb-body--s {
   font-size: var(--font-size-s);
 }
 
-.bb-body--medium {
+.bb-body--m {
   font-size: var(--font-size-m);
 }
 
-.bb-body--large {
+.bb-body--l {
   font-size: var(--font-size-l);
+}
+
+.bb-body--xl {
+  font-size: var(--font-size-xl);
 }
 
 .bb-body--light {
