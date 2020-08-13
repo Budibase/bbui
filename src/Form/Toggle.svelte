@@ -3,8 +3,8 @@
   export let text = '';
   export let checked = false;
   export let disabled = false;
+  export let screenreader = true;
   
-
 </script>
 
 <style>
@@ -15,6 +15,11 @@
       gap: var(--spacing-s);
   }
 
+  label:disabled {
+    background-color: var(--grey-2);
+    cursor: not-allowed;
+  }
+
   .toggle {
     position: relative;
     display: inline-block;
@@ -23,18 +28,20 @@
     -webkit-user-select: none; 
     background: transparent;
     outline-color: var(--blue);
-
   }
+
+
   .track {
     width: 28px;
     height: 14px;
-    background-color: var(--grey-6);
+    background-color: var(--grey-4);
     border-radius: var(--border-radius-xl);
     transition-delay: .12s;
     transition-duration: .2s;
     transition-property: background,border;
     transition-timing-function: cubic-bezier(0,0,.2,1);
   }
+
 
   .thumb {
     cursor: pointer;
@@ -62,10 +69,12 @@
   }
   input[type='checkbox']:disabled ~ .track {
     background-color: var(--grey-4);
+    cursor: not-allowed;
   }
   input[type='checkbox']:disabled ~ .thumb {
     background-color: var(--grey-2);
-    box-shadow:  1px 2px 0 rgba(0,0,0,.2), 0 1px 3px 0 rgba(0,0,0,.1);
+    cursor: not-allowed;
+
   }
 
   .screenreader {
@@ -88,17 +97,17 @@
 </style>
 
 <label for="{id}">
+  <span class="text">{text}</span>
   <div class="toggle">
     <input
       {id}
       name="{id}"
       type="checkbox"
-      class="screenreader"
+      class:screenreader
       {disabled}
       bind:checked
     />
     <div class="track"></div>
     <div class="thumb"></div>
   </div>
-  <span class="text">{text}</span>
 </label>

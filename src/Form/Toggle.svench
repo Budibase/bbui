@@ -10,5 +10,13 @@
 </script>
 
 <View name="default">
-  <Toggle bind:disabled="{nodisplay}" id="nodisplay" text="Display on mobile?" />
+  <Toggle bind:checked="{nodisplay}" id="nodisplay" />
+</View>
+
+<View name="checked with text">
+  <Toggle bind:checked="{display}" id="display" text="Display on mobile?"/>
+</View>
+
+<View name="disabled">
+  <Toggle bind:unchecked="{nodisplay}" id="disabled" disabled="{true}" />
 </View>
