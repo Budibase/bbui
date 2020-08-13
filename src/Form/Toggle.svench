@@ -1,0 +1,14 @@
+<script>
+  import { View } from "svench";
+  import Toggle from "./Toggle.svelte";
+
+  let nodisplay = false;
+  let display = true;
+
+  $: values = { display, nodisplay };
+
+</script>
+
+<View name="default">
+  <Toggle bind:disabled="{nodisplay}" id="nodisplay" text="Display on mobile?" />
+</View>
