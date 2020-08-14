@@ -1,0 +1,11 @@
+<script>
+import Modal from "./Modal.svelte";
+import Content from "./Content.svelte";
+import { View } from "svench";
+
+</script>
+<View name="default">
+    <Modal>
+        <Content />
+    </Modal>
+</View>
