@@ -187,7 +187,7 @@ p {
 
 .bb-heading {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 600;
   text-rendering: var(--text-render);
   color: var(--ink);
   line-height: 1.5;
@@ -207,17 +207,11 @@ p {
 
 .bb-heading--l {
   font-size: var(--heading-font-size-l);
+  font-weight: 700;
 }
 
 .bb-heading--xl {
   font-size: var(--heading-font-size-xl);
-}
-
-.bb-heading--light {
-  font-weight: 300;
-}
-
-.bb-heading--heavy {
   font-weight: 700;
 }
 
@@ -235,7 +229,7 @@ p {
 
 .bb-body {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 400;
   text-rendering: var(--text-render);
   color: var(--ink);
   line-height: 1.5;
@@ -259,14 +253,6 @@ p {
 
 .bb-body--xl {
   font-size: var(--font-size-xl);
-}
-
-.bb-body--light {
-  font-weight: 300;
-}
-
-.bb-body--heavy {
-  font-weight: 700;
 }
 
 .bb-body--color-white {
