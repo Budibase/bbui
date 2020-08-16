@@ -2,6 +2,9 @@
   import { View } from "svench";
   import Heading from "./Heading.svelte";
   import Body from "./Body.svelte";
+  import Label from "./Label.svelte";
+
+  const username = "bbuserexample";
 </script>
 
 <style>
@@ -15,6 +18,10 @@
 
   .typography-column--grey {
     background-color: var(--grey-5);
+  }
+
+  .label-wrapper {
+    padding: var(--spacing-m);
   }
 </style>
 
@@ -33,18 +40,6 @@
 <View name="Heading">
   <div class="typography-container">
     <div class="typography-column">
-      <Heading size="xl" color="light">Heading Extra Large Color Light</Heading>
-
-      <Heading size="l" color="light">Heading Large Color Light</Heading>
-
-      <Heading size="m" color="light">Heading Medium Color Light</Heading>
-
-      <Heading size="s" color="light">Heading Small Color Light</Heading>
-
-      <Heading size="xs" color="light">Heading Extra Small Light</Heading>
-    </div>
-
-    <div class="typography-column">
       <Heading size="xl" color="dark">Heading Extra Large Color Dark</Heading>
 
       <Heading size="l" color="dark">Heading Large Color Dark</Heading>
@@ -54,6 +49,18 @@
       <Heading size="s" color="dark">Heading Small Color Dark</Heading>
 
       <Heading size="xs" color="dark">Heading Extra Small Color Dark</Heading>
+    </div>
+
+    <div class="typography-column">
+      <Heading size="xl" color="light">Heading Extra Large Color Light</Heading>
+
+      <Heading size="l" color="light">Heading Large Color Light</Heading>
+
+      <Heading size="m" color="light">Heading Medium Color Light</Heading>
+
+      <Heading size="s" color="light">Heading Small Color Light</Heading>
+
+      <Heading size="xs" color="light">Heading Extra Small Light</Heading>
     </div>
 
     <div class="typography-column typography-column--grey">
@@ -73,18 +80,6 @@
 <View name="Body">
   <div class="typography-container">
     <div class="typography-column">
-      <Body size="xl" color="light">Body Extra Large Color Light</Body>
-
-      <Body size="l" color="light">Body Large Color Light</Body>
-
-      <Body size="m" color="light">Body Medium Color Light</Body>
-
-      <Body size="s" color="light">Body Small Color Light</Body>
-
-      <Body size="xs" color="light">Body Extra Small Color Light</Body>
-    </div>
-
-    <div class="typography-column">
       <Body size="xl" color="dark">Body Extra Large Color Dark</Body>
 
       <Body size="l" color="dark">Body Large Color Dark</Body>
@@ -94,6 +89,18 @@
       <Body size="s" color="dark">Body Small Color Dark</Body>
 
       <Body size="xs" color="dark">Body Extra Small Color Dark</Body>
+    </div>
+
+    <div class="typography-column">
+      <Body size="xl" color="light">Body Extra Large Color Light</Body>
+
+      <Body size="l" color="light">Body Large Color Light</Body>
+
+      <Body size="m" color="light">Body Medium Color Light</Body>
+
+      <Body size="s" color="light">Body Small Color Light</Body>
+
+      <Body size="xs" color="light">Body Extra Small Color Light</Body>
     </div>
 
     <div class="typography-column typography-column--grey">
@@ -106,6 +113,120 @@
       <Body size="s" color="white">Body Small Color White</Body>
 
       <Body size="xs" color="white">Body Small Color White</Body>
+    </div>
+  </div>
+</View>
+
+<View name="Label">
+  <div class="typography-container">
+    <div class="label-wrapper">
+      <Label size="xl" color="dark" forAttr={username}>
+        Label Extra Large Color Dark
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="l" color="dark" forAttr={username}>
+        Label Large Color Dark
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="m" color="dark" forAttr={username}>
+        Label Medium Color Dark
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="s" color="dark" forAttr={username}>
+        Label Small Color Dark
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="xs" color="dark" forAttr={username}>
+        Label Extra Small Color Dark
+      </Label>
+      <input type="text" />
+    </div>
+  </div>
+
+  <div class="typography-container">
+    <div class="label-wrapper">
+      <Label size="xl" color="light" forAttr={username}>
+        Label Extra Large Color Light
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="l" color="light" forAttr={username}>
+        Label Large Color Light
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="m" color="light" forAttr={username}>
+        Label Medium Color Light
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="s" color="light" forAttr={username}>
+        Label Small Color Light
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="xs" color="light" forAttr={username}>
+        Label Extra Small Color Light
+      </Label>
+      <input type="text" />
+    </div>
+  </div>
+
+  <div class="typography-container typography-column--grey">
+    <div class="label-wrapper">
+      <Label size="xl" color="white" forAttr={username}>
+        Label Extra Large Color White
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="l" color="white" forAttr={username}>
+        Label Large Color White
+      </Label>
+
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="m" color="white" forAttr={username}>
+        Label Medium Color White
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="s" color="white" forAttr={username}>
+        Label Small Color White
+      </Label>
+      <input type="text" />
+    </div>
+
+    <div class="label-wrapper">
+      <Label size="xs" color="white" forAttr={username}>
+        Label Small Color White
+      </Label>
+      <input type="text" />
     </div>
   </div>
 </View>

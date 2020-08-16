@@ -190,6 +190,7 @@ p {
   font-weight: 600;
   text-rendering: var(--text-render);
   color: var(--ink);
+  font-size: var(--heading-font-size-m);
   line-height: 1.5;
 }
 
@@ -232,6 +233,7 @@ p {
   font-weight: 400;
   text-rendering: var(--text-render);
   color: var(--ink);
+  font-size: var(--font-size-m);
   line-height: 1.5;
 }
 
@@ -264,5 +266,48 @@ p {
 }
 
 .bb-body--color-dark {
+  color: var(--ink);
+}
+
+.bb-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-rendering: var(--text-render);
+  color: var(--ink);
+  font-size: var(--font-size-s);
+  margin-bottom: 12px;
+  display: block;
+  line-height: 1.5;
+}
+
+.bb-label--xs {
+  font-size: var(--font-size-xs);
+}
+
+.bb-label--s {
+  font-size: var(--font-size-s);
+}
+
+.bb-label--m {
+  font-size: var(--font-size-m);
+}
+
+.bb-label--l {
+  font-size: var(--font-size-l);
+}
+
+.bb-label--xl {
+  font-size: var(--font-size-xl);
+}
+
+.bb-label--color-white {
+  color: var(--white);
+}
+
+.bb-label--color-light {
+  color: var(--grey-5);
+}
+
+.bb-label--color-dark {
   color: var(--ink);
 }

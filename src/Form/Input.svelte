@@ -17,7 +17,7 @@
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
 
-  const updateValue = (e) => {
+  const updateValue = e => {
     value = e.target.value;
   };
 
