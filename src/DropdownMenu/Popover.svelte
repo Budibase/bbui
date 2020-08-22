@@ -1,43 +1,41 @@
 <script>
-  export let anchor;
-  export let align = "right";
-  export let width = null;
-  export let borderColor = "";
+  export let anchor
+  export let align = "right"
 
   export const show = () => {
-    open = true;
-  };
+    open = true
+  }
 
   export const hide = () => {
-    open = false;
-  };
+    open = false
+  }
 
-  let open = null;
-  let dimensions = { top: 0, bottom: 0, left: 0, width: 0, containerWidth: 0 };
-  let containerEl;
-  let positionSide = "top";
-  let maxHeight = 0;
-  let scrollTop = 0;
+  let open = null
+  let dimensions = { top: 0, bottom: 0, left: 0, width: 0, containerWidth: 0 }
+  let containerEl
+  let positionSide = "top"
+  let maxHeight = 0
+  let scrollTop = 0
 
   function handleEscape(e) {
     if (open && e.key === "Escape") {
-      hide();
+      hide()
     }
   }
 
   function buildStyle(styles) {
     const convertCamel = str => {
-      return str.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`);
-    };
+      return str.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`)
+    }
 
-    let str = "";
+    let str = ""
     for (let s in styles) {
       if (styles[s]) {
-        let key = convertCamel(s);
-        str += `${key}: ${styles[s]}; `;
+        let key = convertCamel(s)
+        str += `${key}: ${styles[s]}; `
       }
     }
-    return str;
+    return str
   }
 
   function getDimensions() {
@@ -45,48 +43,59 @@
       bottom,
       top: spaceAbove,
       left,
-      width
-    } = anchor.getBoundingClientRect();
-    const spaceBelow = window.innerHeight - bottom;
-    const containerRect = containerEl.getBoundingClientRect();
+      width,
+    } = anchor.getBoundingClientRect()
+    const spaceBelow = window.innerHeight - bottom
+    const containerRect = containerEl.getBoundingClientRect()
 
-    let y;
+    let y
 
     if (spaceAbove > spaceBelow) {
-      positionSide = "bottom";
-      maxHeight = spaceAbove - 20;
-      y = window.innerHeight - spaceAbove;
+      positionSide = "bottom"
+      maxHeight = spaceAbove - 20
+      y = window.innerHeight - spaceAbove
     } else {
-      positionSide = "top";
-      y = bottom;
-      maxHeight = spaceBelow - 20;
+      positionSide = "top"
+      y = bottom
+      maxHeight = spaceBelow - 20
     }
 
     dimensions = {
       [positionSide]: y,
       left,
       width,
-      containerWidth: containerRect.width
-    };
+      containerWidth: containerRect.width,
+    }
   }
 
   const calcLeftPosition = () =>
     align === "right"
       ? dimensions.left + dimensions.width - dimensions.containerWidth
-      : dimensions.left;
+      : dimensions.left
 
   // get dimensions when containerElement exists (i.e. open = true & rendered)
-  $: if (containerEl) getDimensions();
+  $: if (containerEl) getDimensions()
 
   $: menuStyle = buildStyle({
     "max-height": `${maxHeight.toFixed(0)}px`,
     "transform-origin": `center ${positionSide}`,
     [positionSide]: `${dimensions[positionSide]}px`,
     left: `${calcLeftPosition(dimensions)}px`,
-    width,
-    borderColor
-  });
+  })
 </script>
+
+{#if open}
+  <div
+    tabindex="0"
+    class:open
+    bind:this={containerEl}
+    style={menuStyle}
+    on:keydown={handleEscape}
+    class="menu-container">
+    <slot/>
+  </div>
+  <div on:click|self={hide} class="overlay" />
+{/if}
 
 <style>
   .overlay {
@@ -101,13 +110,13 @@
   .menu-container {
     position: fixed;
     margin-top: var(--spacing-xs);
+    padding: var(--spacing-xl);
     outline: none;
     box-sizing: border-box;
     opacity: 0;
-    min-width: 200px;
+    min-width: 400px;
     z-index: 2;
     color: var(--ink);
-    font-weight: 400;
     height: fit-content !important;
     border: var(--border-dark);
     border-radius: var(--border-radius-m);
@@ -123,16 +132,3 @@
     opacity: 1;
   }
 </style>
-
-{#if open}
-  <div
-    tabindex="0"
-    class:open
-    bind:this={containerEl}
-    style={menuStyle}
-    on:keydown={handleEscape}
-    class="menu-container">
-    <slot />
-  </div>
-  <div on:click|self={hide} class="overlay" />
-{/if}

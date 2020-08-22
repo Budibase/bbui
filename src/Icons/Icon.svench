@@ -95,4 +95,8 @@
   <Icon name="addfill" />
 </View>
 
+<View name="Group">
+  <Icon name="group" />
+</View>
+
 

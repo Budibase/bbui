@@ -1,5 +1,6 @@
 <script>
   export let 
+    active = false,
     text = false,
     small = false,
     medium = false,
@@ -36,6 +37,9 @@
   button.text:active:not([disabled]) {
     color: var(--blue);
   }
+  button.text.active:not([disabled]) {
+    color: var(--blue);
+  }
   button.text:disabled {
     cursor: not-allowed;
     color: var(--grey-4);
@@ -43,19 +47,23 @@
 
   .small {
     font-size: var(--font-size-xs);
+    margin: 0;
   }
 
   .medium {
     font-size: var(--font-size-s);
+    margin: 0;
   }
 
   .large {
     font-size: var(--font-size-m);
+    margin: 0;
   }
 
 </style>
 
 <button
+  class:active
   class:small
   class:medium
   class:large

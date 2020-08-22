@@ -5,8 +5,10 @@ A package that handles all common components across the Budibase organisation. Y
 ## Install
 
 1. Clone
-2. `yarn`
-3. `yarn svench`
+2. `npm install`
+3. `npm run svench`
+
+(Note: yarn won't work!)
 
 ## Example workflow to create a component
 
