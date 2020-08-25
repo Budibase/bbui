@@ -84,7 +84,7 @@
       </li>
       <li>
         <Icon name="sortascending" />
-        Sort A - Z 
+        Sort A - Z
       </li>
       <li>
         <Icon name="sortdescending" />
@@ -100,7 +100,12 @@
       <Icon name="arrowdown" />
     </Button>
   </div>
-    <DropdownMenu bind:this={dropdownLeft} width="175px" borderColor="#d1d1d1ff" anchor={anchorLeft} align="left">
+  <DropdownMenu
+    bind:this={dropdownLeft}
+    width="175px"
+    borderColor="#d1d1d1ff"
+    anchor={anchorLeft}
+    align="left">
     <ul>
       <li>
         <Icon name="edit" />
@@ -112,7 +117,41 @@
       </li>
       <li>
         <Icon name="sortascending" />
-        Sort A - Z 
+        Sort A - Z
+      </li>
+      <li>
+        <Icon name="sortdescending" />
+        Sort Z - A
+      </li>
+    </ul>
+  </DropdownMenu>
+</View>
+<View name="Dropdown on close event example">
+  <div bind:this={anchorLeft}>
+    <Button primary on:click={dropdownLeft.show}>
+      Field Name
+      <Icon name="arrowdown" />
+    </Button>
+  </div>
+  <DropdownMenu
+    on:close={() => alert('Closed!')}
+    bind:this={dropdownLeft}
+    width="175px"
+    borderColor="#d1d1d1ff"
+    anchor={anchorLeft}
+    align="left">
+    <ul>
+      <li>
+        <Icon name="edit" />
+        Edit
+      </li>
+      <li>
+        <Icon name="delete" />
+        Delete
+      </li>
+      <li>
+        <Icon name="sortascending" />
+        Sort A - Z
       </li>
       <li>
         <Icon name="sortdescending" />

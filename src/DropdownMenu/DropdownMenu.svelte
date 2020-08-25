@@ -1,14 +1,19 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
   export let anchor;
   export let align = "right";
   export let width = null;
   export let borderColor = "";
 
   export const show = () => {
+    dispatch("open");
     open = true;
   };
 
   export const hide = () => {
+    dispatch("close");
     open = false;
   };
 
@@ -26,8 +31,8 @@
   }
 
   function buildStyle(styles) {
-    const convertCamel = str => {
-      return str.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`);
+    const convertCamel = (str) => {
+      return str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
     };
 
     let str = "";
@@ -45,7 +50,7 @@
       bottom,
       top: spaceAbove,
       left,
-      width
+      width,
     } = anchor.getBoundingClientRect();
     const spaceBelow = window.innerHeight - bottom;
     const containerRect = containerEl.getBoundingClientRect();
@@ -66,7 +71,7 @@
       [positionSide]: y,
       left,
       width,
-      containerWidth: containerRect.width
+      containerWidth: containerRect.width,
     };
   }
 
@@ -84,7 +89,7 @@
     [positionSide]: `${dimensions[positionSide]}px`,
     left: `${calcLeftPosition(dimensions)}px`,
     width,
-    borderColor
+    borderColor,
   });
 </script>
 
