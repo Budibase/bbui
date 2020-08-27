@@ -1,11 +1,22 @@
 <script>
-import Modal from "./Modal.svelte";
-import Content from "./Content.svelte";
-import { View } from "svench";
-
+  import { View } from "svench";
+  import Modal from "./Modal.svelte";
+  import Button from "../Button/Button.svelte";
+  import Heading from "../Styleguide/Heading.svelte";
+  import Body from "../Styleguide/Body.svelte";
+  import Logo from "../Styleguide/Logo.svelte";
+  import Content from "./Content.svelte";
+  let modal
 </script>
-<View name="default">
-    <Modal>
-        <Content />
-    </Modal>
+
+<style>
+
+</style>
+
+<View name="Modal">
+  <Button primary on:click={modal.show}>Show Modal</Button>
+
+  <Modal bind:this={modal}>
+    <Content />
+  </Modal>
 </View>
