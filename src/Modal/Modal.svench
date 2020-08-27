@@ -6,17 +6,26 @@
   import Body from "../Styleguide/Body.svelte";
   import Logo from "../Styleguide/Logo.svelte";
   import Content from "./Content.svelte";
-  let modal
+  let modalDefault
+  let modalmaxWidth
 </script>
 
 <style>
 
 </style>
 
-<View name="Modal">
-  <Button primary on:click={modal.show}>Show Modal</Button>
+<View name="Modal Default">
+  <Button primary on:click={modalDefault.show}>Show Modal</Button>
 
-  <Modal bind:this={modal}>
+  <Modal bind:this={modalDefault}>
+    <Content />
+  </Modal>
+</View>
+
+<View name="Modal with max width">
+  <Button primary on:click={modalmaxWidth.show}>Show Modal</Button>
+
+  <Modal bind:this={modalmaxWidth} maxWidth="400px">
     <Content />
   </Modal>
 </View>
