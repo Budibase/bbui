@@ -51,7 +51,6 @@
     outline: none;
     box-sizing: border-box;
     opacity: 0;
-    width: 400px;
     min-width: 200px;
     min-height: 200px;
     color: var(--ink);
