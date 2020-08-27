@@ -1,61 +1,35 @@
 <script>
-  import { getContext } from "svelte";
-  import { fly } from "svelte/transition";
-  import Popup from "./Popup.svelte";
-  import Button from "../Button/Button.svelte"
-
-  const { open } = getContext("simple-modal");
-
-  let opening = false;
-  let opened = false;
-  let closing = false;
-  let closed = false;
-
-  const showPopup = () => {
-    open(Popup);
-  };
-
-  let name;
-  let status = 0;
-
-  const onCancel = text => {
-    name = "";
-    status = -1;
-  };
-
-  const onOkay = text => {
-    name = text;
-    status = 1;
-  };
+  import Button from "../Button/Button.svelte";
+  import Input from "../Form/Input.svelte";
+  import Select from "../Form/Select.svelte"
+  import Spacer from "../Spacer/Spacer.svelte"
 
 </script>
 
 <style>
-  section {
-    padding-top: 0.5em;
-  }
+  h2 {
+		font-size: var(--font-size-xl);
+		margin: 0;
+		font-family: var(--font-sans);
+		font-weight: 600;
+	}
 
-  #state {
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0.33;
-    font-size: 0.8em;
-  }
+	p {
+		font-size: var(--font-size-m);
+		margin: 0;
+		font-family: var(--font-sans);
+		font-weight: 400;
+		line-height: 1.5;
+		color: var(--grey-7);
+	}
+
 </style>
 
-<section>
-  <Button primary on:click={showPopup}>Show a popup!</Button>
+<h2>Delete Row</h2>
+<Spacer medium />
+<p>Are you sure you would like to delete this record? Once it is deleted, it will be lost forever and ever.</p>
+<Spacer extraLarge />
+	<Button red wide on:click={() => alert('Clicked!')}>Delete</Button>
+	<Spacer small />	
+	<Button secondary wide on:click={() => alert('Clicked!')}>Cancel</Button>
 
-  <div id="state">
-    {#if opening}
-      <p>opening modal...</p>
-    {:else if opened}
-      <p>opened modal!</p>
-    {:else if closing}
-      <p>closing modal...</p>
-    {:else if closed}
-      <p>closed modal!</p>
-    {/if}
-  </div>
-</section>
