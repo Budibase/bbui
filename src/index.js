@@ -13,6 +13,7 @@ export { default as Select } from "./Form/Select.svelte";
 export { default as Button } from "./Button/Button.svelte";
 export { default as Icon, iconOptions, directions } from "./Icons/Icon.svelte";
 export { default as TextButton } from "./Button/TextButton.svelte";
+export { default as Toggle } from "./Button/Toggle.svelte";
 export { default as Home } from "./Links/Home.svelte";
 export { default as DetailSummary } from "./List/Items/DetailSummary.svelte";
 export { default as Switcher } from "./Switcher/Switcher.svelte";
