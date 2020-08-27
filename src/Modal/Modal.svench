@@ -1,0 +1,26 @@
+<script>
+  import { View } from "svench";
+  import Modal from "./Modal.svelte";
+  import Button from "../Button/Button.svelte";
+  import Heading from "../Styleguide/Heading.svelte";
+  import Body from "../Styleguide/Body.svelte";
+  import Logo from "../Styleguide/Logo.svelte";
+
+  let modal
+</script>
+
+<style>
+
+</style>
+
+<View name="Modal">
+  <Button primary on:click={modal.show}>Show Modal</Button>
+
+  <Modal bind:this={modal}>
+    <Heading>Build web apps fast with Budibase</Heading>
+    <Body>
+      Become a superhero, free your team from spreadsheets. Build a web app today.
+    </Body>
+    <Button on:click={modal.hide} primary>Close</Button>
+  </Modal>
+</View>
