@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
-
+  import buildStyle from "../utils/buildStyle"
+  
   const dispatch = createEventDispatcher();
   export let anchor;
   export let align = "right";
@@ -28,21 +29,6 @@
     if (open && e.key === "Escape") {
       hide();
     }
-  }
-
-  function buildStyle(styles) {
-    const convertCamel = (str) => {
-      return str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
-    };
-
-    let str = "";
-    for (let s in styles) {
-      if (styles[s]) {
-        let key = convertCamel(s);
-        str += `${key}: ${styles[s]}; `;
-      }
-    }
-    return str;
   }
 
   function getDimensions() {
