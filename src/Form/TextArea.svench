@@ -12,8 +12,12 @@
   <TextArea bind:value placeholder="Enter your name" label="Name" />
 </View>
 
-<View name="default">
+<View name="disabled">
   <TextArea disabled placeholder="Enter your name" label="Name" />
+</View>
+
+<View name="no label">
+  <TextArea placeholder="Enter your name" />
 </View>
 
 <View name="thin">

@@ -92,7 +92,7 @@
 
 <div class="container">
   <label class:thin for={name}>
-    {label}
+    {#if label}{label}{/if}
     {#if edit}
       <div class="right">
         <Button small secondary disabled={editMode} on:click={enableEdit}>
