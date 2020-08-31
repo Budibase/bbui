@@ -3,21 +3,21 @@
   import Button from "../Button/Button.svelte";
   const dispatch = createEventDispatcher();
 
-  export let name,
-    label,
-    thin,
-    edit,
-    disabled,
-    type,
-    placeholder,
-    value,
-    error,
-    validator = () => {};
+  export let name = undefined;
+  export let label = undefined;
+  export let thin = false;
+  export let edit = false;
+  export let disabled = false;
+  export let type = undefined;
+  export let placeholder = "";
+  export let value = "";
+  export let error = false;
+  export let validator = () => {};
 
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
 
-  const updateValue = e => {
+  const updateValue = (e) => {
     value = e.target.value;
   };
 

@@ -1,6 +1,6 @@
 <script>
-  export let value;
-  export let name;
+  export let value = "";
+  export let name = undefined;
   export let thin = false;
   export let secondary = false;
   export let outline = false;

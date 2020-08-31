@@ -3,13 +3,10 @@
   import TextArea from "./TextArea.svelte";
 
   import Button from "../Button/Button.svelte";
-
-  let value;
-  $: console.log(value);
 </script>
 
 <View name="default">
-  <TextArea bind:value placeholder="Enter your name" label="Name" />
+  <TextArea placeholder="Enter your name" label="Name" />
 </View>
 
 <View name="disabled">

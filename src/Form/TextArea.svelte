@@ -3,17 +3,17 @@
   import Button from "../Button/Button.svelte";
   const dispatch = createEventDispatcher();
   import { text_area_resize } from "../actions/autoresize_textarea.js";
-  export let name,
-    label,
-    thin,
-    edit,
-    disabled,
-    placeholder,
-    validator = () => {};
+  export let name = false;
+  export let label = false;
+  export let thin = false;
+  export let edit = false;
+  export let disabled = false;
+  export let placeholder = false;
+  export let validator = () => {};
+  export let value = "";
 
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
-  export let value;
 
   const save = () => {
     editMode = false;
