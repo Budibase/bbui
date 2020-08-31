@@ -80,39 +80,39 @@
 <View name="Body">
   <div class="typography-container">
     <div class="typography-column">
-      <Body size="xl" color="dark">Body Extra Large Color Dark</Body>
+      <Body extraLarge black>Body Extra Large Color Dark</Body>
 
-      <Body size="l" color="dark">Body Large Color Dark</Body>
+      <Body large black>Body Large Color Dark</Body>
 
-      <Body size="m" color="dark">Body Medium Color Dark</Body>
+      <Body medium black>Body Medium Color Dark</Body>
 
-      <Body size="s" color="dark">Body Small Color Dark</Body>
+      <Body small black>Body Small Color Dark</Body>
 
-      <Body size="xs" color="dark">Body Extra Small Color Dark</Body>
+      <Body extraSmall black>Body Extra Small Color Dark</Body>
     </div>
 
     <div class="typography-column">
-      <Body size="xl" color="light">Body Extra Large Color Light</Body>
+      <Body extraLarge grey>Body Extra Large Color Light</Body>
 
-      <Body size="l" color="light">Body Large Color Light</Body>
+      <Body large grey>Body Large Color Light</Body>
 
-      <Body size="m" color="light">Body Medium Color Light</Body>
+      <Body medium grey>Body Medium Color Light</Body>
 
-      <Body size="s" color="light">Body Small Color Light</Body>
+      <Body small grey>Body Small Color Light</Body>
 
-      <Body size="xs" color="light">Body Extra Small Color Light</Body>
+      <Body extraSmall grey>Body Extra Small Color Light</Body>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Body size="xl" color="white">Body Extra Large Color White</Body>
+      <Body extraLarge white>Body Extra Large Color White</Body>
 
-      <Body size="l" color="white">Body Large Color White</Body>
+      <Body large white>Body Large Color White</Body>
 
-      <Body size="m" color="white">Body Medium Color White</Body>
+      <Body medium white>Body Medium Color White</Body>
 
-      <Body size="s" color="white">Body Small Color White</Body>
+      <Body small white>Body Small Color White</Body>
 
-      <Body size="xs" color="white">Body Small Color White</Body>
+      <Body extraSmall white>Body Extra Small Color White</Body>
     </div>
   </div>
 </View>
