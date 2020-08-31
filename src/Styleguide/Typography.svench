@@ -35,44 +35,44 @@
   <strong>label</strong>
 </p>
 <p>Each type has 5 sizes, xs, s, m l and xl.</p>
-<p>Each type is available in the colors white, light or dark.</p>
+<p>Each type is available in the colors white, grey or black.</p>
 
 <View name="Heading">
   <div class="typography-container">
     <div class="typography-column">
-      <Heading size="xl" color="dark">Heading Extra Large Color Dark</Heading>
+      <Heading extraLarge black>Heading Extra Large Black</Heading>
 
-      <Heading size="l" color="dark">Heading Large Color Dark</Heading>
+      <Heading large black>Heading Large Black</Heading>
 
-      <Heading size="m" color="dark">Heading Medium Color Dark</Heading>
+      <Heading medium black>Heading Medium Black</Heading>
 
-      <Heading size="s" color="dark">Heading Small Color Dark</Heading>
+      <Heading small black>Heading Small Black</Heading>
 
-      <Heading size="xs" color="dark">Heading Extra Small Color Dark</Heading>
+      <Heading extraSmall black>Heading Extra Small Black</Heading>
     </div>
 
     <div class="typography-column">
-      <Heading size="xl" color="light">Heading Extra Large Color Light</Heading>
+      <Heading extraLarge grey>Heading Extra Large Grey</Heading>
 
-      <Heading size="l" color="light">Heading Large Color Light</Heading>
+      <Heading large grey>Heading Large Grey</Heading>
 
-      <Heading size="m" color="light">Heading Medium Color Light</Heading>
+      <Heading medium grey>Heading Medium Grey</Heading>
 
-      <Heading size="s" color="light">Heading Small Color Light</Heading>
+      <Heading small grey>Heading Small Grey</Heading>
 
-      <Heading size="xs" color="light">Heading Extra Small Light</Heading>
+      <Heading extraSmall grey>Heading Extra Small Grey</Heading>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Heading size="xl" color="white">Heading Extra Large Color White</Heading>
+      <Heading extraLarge white>Heading Extra Large White</Heading>
 
-      <Heading size="l" color="white">Heading Large Color White</Heading>
+      <Heading large white>Heading Large White</Heading>
 
-      <Heading size="m" color="white">Heading Medium Color White</Heading>
+      <Heading medium white>Heading Medium White</Heading>
 
-      <Heading size="s" color="white">Heading Small Color White</Heading>
+      <Heading small white>Heading Small White</Heading>
 
-      <Heading size="xs" color="white">Heading Small Color White</Heading>
+      <Heading extraSmall white>Heading Extra Small White</Heading>
     </div>
   </div>
 </View>
