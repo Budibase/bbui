@@ -35,44 +35,44 @@
   <strong>label</strong>
 </p>
 <p>Each type has 5 sizes, xs, s, m l and xl.</p>
-<p>Each type is available in the colors white, light or dark.</p>
+<p>Each type is available in the colors white, grey or black.</p>
 
 <View name="Heading">
   <div class="typography-container">
     <div class="typography-column">
-      <Heading size="xl" color="dark">Heading Extra Large Color Dark</Heading>
+      <Heading extraLarge black>Heading Extra Large Black</Heading>
 
-      <Heading size="l" color="dark">Heading Large Color Dark</Heading>
+      <Heading large black>Heading Large Black</Heading>
 
-      <Heading size="m" color="dark">Heading Medium Color Dark</Heading>
+      <Heading medium black>Heading Medium Black</Heading>
 
-      <Heading size="s" color="dark">Heading Small Color Dark</Heading>
+      <Heading small black>Heading Small Black</Heading>
 
-      <Heading size="xs" color="dark">Heading Extra Small Color Dark</Heading>
+      <Heading extraSmall black>Heading Extra Small Black</Heading>
     </div>
 
     <div class="typography-column">
-      <Heading size="xl" color="light">Heading Extra Large Color Light</Heading>
+      <Heading extraLarge grey>Heading Extra Large Grey</Heading>
 
-      <Heading size="l" color="light">Heading Large Color Light</Heading>
+      <Heading large grey>Heading Large Grey</Heading>
 
-      <Heading size="m" color="light">Heading Medium Color Light</Heading>
+      <Heading medium grey>Heading Medium Grey</Heading>
 
-      <Heading size="s" color="light">Heading Small Color Light</Heading>
+      <Heading small grey>Heading Small Grey</Heading>
 
-      <Heading size="xs" color="light">Heading Extra Small Light</Heading>
+      <Heading extraSmall grey>Heading Extra Small Grey</Heading>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Heading size="xl" color="white">Heading Extra Large Color White</Heading>
+      <Heading extraLarge white>Heading Extra Large White</Heading>
 
-      <Heading size="l" color="white">Heading Large Color White</Heading>
+      <Heading large white>Heading Large White</Heading>
 
-      <Heading size="m" color="white">Heading Medium Color White</Heading>
+      <Heading medium white>Heading Medium White</Heading>
 
-      <Heading size="s" color="white">Heading Small Color White</Heading>
+      <Heading small white>Heading Small White</Heading>
 
-      <Heading size="xs" color="white">Heading Small Color White</Heading>
+      <Heading extraSmall white>Heading Extra Small White</Heading>
     </div>
   </div>
 </View>
@@ -80,39 +80,39 @@
 <View name="Body">
   <div class="typography-container">
     <div class="typography-column">
-      <Body size="xl" color="dark">Body Extra Large Color Dark</Body>
+      <Body extraLarge black>Body Extra Large Black</Body>
 
-      <Body size="l" color="dark">Body Large Color Dark</Body>
+      <Body large black>Body Large Black</Body>
 
-      <Body size="m" color="dark">Body Medium Color Dark</Body>
+      <Body medium black>Body Medium Black</Body>
 
-      <Body size="s" color="dark">Body Small Color Dark</Body>
+      <Body small black>Body Small Black</Body>
 
-      <Body size="xs" color="dark">Body Extra Small Color Dark</Body>
+      <Body extraSmall black>Body Extra Small Black</Body>
     </div>
 
     <div class="typography-column">
-      <Body size="xl" color="light">Body Extra Large Color Light</Body>
+      <Body extraLarge grey>Body Extra Large Grey</Body>
 
-      <Body size="l" color="light">Body Large Color Light</Body>
+      <Body large grey>Body Large Grey</Body>
 
-      <Body size="m" color="light">Body Medium Color Light</Body>
+      <Body medium grey>Body Medium Grey</Body>
 
-      <Body size="s" color="light">Body Small Color Light</Body>
+      <Body small grey>Body Small Grey</Body>
 
-      <Body size="xs" color="light">Body Extra Small Color Light</Body>
+      <Body extraSmall grey>Body Extra Small Grey</Body>
     </div>
 
     <div class="typography-column typography-column--grey">
-      <Body size="xl" color="white">Body Extra Large Color White</Body>
+      <Body extraLarge white>Body Extra Large White</Body>
 
-      <Body size="l" color="white">Body Large Color White</Body>
+      <Body large white>Body Large White</Body>
 
-      <Body size="m" color="white">Body Medium Color White</Body>
+      <Body medium white>Body Medium White</Body>
 
-      <Body size="s" color="white">Body Small Color White</Body>
+      <Body small white>Body Small White</Body>
 
-      <Body size="xs" color="white">Body Small Color White</Body>
+      <Body extraSmall white>Body Extra Small White</Body>
     </div>
   </div>
 </View>
@@ -120,112 +120,82 @@
 <View name="Label">
   <div class="typography-container">
     <div class="label-wrapper">
-      <Label size="xl" color="dark" forAttr={username}>
-        Label Extra Large Color Dark
-      </Label>
+      <Label extraLarge black forAttr={username}>Label Extra Large Black</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="l" color="dark" forAttr={username}>
-        Label Large Color Dark
-      </Label>
+      <Label large black forAttr={username}>Label Large Black</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="m" color="dark" forAttr={username}>
-        Label Medium Color Dark
-      </Label>
+      <Label medium black forAttr={username}>Label Medium Black</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="s" color="dark" forAttr={username}>
-        Label Small Color Dark
-      </Label>
+      <Label small black forAttr={username}>Label Small Black</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="xs" color="dark" forAttr={username}>
-        Label Extra Small Color Dark
-      </Label>
+      <Label extraSmall black forAttr={username}>Label Extra Small Black</Label>
       <input type="text" />
     </div>
   </div>
 
   <div class="typography-container">
     <div class="label-wrapper">
-      <Label size="xl" color="light" forAttr={username}>
-        Label Extra Large Color Light
-      </Label>
+      <Label extraLarge grey forAttr={username}>Label Extra Large Grey</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="l" color="light" forAttr={username}>
-        Label Large Color Light
-      </Label>
+      <Label large grey forAttr={username}>Label Large Grey</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="m" color="light" forAttr={username}>
-        Label Medium Color Light
-      </Label>
+      <Label medium grey forAttr={username}>Label Medium Grey</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="s" color="light" forAttr={username}>
-        Label Small Color Light
-      </Label>
+      <Label small grey forAttr={username}>Label Small Grey</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="xs" color="light" forAttr={username}>
-        Label Extra Small Color Light
-      </Label>
+      <Label extraSmall grey forAttr={username}>Label Extra Small Grey</Label>
       <input type="text" />
     </div>
   </div>
 
   <div class="typography-container typography-column--grey">
     <div class="label-wrapper">
-      <Label size="xl" color="white" forAttr={username}>
-        Label Extra Large Color White
-      </Label>
+      <Label extraLarge white forAttr={username}>Label Extra Large White</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="l" color="white" forAttr={username}>
-        Label Large Color White
-      </Label>
+      <Label large white forAttr={username}>Label Large White</Label>
 
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="m" color="white" forAttr={username}>
-        Label Medium Color White
-      </Label>
+      <Label medium white forAttr={username}>Label Medium White</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="s" color="white" forAttr={username}>
-        Label Small Color White
-      </Label>
+      <Label small white forAttr={username}>Label Small White</Label>
       <input type="text" />
     </div>
 
     <div class="label-wrapper">
-      <Label size="xs" color="white" forAttr={username}>
-        Label Small Color White
-      </Label>
+      <Label extraSmall white forAttr={username}>Label Extra Small White</Label>
       <input type="text" />
     </div>
   </div>
