@@ -1,11 +1,12 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import buildStyle from "../utils/buildStyle"
-  import { fade } from 'svelte/transition';
+  import buildStyle from "../utils/buildStyle";
+  import { fade } from "svelte/transition";
 
   const dispatch = createEventDispatcher();
   export let maxWidth = "30vw";
   export let maxHeight = "60vh";
+  export let minWidth = "30vw";
   export let borderColor = "";
 
   export const show = () => {
@@ -29,7 +30,8 @@
   $: containerStyle = buildStyle({
     "max-height": maxHeight,
     "max-width": maxWidth,
-    borderColor,
+    "min-width": minWidth,
+    borderColor
   });
 </script>
 
@@ -100,20 +102,17 @@
     background-color: var(--grey-4);
     cursor: pointer;
   }
-
 </style>
 
-{#if open}  
-  <div on:click|self={hide} class="overlay" transition:fade="{{ duration: 200 }}">
+{#if open}
+  <div on:click|self={hide} class="overlay" transition:fade={{ duration: 200 }}>
     <div
       tabindex="0"
       class:open
       style={containerStyle}
       on:keydown={handleEscape}
       class="container">
-      <button on:click={hide} class="close">
-        ×
-      </button>
+      <button on:click={hide} class="close">×</button>
       <slot />
     </div>
   </div>

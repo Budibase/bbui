@@ -24,4 +24,4 @@ export { default as Heading } from "./Styleguide/Heading.svelte";
 export { default as Label } from "./Styleguide/Label.svelte";
 export { default as Close } from "./Button/Close.svelte";
 export { default as Modal } from "./Modal/Modal.svelte";
-
+export { default as Spacer } from "./Spacer/Spacer.svelte";

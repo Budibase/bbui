@@ -6,8 +6,8 @@
   import Body from "../Styleguide/Body.svelte";
   import Logo from "../Styleguide/Logo.svelte";
   import Content from "./Content.svelte";
-  let modalDefault
-  let modalmaxWidth
+  let modalDefault;
+  let modalmaxWidth;
 </script>
 
 <style>
@@ -18,6 +18,14 @@
   <Button primary on:click={modalDefault.show}>Show Modal</Button>
 
   <Modal bind:this={modalDefault}>
+    <Content />
+  </Modal>
+</View>
+
+<View name="Modal with min width">
+  <Button primary on:click={modalmaxWidth.show}>Show Modal</Button>
+
+  <Modal bind:this={modalmaxWidth} minWidth="600px">
     <Content />
   </Modal>
 </View>
