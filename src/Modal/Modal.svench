@@ -22,7 +22,7 @@
   </Modal>
 </View>
 
-<View name="Modal with min width">
+<View name="Modal with Min Width">
   <Button primary on:click={modalmaxWidth.show}>Show Modal</Button>
 
   <Modal bind:this={modalmaxWidth} minWidth="600px">
@@ -30,7 +30,7 @@
   </Modal>
 </View>
 
-<View name="Modal with max width">
+<View name="Modal with Max Width">
   <Button primary on:click={modalmaxWidth.show}>Show Modal</Button>
 
   <Modal bind:this={modalmaxWidth} maxWidth="400px">
