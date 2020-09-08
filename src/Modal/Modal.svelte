@@ -8,6 +8,7 @@
   export let maxHeight = "60vh";
   export let minWidth = "30vw";
   export let borderColor = "";
+  export let hideCloseButton = false;
 
   export const show = () => {
     dispatch("open");
@@ -53,11 +54,8 @@
     outline: none;
     box-sizing: border-box;
     opacity: 0;
-    min-width: 200px;
-    min-height: 200px;
     color: var(--ink);
     font-weight: 400;
-    padding: var(--layout-s);
     height: fit-content !important;
     border: black;
     border-radius: var(--border-radius-m);
@@ -67,7 +65,6 @@
   }
 
   .open {
-    transform: scale(1);
     opacity: 1;
   }
 
@@ -112,7 +109,11 @@
       style={containerStyle}
       on:keydown={handleEscape}
       class="container">
-      <button on:click={hide} class="close">×</button>
+      {#if !hideCloseButton}
+      <button on:click={hide} class="close">
+        ×
+      </button>
+      {/if}
       <slot />
     </div>
   </div>
