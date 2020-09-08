@@ -116,14 +116,15 @@
 </style>
 
 {#if open}
-  <div
-    tabindex="0"
-    class:open
-    bind:this={containerEl}
-    style={menuStyle}
-    on:keydown={handleEscape}
-    class="menu-container">
-    <slot />
+  <div on:click|self={hide} class="overlay">
+    <div
+      tabindex="0"
+      class:open
+      bind:this={containerEl}
+      style={menuStyle}
+      on:keydown={handleEscape}
+      class="menu-container">
+      <slot />
+    </div>
   </div>
-  <div on:click|self={hide} class="overlay" />
 {/if}
