@@ -1,12 +1,21 @@
 <script>
   import { View } from "svench";
   import Select from "./Select.svelte";
+  import Spacer from "../Spacer/Spacer.svelte"
 
   const options = ["Chocolate", "Vanilla", "Strawberry Cheesecake"];
 </script>
 
 <View name="default">
   <Select name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+
+  <Spacer medium />
+
+  <Select editable name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -19,10 +28,27 @@
       <option value={option}>{option}</option>
     {/each}
   </Select>
+
+  <Spacer medium />
+
+  <Select secondary editable name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+
 </View>
 
 <View name="outline">
   <Select outline name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+
+  <Spacer medium />
+
+  <Select outline editable name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -35,10 +61,26 @@
       <option value={option}>{option}</option>
     {/each}
   </Select>
+
+  <Spacer medium />
+
+  <Select disabled editable name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
 </View>
 
 <View name="thin">
   <Select thin name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+
+  <Spacer medium />
+
+  <Select thin editable name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
