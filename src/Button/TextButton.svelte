@@ -5,6 +5,12 @@
     small = false,
     medium = false,
     large = false,
+    blue = false,
+    green = false,
+    yellow = false,
+    purple = false,
+    red = false,
+    orange = false,
     disabled = false;
 </script>
 
@@ -45,6 +51,31 @@
     color: var(--grey-4);
   }
 
+  .blue {
+    color: var(--blue);
+  }
+
+  .green {
+    color: var(--green);
+  }
+
+  .red {
+    color: var(--red);
+  }
+
+  .purple {
+    color: var(--purple);
+  }
+
+  .yellow {
+    color: var(--yellow);
+  }
+
+  .orange {
+    color: var(--orange);
+  }
+
+
   .small {
     font-size: var(--font-size-xs);
     margin: 0;
@@ -68,6 +99,12 @@
   class:medium
   class:large
   class:text
+  class:blue
+  class:green
+  class:yellow
+  class:purple
+  class:red
+  class:orange
   {disabled}
   on:click|preventDefault>
   <slot />

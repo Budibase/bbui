@@ -1,6 +1,6 @@
 <script>
   import { View } from "svench";
-  import Button from "./TextButton.svelte";
+  import TextButton from "./TextButton.svelte";
   import Icon from "../Icons/Icon.svelte";
 </script>
 
@@ -14,25 +14,50 @@
 
 <View name="Text">
   <div>
-    <Button text small on:click={() => alert('Clicked!')}>
+    <TextButton text small on:click={() => alert('Clicked!')}>
       <Icon name="view" />
       Add View
-    </Button>
-    <Button text medium on:click={() => alert('Clicked!')}>
+    </TextButton>
+    <TextButton text medium on:click={() => alert('Clicked!')}>
       <Icon name="addcolumn" />
       Add Column
-    </Button>
-    <Button text large on:click={() => alert('Clicked!')}>
+    </TextButton>
+    <TextButton text large on:click={() => alert('Clicked!')}>
       <Icon name="addrow" />
       Add Row
-    </Button>
-    <Button text disabled on:click={() => alert('Clicked!')}>
+    </TextButton>
+    <TextButton text disabled on:click={() => alert('Clicked!')}>
       <Icon name="arrow" direction="w" />
       Disabled Text Button
-    </Button>
-    <Button active text on:click={() => alert('Clicked!')}>
+    </TextButton>
+    <TextButton active text on:click={() => alert('Clicked!')}>
       <Icon name="calculate" />
       Active Calculation
-    </Button>
+    </TextButton>
+  </div>
+</View>
+
+<View name="Colours">
+  <div>
+    <TextButton text medium yellow on:click={() => alert('Clicked!')}>
+      <Icon name="view" />
+      Add View
+    </TextButton>
+    <TextButton text medium blue on:click={() => alert('Clicked!')}>
+      <Icon name="addcolumn" />
+      Add Column
+    </TextButton>
+    <TextButton text medium purple on:click={() => alert('Clicked!')}>
+      <Icon name="addrow" />
+      Add Row
+    </TextButton>
+    <TextButton text medium red on:click={() => alert('Clicked!')}>
+      <Icon name="arrow" />
+      Delete
+    </TextButton>
+    <TextButton text medium green on:click={() => alert('Clicked!')}>
+      <Icon name="calculate" />
+      Calculate
+    </TextButton>
   </div>
 </View>
