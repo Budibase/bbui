@@ -125,6 +125,8 @@ const configs = {
       }),
 
       resolve(),
+
+      commonjs()
     ],
   }),
 }
