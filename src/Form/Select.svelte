@@ -12,10 +12,10 @@
   
   const dispatch = createEventDispatcher();
 
-  const updateValue = type => e => {
+  const updateValue =  e => {
     value = e.target.value;
-    dispatch("blur", e)
   };
+
 
 </script>
 
@@ -119,9 +119,13 @@
       class:thin 
       class:secondary 
       class:disabled
-      on:change={updateValue("change")}
-      on:input={updateValue("input")}
-      on:blur={updateValue("blur")}
+      on:change={updateValue}
+      on:input={updateValue}
+      on:blur={e => {
+        updateValue(e)
+        // blur does not bubble
+        dispatch("blur", e)
+      }}
       value={value || ''}
       type="text" />
   {/if}
