@@ -1,0 +1,13 @@
+<script>
+  import { View } from "svench";
+  import DatePicker from "./DatePicker.svelte";
+
+  function handleChange(event) {
+    const [fullDate, shortDate, instance] = event.detail
+    alert("Date is " + fullDate)
+  }
+</script>
+
+<View name="Date Picker">
+  <DatePicker on:change={handleChange} />
+</View>
