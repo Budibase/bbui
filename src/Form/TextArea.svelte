@@ -91,17 +91,19 @@
 </style>
 
 <div class="container">
-  <label class:thin for={name}>
-    {#if label}{label}{/if}
-    {#if edit}
-      <div class="right">
-        <Button small secondary disabled={editMode} on:click={enableEdit}>
-          Edit
-        </Button>
-        <Button small blue disabled={!editMode} on:click={save}>Save</Button>
-      </div>
-    {/if}
-  </label>
+  {#if label || edit}
+    <label class:thin for={name}>
+      {#if label}{label}{/if}
+      {#if edit}
+        <div class="right">
+          <Button small secondary disabled={editMode} on:click={enableEdit}>
+            Edit
+          </Button>
+          <Button small blue disabled={!editMode} on:click={save}>Save</Button>
+        </div>
+      {/if}
+    </label>
+  {/if}
   <textarea
     class:thin
     bind:value
