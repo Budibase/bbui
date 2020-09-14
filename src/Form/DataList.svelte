@@ -1,4 +1,3 @@
-
 <script>
   import Icon from "../Icons/Icon.svelte";
   import { createEventDispatcher } from "svelte";
@@ -9,19 +8,15 @@
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
-  export let editable = false;
-  
+
   const dispatch = createEventDispatcher();
 
-  const updateValue =  e => {
+  const updateValue = e => {
     value = e.target.value;
   };
-
-
 </script>
 
 <style>
-
   select {
     display: block !important;
     width: 100% !important;
@@ -37,6 +32,7 @@
     align-items: center;
     white-space: pre;
     outline-color: var(--blue);
+    opacity: 0;
   }
 
   input {
@@ -54,7 +50,8 @@
     border-radius: var(--border-radius-s);
   }
 
-  select.thin, input.thin {
+  select.thin,
+  input.thin {
     padding: var(--spacing-m);
     font-size: var(--font-size-xs);
   }
@@ -66,7 +63,9 @@
     border: var(--border-dark);
   }
 
-  select:disabled, input:disabled, .disabled {
+  select:disabled,
+  input:disabled,
+  .disabled {
     background: var(--grey-4);
     border: 1px solid var(--grey-4);
     color: var(--grey-6);
@@ -76,7 +75,6 @@
     position: relative !important;
     display: block;
     border-radius: var(--border-radius-s);
-
   }
 
   .pointer {
@@ -90,17 +88,12 @@
     box-sizing: border-box;
   }
 
-  .editable {
-    opacity: 0;
-  }
-
   .editable-pointer {
     border-style: solid;
     border-width: 0 0 0 1px;
     border-color: var(--grey-4);
     padding-left: var(--spacing-m);
   }
-
 </style>
 
 <div class="relative" class:disabled class:secondary class:outline>
@@ -108,7 +101,6 @@
     {name}
     class:thin
     class:secondary
-    class:editable
     {disabled}
     on:change
     on:blur
@@ -116,22 +108,19 @@
     <slot />
   </select>
   <slot name="custom-input" />
-  {#if editable}
-    <input  
-      class:thin 
-      class:secondary 
-      class:disabled
-      on:change={updateValue}
-      on:input={updateValue}
-      on:blur={e => {
-        updateValue(e)
-        // blur does not bubble
-        dispatch("blur", e)
-      }}
-      value={value || ''}
-      type="text" />
-  {/if}
-  <div class="pointer" class:editable-pointer={editable}>
+  <input
+    class:thin
+    class:secondary
+    class:disabled
+    on:change={updateValue}
+    on:input={updateValue}
+    on:blur={e => {
+      updateValue(e);
+      dispatch('blur', e);
+    }}
+    value={value || ''}
+    type="text" />
+  <div class="pointer editable-pointer">
     <Icon name="arrowdown" />
   </div>
 
