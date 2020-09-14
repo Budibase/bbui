@@ -10,6 +10,10 @@
   export let borderColor = "";
   export let hideCloseButton = false;
 
+  // by default, all modals have padding
+  // use <Modal noPadding> ... </Modal> to remove
+  export let noPadding=false;
+
   export const show = () => {
     dispatch("open");
     open = true;
@@ -48,6 +52,10 @@
     left: 0;
     z-index: 1;
     background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .padding {
+    padding: var(--layout-xs);
   }
 
   .container {
@@ -108,6 +116,7 @@
       class:open
       style={containerStyle}
       on:keydown={handleEscape}
+      class:padding={!noPadding}
       class="container">
       {#if !hideCloseButton}
       <button on:click={hide} class="close">
