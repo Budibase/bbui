@@ -1,14 +1,27 @@
+
 <script>
+  import Icon from "../Icons/Icon.svelte";
+  import { createEventDispatcher } from "svelte";
+
   export let value = "";
   export let name = undefined;
   export let thin = false;
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
-  import Icon from "../Icons/Icon.svelte";
+  export let editable = false;
+  
+  const dispatch = createEventDispatcher();
+
+  const updateValue =  e => {
+    value = e.target.value;
+  };
+
+
 </script>
 
 <style>
+
   select {
     display: block !important;
     width: 100% !important;
@@ -25,7 +38,23 @@
     white-space: pre;
     outline-color: var(--blue);
   }
-  select.thin {
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 50px);
+    height: 100%;
+    border: none;
+    text-align: left;
+    color: var(--ink);
+    font-size: var(--font-size-m);
+    box-sizing: border-box;
+    padding: var(--spacing-s) 0 var(--spacing-m) var(--spacing-m);
+    border-radius: var(--border-radius-s);
+  }
+
+  select.thin, input.thin {
     padding: var(--spacing-m);
     font-size: var(--font-size-xs);
   }
@@ -37,7 +66,7 @@
     border: var(--border-dark);
   }
 
-  select:disabled {
+  select:disabled, input:disabled, .disabled {
     background: var(--grey-4);
     border: 1px solid var(--grey-4);
     color: var(--grey-6);
@@ -46,6 +75,8 @@
   .relative {
     position: relative !important;
     display: block;
+    border-radius: var(--border-radius-s);
+
   }
 
   .pointer {
@@ -54,24 +85,54 @@
     bottom: 0 !important;
     position: absolute !important;
     pointer-events: none !important;
-    padding-left: 0.5rem !important;
     align-items: center !important;
     display: flex !important;
+    box-sizing: border-box;
   }
+
+  .editable {
+    opacity: 0;
+  }
+
+  .editable-pointer {
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    border-color: var(--grey-4);
+    padding-left: var(--spacing-m);
+  }
+
 </style>
 
-<div class="relative">
+<div class="relative" class:disabled class:secondary class:outline>
   <select
     {name}
     class:thin
     class:secondary
-    class:outline
+    class:editable
     {disabled}
     on:change
+    on:blur
     bind:value>
     <slot />
   </select>
-  <div class="pointer">
+  <slot name="custom-input" />
+  {#if editable}
+    <input  
+      class:thin 
+      class:secondary 
+      class:disabled
+      on:change={updateValue}
+      on:input={updateValue}
+      on:blur={e => {
+        updateValue(e)
+        // blur does not bubble
+        dispatch("blur", e)
+      }}
+      value={value || ''}
+      type="text" />
+  {/if}
+  <div class="pointer" class:editable-pointer={editable}>
     <Icon name="arrowdown" />
   </div>
+
 </div>
