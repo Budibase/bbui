@@ -50,10 +50,10 @@
   </Modal>
 </View>
 
-<View name="Modal with no padding">
+<View name="Modal with custom padding">
   <Button primary on:click={modalmaxWidth.show}>Show Modal</Button>
 
-  <Modal bind:this={modalmaxWidth} noPadding maxWidth="400px">
+  <Modal bind:this={modalmaxWidth} padding="0" maxWidth="400px">
     <div class="custom-padding">
       <div>
         <Content />

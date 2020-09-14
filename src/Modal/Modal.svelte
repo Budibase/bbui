@@ -9,10 +9,7 @@
   export let minWidth = "30vw";
   export let borderColor = "";
   export let hideCloseButton = false;
-
-  // by default, all modals have padding
-  // use <Modal noPadding> ... </Modal> to remove
-  export let noPadding=false;
+  export let padding="var(--layout-xs)";
 
   export const show = () => {
     dispatch("open");
@@ -36,7 +33,8 @@
     "max-height": maxHeight,
     "max-width": maxWidth,
     "min-width": minWidth,
-    borderColor
+    borderColor,
+    padding,
   });
 </script>
 
@@ -52,10 +50,6 @@
     left: 0;
     z-index: 1;
     background: rgba(0, 0, 0, 0.6);
-  }
-  
-  .padding {
-    padding: var(--layout-xs);
   }
 
   .container {
@@ -116,7 +110,6 @@
       class:open
       style={containerStyle}
       on:keydown={handleEscape}
-      class:padding={!noPadding}
       class="container">
       {#if !hideCloseButton}
       <button on:click={hide} class="close">
