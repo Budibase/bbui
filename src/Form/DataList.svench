@@ -7,7 +7,7 @@
 </script>
 
 <View name="default">
-  <Select name="Test">
+  <Select editable name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -15,7 +15,7 @@
 </View>
 
 <View name="secondary">
-  <Select secondary name="Test">
+  <Select secondary editable name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -23,7 +23,7 @@
 </View>
 
 <View name="outline">
-  <Select outline name="Test">
+  <Select outline editable name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -36,10 +36,26 @@
       <option value={option}>{option}</option>
     {/each}
   </Select>
+
+  <Spacer medium />
+
+  <Select disabled editable name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
 </View>
 
 <View name="thin">
   <Select thin name="Test">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+
+  <Spacer medium />
+
+  <Select thin editable name="Test">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
