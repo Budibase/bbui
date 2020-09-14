@@ -9,6 +9,7 @@
   export let minWidth = "30vw";
   export let borderColor = "";
   export let hideCloseButton = false;
+  export let padding="var(--layout-xs)";
 
   export const show = () => {
     dispatch("open");
@@ -32,7 +33,8 @@
     "max-height": maxHeight,
     "max-width": maxWidth,
     "min-width": minWidth,
-    borderColor
+    borderColor,
+    padding,
   });
 </script>
 

@@ -12,6 +12,18 @@
 
 <style>
 
+.custom-padding {
+  background-color: var(--purple);
+  padding: var(--layout-m);
+}
+
+.custom-padding > div {
+  background-color: white;
+  border-radius: var(--border-radius-m);
+  padding: var(--layout-s);
+
+}
+
 </style>
 
 <View name="Modal Default">
@@ -35,5 +47,17 @@
 
   <Modal bind:this={modalmaxWidth} maxWidth="400px">
     <Content />
+  </Modal>
+</View>
+
+<View name="Modal with custom padding">
+  <Button primary on:click={modalmaxWidth.show}>Show Modal</Button>
+
+  <Modal bind:this={modalmaxWidth} padding="0" maxWidth="400px">
+    <div class="custom-padding">
+      <div>
+        <Content />
+      </div>
+    </div>
   </Modal>
 </View>
