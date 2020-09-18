@@ -124,12 +124,14 @@
   {/if}
   <input
     class:thin
+    on:change
+    on:input
     on:change={updateValue}
     on:input={updateValue}
     on:blur={updateValue}
     use:validator
     disabled={disabled || (edit && !editMode)}
-    value={value}
+    {value}
     {type}
     {name}
     {placeholder} />
