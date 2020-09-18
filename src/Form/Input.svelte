@@ -18,7 +18,12 @@
   let editMode = false;
 
   const updateValue = (e) => {
-    value = e.target.value;
+    if (type === "number") {
+      const num = parseFloat(e.target.value)
+      value = isNaN(num) ? "" : num;
+    } else {
+      value = e.target.value;
+    }
   };
 
   const save = () => {
@@ -92,7 +97,7 @@
   }
   .right :global(button) {
     min-width: 100px;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-s);
     border-radius: var(--rounded-small);
   }
   .error {
@@ -119,14 +124,12 @@
   {/if}
   <input
     class:thin
-    on:change
-    on:input
     on:change={updateValue}
     on:input={updateValue}
     on:blur={updateValue}
     use:validator
     disabled={disabled || (edit && !editMode)}
-    value={value || ''}
+    value={value}
     {type}
     {name}
     {placeholder} />
