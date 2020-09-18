@@ -16,6 +16,10 @@
   <Input thin placeholder="Enter your name" label="Name" />
 </View>
 
+<View name="number">
+  <Input type="number" placeholder="Enter your age" label="Age" />
+</View>
+
 <View name="with edit buttons">
   <Input
     thin
