@@ -159,7 +159,7 @@ h4 {
 }
 
 h5 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-l);
   font-family: var(--font-sans);
   font-weight: 500;
   text-rendering: var(--text-render);
@@ -168,7 +168,7 @@ h5 {
 }
 
 h6 {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-m);
   font-family: var(--font-sans);
   font-weight: 500;
   text-rendering: var(--text-render);
