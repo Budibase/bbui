@@ -9,8 +9,8 @@
     image: "fas fa-file-image",
     code: "fas fa-file-code",
     file: "fas fa-file",
-    leftArrow: "fas fa-left-arrow",
-    rightArrow: "fas fa-right-arrow",
+    leftArrow: "fas fa-arrow-left",
+    rightArrow: "fas fa-arrow-right",
     deleteButton: "fas fa-times",
     fileUpload: "fas fa-upload",
   }
@@ -36,7 +36,7 @@
 
   async function processFileList(fileList) {
     if (Array.from(fileList).some(file => file.size >= fileSizeLimit)) {
-      handleFileTooLarge();
+      handleFileTooLarge(fileSizeLimit, file);
       return
     }
 
