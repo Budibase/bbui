@@ -11,6 +11,7 @@ export { default as Input } from "./Form/Input.svelte";
 export { default as TextArea } from "./Form/TextArea.svelte";
 export { default as Select } from "./Form/Select.svelte";
 export { default as DataList } from "./Form/DataList.svelte";
+export { default as Dropzone } from "./Dropzone/Dropzone.svelte";
 export { default as Button } from "./Button/Button.svelte";
 export { default as Icon, iconOptions, directions } from "./Icons/Icon.svelte";
 export { default as TextButton } from "./Button/TextButton.svelte";
