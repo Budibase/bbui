@@ -99,4 +99,7 @@
   <Icon name="group" />
 </View>
 
+<View name="Download">
+  <Icon name="download" />
+</View>
 
