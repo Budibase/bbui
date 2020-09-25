@@ -1,6 +1,5 @@
 <script>
-  export let 
-    active = false,
+  export let active = false,
     text = false,
     small = false,
     medium = false,
@@ -11,11 +10,13 @@
     purple = false,
     red = false,
     orange = false,
-    disabled = false;
+    disabled = false,
+    href = false;
 </script>
 
 <style>
-  button {
+  button,
+  a {
     font-family: var(--font-sans);
     cursor: pointer;
     font-weight: 600;
@@ -25,6 +26,7 @@
     display: inline-flex;
     align-items: center;
     text-rendering: optimizeLegibility;
+    text-decoration: none;
     outline: none;
     -webkit-box-align: center;
     user-select: none;
@@ -75,7 +77,6 @@
     color: var(--orange);
   }
 
-
   .small {
     font-size: var(--font-size-xs);
     margin: 0;
@@ -90,22 +91,37 @@
     font-size: var(--font-size-m);
     margin: 0;
   }
-
 </style>
 
-<button
-  class:active
-  class:small
-  class:medium
-  class:large
-  class:text
-  class:blue
-  class:green
-  class:yellow
-  class:purple
-  class:red
-  class:orange
-  {disabled}
-  on:click|preventDefault>
-  <slot />
-</button>
+{#if href}
+  <a
+    {href}
+    class:active
+    class:small
+    class:medium
+    class:large
+    class:text
+    class:blue
+    class:green
+    class:yellow
+    class:purple
+    class:red
+    class:orange><slot /></a>
+{:else}
+  <button
+    class:active
+    class:small
+    class:medium
+    class:large
+    class:text
+    class:blue
+    class:green
+    class:yellow
+    class:purple
+    class:red
+    class:orange
+    {disabled}
+    on:click|preventDefault>
+    <slot />
+  </button>
+{/if}
