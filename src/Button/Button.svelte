@@ -43,7 +43,7 @@
   }
 
   .primary {
-    border: solid 1.5px var(--ink);
+    border: var(--border-black);
     background-color: var(--ink);
   }
   button.primary:hover:not([disabled]) {
@@ -51,7 +51,7 @@
     color: var(--ink);
   }
   .secondary {
-    border: solid 2px var(--grey-7);
+    border: var(--border-dark);
     background-color: white;
     color: var(--ink);
   }
