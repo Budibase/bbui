@@ -98,3 +98,6 @@
   let:knobs>
   <Button {...knobs} on:click={() => alert('Clicked!')}>Knooby</Button>
 </View>
+<View name="a link that looks like a button">
+  <Button primary href="https://google.com">Linkbutton</Button>
+</View>
