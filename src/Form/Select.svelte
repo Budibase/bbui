@@ -10,13 +10,14 @@
 
 <style>
   select {
+    font-family: var(--font-sans);
     display: block !important;
     width: 100% !important;
     border-radius: var(--border-radius-s);
     border: none;
     text-align: left;
     color: var(--ink);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s);
     padding: var(--spacing-m) 2rem var(--spacing-m) var(--spacing-m) !important;
     appearance: none !important;
     -webkit-appearance: none !important;

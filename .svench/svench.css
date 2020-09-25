@@ -118,8 +118,10 @@ h6.svench-content {
   --border-radius-l: 1rem;
   --border-radius-xl: 100rem;
 
-  --border-dark: 1.5px var(--grey-7) solid;
+  --border-black: 3px var(--black) solid;
+  --border-dark: 2px var(--grey-7) solid;
   --border-light: 1px var(--grey-3) solid;
+
 }
 
 h1 {
@@ -183,4 +185,8 @@ p {
   text-rendering: var(--text-render);
   -webkit-font-smoothing: var(--text-smooth);
   color: var(--ink);
+}
+
+a {
+  text-decoration: none;
 }

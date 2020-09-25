@@ -19,7 +19,7 @@
     font-size: var(--font-size-s);
     margin-bottom: 12px;
     display: block;
-    line-height: 1.5;
+    line-height: 0;
   }
 
   .extraSmall {
@@ -47,12 +47,13 @@
   }
 
   .grey {
-    color: var(--grey-5);
+    color: var(--grey-6);
   }
 
   .black {
     color: var(--ink);
   }
+
 </style>
 
 <label

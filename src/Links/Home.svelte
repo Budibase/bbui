@@ -9,12 +9,13 @@
   .nav-item {
     cursor: pointer;
     padding: 12px;
-    height: 40px;
+    height: 2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     box-sizing: border-box;
-    border-radius: 3px;
+    border-radius: var(--border-radius-s);
+
   }
 
   .nav-item:hover {
@@ -22,7 +23,8 @@
   }
 
   .nav-item-title {
-    font-size: 14px;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-xs);
     color: var(--ink);
     font-weight: 400;
     margin-left: 12px;
@@ -33,7 +35,7 @@
   }
 
   .active {
-    background-color: var(--blue-light);
+    background-color: var(--grey-2);
   }
 </style>
 
