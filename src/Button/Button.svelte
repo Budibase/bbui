@@ -51,7 +51,7 @@
     color: var(--ink);
   }
   .secondary {
-    border: solid 1.5px var(--grey-7);
+    border: solid 2px var(--grey-7);
     background-color: white;
     color: var(--ink);
   }

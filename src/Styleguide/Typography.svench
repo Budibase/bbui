@@ -9,7 +9,8 @@
 
 <style>
   .typography-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .typography-column {
@@ -74,6 +75,18 @@
 
       <Heading extraSmall white>Heading Extra Small White</Heading>
     </div>
+
+    <div class="typography-column">
+      <Heading extraLarge black lh>Heading Extra Large Black Line Height</Heading>
+
+      <Heading large black lh>Heading Large Black Line Height</Heading>
+
+      <Heading medium black lh>Heading Medium Black Line Height</Heading>
+
+      <Heading small black lh>Heading Small Black Line Height</Heading>
+
+      <Heading extraSmall black lh>Heading Extra Small Black Line Height</Heading>
+    </div>
   </div>
 </View>
 
@@ -89,6 +102,18 @@
       <Body small black>Body Small Black</Body>
 
       <Body extraSmall black>Body Extra Small Black</Body>
+    </div>
+
+    <div class="typography-column">
+      <Body extraLarge lh black>Body Extra Large Black Line-height</Body>
+
+      <Body large lh black>Body Large Black Line-height</Body>
+
+      <Body medium lh black>Body Medium Black Line-height</Body>
+
+      <Body small lh black>Body Small Black Line-height</Body>
+
+      <Body extraSmall lh black>Body Extra Small Black Line-height</Body>
     </div>
 
     <div class="typography-column">

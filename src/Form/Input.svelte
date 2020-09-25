@@ -5,6 +5,7 @@
 
   export let name = undefined;
   export let label = undefined;
+  export let outline = false;
   export let thin = false;
   export let edit = false;
   export let disabled = false;
@@ -12,6 +13,7 @@
   export let placeholder = "";
   export let value = "";
   export let error = false;
+  
   export let validator = () => {};
 
   // This section handles the edit mode and dispatching of things to the parent when saved
@@ -41,14 +43,14 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
+    font-size: var(--font-size-s);
     font-family: sans-serif;
     font-weight: 500;
   }
 
   label {
     color: var(--ink);
-    margin-bottom: 12px;
+    margin-bottom: var(--spacing-s);
     display: flex;
   }
 
@@ -65,13 +67,14 @@
     min-width: 0;
     box-sizing: border-box;
     color: var(--ink);
-    font-size: 18px;
-    border-radius: 5px;
+    font-size: var(--font-size-s);
+    border-radius: var(--border-radius-s);
     border: none;
     background-color: var(--grey-2);
-    padding: 20px;
+    padding: var(--spacing-m);
     margin: 0;
     outline-color: var(--blue);
+    font-family: var(--font-sans);
   }
 
   input::placeholder {
@@ -86,9 +89,16 @@
     background: var(--grey-4);
   }
 
+
+
   input.thin {
     padding: var(--spacing-m);
     font-size: var(--font-size-xs);
+  }
+
+  .outline {
+    border: var(--border-dark);
+    background: white;
   }
 
   input:disabled {
@@ -123,6 +133,7 @@
     </label>
   {/if}
   <input
+    class:outline
     class:thin
     on:change
     on:input

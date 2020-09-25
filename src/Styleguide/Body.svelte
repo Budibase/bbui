@@ -6,7 +6,8 @@
     extraLarge = false,
     white = false,
     grey = false,
-    black = false;
+    black = false,
+    lh = false;
 </script>
 
 <style>
@@ -16,7 +17,7 @@
     text-rendering: var(--text-render);
     color: var(--ink);
     font-size: var(--font-size-m);
-    line-height: 1.5;
+    line-height: 0;
   }
 
   .extraSmall {
@@ -50,6 +51,10 @@
   .black {
     color: var(--ink);
   }
+
+  .lh {
+    line-height: 1.5;
+  }
 </style>
 
 <p
@@ -61,6 +66,7 @@
   class:extraLarge
   class:white
   class:grey
-  class:black>
+  class:black  
+  class:lh>
   <slot />
 </p>
