@@ -12,11 +12,13 @@
     small = false,
     medium = false,
     wide = false,
-    large = false;
+    large = false,
+    href = false;
 </script>
 
 <style>
-  button {
+  button,
+  a {
     font-family: var(--font-sans);
     cursor: pointer;
     font-weight: 600;
@@ -28,6 +30,7 @@
     transition: all 0.2s ease 0s;
     display: inline-flex;
     text-rendering: optimizeLegibility;
+    text-decoration: none;
     min-width: auto;
     outline: none;
     font-feature-settings: "case" 1, "rlig" 1, "calt" 0;
@@ -149,21 +152,42 @@
   }
 </style>
 
-<button
-  class:primary
-  class:secondary
-  class:blue
-  class:red
-  class:yellow
-  class:orange
-  class:green
-  class:purple
-  class:small
-  class:medium
-  class:wide
-  class:large
-  class:text
-  {disabled}
-  on:click|preventDefault>
-  <slot />
-</button>
+{#if href}
+  <a
+    {href}
+    class:primary
+    class:secondary
+    class:blue
+    class:red
+    class:yellow
+    class:orange
+    class:green
+    class:purple
+    class:small
+    class:medium
+    class:wide
+    class:large
+    class:text
+    {disabled}>
+    <slot />
+  </a>
+{:else}
+  <button
+    class:primary
+    class:secondary
+    class:blue
+    class:red
+    class:yellow
+    class:orange
+    class:green
+    class:purple
+    class:small
+    class:medium
+    class:wide
+    class:large
+    class:text
+    {disabled}
+    on:click|preventDefault>
+    <slot />
+  </button>
+{/if}
