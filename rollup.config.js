@@ -1,5 +1,4 @@
 import * as path from 'path'
-import * as fs from 'fs'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
@@ -8,7 +7,6 @@ import hmr from 'rollup-plugin-hot'
 import del from 'rollup-plugin-delete'
 import postcss from 'rollup-plugin-postcss-hot'
 import { plugin as Svench } from 'svench/rollup'
-import addClasses from 'rehype-add-classes'
 
 import pkg from './package.json'
 
@@ -27,13 +25,17 @@ const svench = Svench({
   // The root dir that Svench will parse and watch.
   dir: 'src',
 
-  extensions: ['.svench', '.svench.svelte', '.svench.svx'],
+  // Use custom index.html
+  index: {
+    source: "public/index.html"
+  },
 
+  extensions: ['.svench', '.svench.svelte', '.svench.svx'],
   serve: WATCH && {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 4242,
     public: 'public',
-    nollup: 'localhost:42421',
+    nollup: '0.0.0.0:42421',
   },
 })
 
@@ -83,6 +85,7 @@ const configs = {
 
       HOT &&
       hmr({
+        host: "0.0.0.0",
         public: 'public',
         inMemory: true,
         compatModuleHot: !HOT, // for terser
