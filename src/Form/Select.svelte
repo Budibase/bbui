@@ -65,21 +65,23 @@
   }
 </style>
 
-{#if label}
-  <Label extraSmall grey forAttr={name}>{label}</Label>
-{/if}
-<div class="relative">
-  <select
-    {name}
-    class:thin
-    class:secondary
-    class:outline
-    {disabled}
-    on:change
-    bind:value>
-    <slot />
-  </select>
-  <div class="pointer">
-    <Icon name="arrowdown" />
+<div>
+  {#if label}
+    <Label extraSmall grey forAttr={name}>{label}</Label>
+  {/if}
+  <div class="relative">
+    <select
+      {name}
+      class:thin
+      class:secondary
+      class:outline
+      {disabled}
+      on:change
+      bind:value>
+      <slot />
+    </select>
+    <div class="pointer">
+      <Icon name="arrowdown" />
+    </div>
   </div>
 </div>
