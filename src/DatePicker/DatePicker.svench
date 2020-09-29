@@ -8,6 +8,10 @@
   }
 </script>
 
-<View name="Date Picker">
-  <DatePicker on:change={handleChange} />
+<View name="default">
+  <DatePicker on:change={handleChange} label="Start Date" placeholder="Pick a date" />
+</View>
+
+<View name="thin">
+  <DatePicker on:change={handleChange} label="Start Date" thin placeholder="Pick a date" />
 </View>
