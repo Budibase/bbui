@@ -1,21 +1,19 @@
 <script>
-  export let id = '';
-  export let text = '';
+  export let name = undefined;
+  export let text = "";
   export let checked = false;
   export let disabled = false;
   export let screenreader = true;
-  
+  export let thin = false;
 </script>
 
 <style>
-
-  label {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-s);
+  .container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
   }
-
-  label:disabled {
+  .container:disabled {
     background-color: var(--grey-2);
     cursor: not-allowed;
   }
@@ -27,21 +25,19 @@
     cursor: pointer;
     -webkit-user-select: none; 
     background: transparent;
-    outline-color: var(--blue);
   }
-
 
   .track {
-    width: 28px;
-    height: 14px;
+    width: 32px;
+    height: 18px;
     background-color: var(--grey-4);
-    border-radius: var(--border-radius-xl);
+    border-radius: 9px;
     transition-delay: .12s;
     transition-duration: .2s;
-    transition-property: background,border;
+    transition-property: background;
     transition-timing-function: cubic-bezier(0,0,.2,1);
+    position: relative;
   }
-
 
   .thumb {
     cursor: pointer;
@@ -49,32 +45,27 @@
     transition-duration: .28s;
     transition-property: all;
     transition-timing-function: cubic-bezier(0,0,.2,1);
-    position: absolute;
-    margin: 1px 1px 1px 1.5px;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
     background-color: white;
     border-radius: var(--border-radius-xl);
-    border: 1px solid transparent;
   }
 
-  input[type='checkbox']:checked ~ .thumb {
-    transform: translateX(115%);
+  input[type='checkbox']:checked ~ .track .thumb {
+    transform: translateX(14px);
   }
   input[type='checkbox']:checked ~ .track {
-     background-color: var(--blue);
-
+    background-color: var(--blue);
   }
   input[type='checkbox']:disabled ~ .track {
     background-color: var(--grey-4);
     cursor: not-allowed;
   }
-  input[type='checkbox']:disabled ~ .thumb {
+  input[type='checkbox']:disabled ~ .track .thumb {
     background-color: var(--grey-2);
     cursor: not-allowed;
-
   }
 
   .screenreader {
@@ -90,24 +81,31 @@
   }
 
   .text {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-s);
     font-family: var(--font-sans);
     cursor: pointer;
+    user-select: none;
+  }
+  .text.thin {
+    font-size: var(--font-size-xs);
   }
 </style>
 
-<label for="{id}">
-  <span class="text">{text}</span>
+<label for={name} class="container">
   <div class="toggle">
     <input
-      {id}
-      name="{id}"
+      id={name}
+      {name}
       type="checkbox"
       class:screenreader
       {disabled}
       bind:checked
     />
-    <div class="track"></div>
-    <div class="thumb"></div>
+    <div class="track">
+      <div class="thumb"></div>
+    </div>
   </div>
+  {#if text}
+    <span class="text" class:thin>{text}</span>
+  {/if}
 </label>

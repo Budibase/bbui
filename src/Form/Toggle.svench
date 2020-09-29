@@ -1,21 +1,21 @@
 <script>
   import { View } from "svench";
   import Toggle from "./Toggle.svelte";
-
-  let nodisplay = false;
-  let display = true;
-
-  $: values = { display, nodisplay };
 </script>
 
 <View name="default">
-  <Toggle bind:checked={nodisplay} id="nodisplay" />
+  <Toggle />
 </View>
 
 <View name="checked with text">
-  <Toggle bind:checked={display} id="display" text="Display on mobile?" />
+  <Toggle text="Display on mobile?" />
+</View>
+
+<View name="thin">
+  <Toggle text="Display on mobile?" thin />
 </View>
 
 <View name="disabled">
-  <Toggle bind:checked={nodisplay} id="disabled" disabled={true} />
+  <Toggle disabled={true} />
 </View>
+
