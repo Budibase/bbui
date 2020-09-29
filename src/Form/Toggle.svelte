@@ -100,6 +100,7 @@
       class:screenreader
       {disabled}
       bind:checked
+      on:change
     />
     <div class="track">
       <div class="thumb"></div>
