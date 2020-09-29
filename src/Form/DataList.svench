@@ -1,65 +1,50 @@
 <script>
   import { View } from "svench";
   import Select from "./Select.svelte";
+  import DataList from "./DataList.svelte";
   import Spacer from "../Spacer/Spacer.svelte"
 
   const options = ["Chocolate", "Vanilla", "Strawberry Cheesecake"];
 </script>
 
 <View name="default">
-  <Select name="Test">
+  <DataList name="Test" label="Flavour">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
-  </Select>
+  </DataList>
 </View>
 
 <View name="secondary">
-  <Select secondary name="Test">
+  <DataList secondary name="Test" label="Flavour">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
-  </Select>
+  </DataList>
 </View>
 
 <View name="outline">
-  <Select outline name="Test">
+  <DataList outline name="Test" label="Flavour">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
-  </Select>
+  </DataList>
 </View>
 
 <View name="disabled">
-  <Select disabled name="Test">
+  <DataList disabled name="Test" label="Flavour">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
-  </Select>
-
-  <Spacer medium />
-
-  <Select disabled name="Test">
-    {#each options as option}
-      <option value={option}>{option}</option>
-    {/each}
-  </Select>
+  </DataList>
 </View>
 
 <View name="thin">
-  <Select thin name="Test">
+  <DataList thin name="Test" label="Flavour">
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
-  </Select>
-
-  <Spacer medium />
-
-  <Select thin name="Test">
-    {#each options as option}
-      <option value={option}>{option}</option>
-    {/each}
-  </Select>
+  </DataList>
 </View>
 
 

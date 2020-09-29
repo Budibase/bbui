@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import Button from "../Button/Button.svelte";
+  import Label from "../Styleguide/Label.svelte"
   const dispatch = createEventDispatcher();
 
   export let name = undefined;
@@ -43,24 +44,31 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    font-size: var(--font-size-s);
-    font-family: sans-serif;
-    font-weight: 500;
   }
 
-  label {
-    color: var(--ink);
-    margin-bottom: var(--spacing-s);
+  .label-container {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--spacing-s);
+  }
+  .label-container :global(label) {
+    margin-bottom: 0;
   }
 
-  .right {
+  .controls {
     align-items: center;
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 12px;
     margin-left: auto;
     padding-left: 12px;
+  }
+  .controls :global(button) {
+    min-width: 100px;
+    font-size: var(--font-size-s);
+    border-radius: var(--rounded-small);
   }
 
   input {
@@ -73,64 +81,52 @@
     background-color: var(--grey-2);
     padding: var(--spacing-m);
     margin: 0;
-    outline-color: var(--blue);
+    outline: none;
     font-family: var(--font-sans);
+    border: var(--border-transparent);
   }
-
-  input::placeholder {
-    color: var(--grey-6);
-  }
-
-  input:focus {
-    box-shadow: 0 4px 16px 0 rgba(57, 60, 68, 0.08);
-  }
-
-  input:disabled {
-    background: var(--grey-4);
-  }
-
-
-
   input.thin {
-    padding: var(--spacing-m);
     font-size: var(--font-size-xs);
   }
-
-  .outline {
+  input.outline {
     border: var(--border-dark);
     background: white;
   }
-
+  input::placeholder {
+    color: var(--grey-6);
+  }
+  input:focus {
+    border: var(--border-blue);
+  }
   input:disabled {
     background: var(--grey-4);
     color: var(--grey-5);
   }
-  .right :global(button) {
-    min-width: 100px;
-    font-size: var(--font-size-s);
-    border-radius: var(--rounded-small);
-  }
+
   .error {
     margin-top: 10px;
-    font-size: 12px;
+    font-size: var(--font-size-xs);
+    font-family: var(--font-sans);
     line-height: 1.17;
     color: var(--red);
   }
 </style>
 
 <div class="container">
-  {#if label}
-    <label class:thin for={name}>
-      {label}
+  {#if label || edit}
+    <div class="label-container">
+      {#if label}
+        <Label extraSmall grey forAttr={name}>{label}</Label>
+      {/if}
       {#if edit}
-        <div class="right">
+        <div class="controls">
           <Button small secondary disabled={editMode} on:click={enableEdit}>
             Edit
           </Button>
           <Button small blue disabled={!editMode} on:click={save}>Save</Button>
         </div>
       {/if}
-    </label>
+    </div>
   {/if}
   <input
     class:outline

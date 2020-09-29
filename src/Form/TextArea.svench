@@ -6,25 +6,25 @@
 </script>
 
 <View name="default">
-  <TextArea placeholder="Enter your name" label="Name" />
+  <TextArea placeholder="Enter your email text" label="Email Body" />
 </View>
 
 <View name="disabled">
-  <TextArea disabled placeholder="Enter your name" label="Name" />
+  <TextArea disabled placeholder="Enter your email text" label="Email Body" />
 </View>
 
 <View name="no label">
-  <TextArea placeholder="Enter your name" />
+  <TextArea placeholder="Enter your email text" />
 </View>
 
 <View name="thin">
-  <TextArea thin placeholder="Enter your name" label="Name" />
+  <TextArea thin placeholder="Enter your email text" label="Email Body" />
 </View>
 
 <View name="thin">
-  <TextArea thin disabled placeholder="Enter your name" label="Name" />
+  <TextArea thin disabled placeholder="Enter your email text" label="Email Body" />
 </View>
 
 <View name="with buttons">
-  <TextArea edit placeholder="Enter your name" label="Name" />
+  <TextArea edit placeholder="Enter your email text" label="Email Body" />
 </View>

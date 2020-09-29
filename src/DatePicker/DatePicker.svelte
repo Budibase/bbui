@@ -7,8 +7,10 @@
     enableTime: true
   };
 
+  export let label;
   export let placeholder;
   export let value;
+  export let thin = false;
 </script>
 
 <style>
@@ -21,10 +23,23 @@
     border: none;
     background-color: var(--grey-2);
     padding: var(--spacing-m);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-s);
     margin: 0;
-    outline-color: var(--blue);
+    outline: none;
+    border: var(--border-transparent);
+  }
+  :global(.flatpickr-input:focus) {
+    border: var(--border-blue);
+  }
+
+  div.thin :global(.flatpickr-input) {
+    font-size: var(--font-size-xs);
   }
 </style>
 
-<Flatpickr {placeholder} options={PICKER_OPTIONS} on:change bind:value />
+<div class:thin>
+  {#if label}
+    <Label extraSmall grey>{label}</Label>
+  {/if}
+  <Flatpickr {placeholder} options={PICKER_OPTIONS} on:change bind:value />
+</div>
