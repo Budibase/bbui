@@ -121,7 +121,8 @@ h6.svench-content {
   --border-black: 3px var(--black) solid;
   --border-dark: 2px var(--grey-7) solid;
   --border-light: 1px var(--grey-3) solid;
-
+  --border-blue: 2px var(--blue) solid;
+  --border-transparent: 2px transparent solid;
 }
 
 h1 {
