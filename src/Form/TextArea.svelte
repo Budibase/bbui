@@ -1,14 +1,17 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import Button from "../Button/Button.svelte";
-  const dispatch = createEventDispatcher();
+  import Label from "../Styleguide/Label.svelte";
   import { text_area_resize } from "../actions/autoresize_textarea.js";
+
+  const dispatch = createEventDispatcher();
+
   export let name = false;
   export let label = false;
   export let thin = false;
   export let edit = false;
   export let disabled = false;
-  export let placeholder = false;
+  export let placeholder;
   export let validator = () => {};
   export let value = "";
 
@@ -32,14 +35,18 @@
     flex-direction: column;
   }
 
-  label {
-    color: var(--ink);
-    margin-bottom: 12px;
-    font-family: sans-serif;
+  .label-container {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--spacing-s);
+  }
+  .label-container :global(label) {
+    margin-bottom: 0;
   }
 
-  .right {
+  .controls {
     align-items: center;
     display: grid;
     grid-template-columns: auto auto;
@@ -47,62 +54,62 @@
     margin-left: auto;
     padding-left: 12px;
   }
+  .controls :global(button) {
+    min-width: 100px;
+    font-size: var(--font-size-s);
+    border-radius: var(--rounded-small);
+  }
 
   textarea {
     min-width: 0;
     color: var(--ink);
-    font-size: 18px;
-    font-family: sans-serif;
+    font-size: var(--font-size-s);
+    font-family: var(--font-sans);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-s);
     background-color: var(--grey-2);
-    padding: 20px;
+    padding: var(--spacing-m);
     margin: 0;
+    border: var(--border-transparent);
+    outline: none;
   }
-
   textarea::placeholder {
     color: var(--grey-6);
   }
-
-  textarea:focus {
-    box-shadow: 0 4px 16px 0 rgba(57, 60, 68, 0.08);
-  }
-
-  textarea:disabled {
-    background: var(--grey-4);
-  }
-
   textarea.thin {
-    padding: 12px;
-    font-size: 14px;
+    font-size: var(--font-size-xs);
+  }
+  textarea:focus {
+    border: var(--border-blue);
   }
   textarea:disabled {
     background: var(--grey-4);
-    border: none;
+  }
+  textarea:disabled {
+    background: var(--grey-4);
   }
   textarea:disabled::placeholder {
     color: var(--grey-6);
-  }
-  .right :global(button) {
-    min-width: 100px;
-    font-size: var(--font-size-sm);
-    border-radius: var(--rounded-small);
   }
 </style>
 
 <div class="container">
   {#if label || edit}
-    <label class:thin for={name}>
-      {#if label}{label}{/if}
+    <div class="label-container">
+      {#if label}
+        <Label extraSmall grey forAttr={name}>
+          {label}
+        </Label>
+      {/if}
       {#if edit}
-        <div class="right">
+        <div class="controls">
           <Button small secondary disabled={editMode} on:click={enableEdit}>
             Edit
           </Button>
           <Button small blue disabled={!editMode} on:click={save}>Save</Button>
         </div>
       {/if}
-    </label>
+    </div>
   {/if}
   <textarea
     class:thin
