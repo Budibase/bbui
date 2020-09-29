@@ -114,6 +114,7 @@
   <textarea
     class:thin
     bind:value
+    on:change
     disabled={disabled || (edit && !editMode)}
     {placeholder}
     {name}
