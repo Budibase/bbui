@@ -1,11 +1,14 @@
 <script>
+  import Icon from "../Icons/Icon.svelte";
+  import Label from "../Styleguide/Label.svelte";
+
   export let value = "";
   export let name = undefined;
+  export let label = undefined;
   export let thin = false;
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
-  import Icon from "../Icons/Icon.svelte";
 </script>
 
 <style>
@@ -24,23 +27,24 @@
     -moz-appearance: none !important;
     align-items: center;
     white-space: pre;
-    outline-color: var(--blue);
+    outline: none;
+    border: var(--border-transparent);
   }
   select.thin {
     padding: var(--spacing-m);
     font-size: var(--font-size-xs);
   }
-  .secondary {
+  select.secondary {
     background: var(--grey-2);
   }
-
-  .outline {
+  select.outline {
     border: var(--border-dark);
   }
-
+  select:focus {
+    border: var(--border-blue);
+  }
   select:disabled {
     background: var(--grey-4);
-    border: 1px solid var(--grey-4);
     color: var(--grey-6);
   }
 
@@ -61,6 +65,9 @@
   }
 </style>
 
+{#if label}
+  <Label extraSmall grey forAttr={name}>{label}</Label>
+{/if}
 <div class="relative">
   <select
     {name}
