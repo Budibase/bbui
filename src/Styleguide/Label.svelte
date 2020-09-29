@@ -17,9 +17,8 @@
     text-rendering: var(--text-render);
     color: var(--ink);
     font-size: var(--font-size-s);
-    margin-bottom: 12px;
+    margin-bottom: var(--spacing-s);
     display: block;
-    line-height: 0;
   }
 
   .extraSmall {
