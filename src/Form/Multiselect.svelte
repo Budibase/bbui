@@ -229,7 +229,8 @@
 
   .token {
     font-size: var(--font-size-xs);
-    background-color: var(--grey-2);
+    background-color: var(--ink);
+    color: white;
     border-radius: var(--border-radius-l);
     display: flex;
     flex-direction: row;
@@ -242,9 +243,6 @@
     white-space: nowrap;
     overflow: hidden;
   }
-  .token.secondary {
-    background-color: white;
-  }
   .token span {
     pointer-events: none;
     user-select: none;
@@ -255,7 +253,7 @@
   }
   .token .token-remove {
     align-items: center;
-    background-color: var(--grey-4);
+    background-color: var(--grey-8);
     border-radius: 50%;
     color: var(--white);
     display: flex;
@@ -267,7 +265,7 @@
     flex: 0 0 auto;
   }
   .token .token-remove:hover {
-    background-color: var(--grey-5);
+    background-color: var(--grey-7);
     cursor: pointer;
   }
 
