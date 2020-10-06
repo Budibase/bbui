@@ -28,3 +28,4 @@ export { default as Close } from "./Button/Close.svelte";
 export { default as Modal } from "./Modal/Modal.svelte";
 export { default as Spacer } from "./Spacer/Spacer.svelte";
 export { default as DatePicker } from "./DatePicker/DatePicker.svelte";
+export { default as Multiselect } from "./Form/Multiselect.svelte";
