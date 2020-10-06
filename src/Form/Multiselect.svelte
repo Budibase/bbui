@@ -214,17 +214,6 @@
   .tokens:hover {
     cursor: pointer;
   }
-  .tokens::after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: -1px;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
   .tokens.optionsVisible {
     border: var(--border-blue);
   }
