@@ -1,5 +1,5 @@
 <script>
-  import { onMount, afterUpdate } from "svelte"
+  import { afterUpdate } from "svelte"
   import { fly } from "svelte/transition"
   import Label from "../Styleguide/Label.svelte"
   import buildStyle from "../utils/buildStyle";
@@ -15,41 +15,11 @@
 
   let options = [];
   let optionsVisible = false;
-  let selected = {};
-  let first = true;
   let slot;
   let anchor;
   let dimensions = { top: 0, left: 0, minWidth: 0, maxHeight: 0 };
-
-  onMount(() => {
-    const domOptions = Array.from(slot.querySelectorAll("option"));
-    options = domOptions.map(option => ({
-      value: option.value,
-      name: option.textContent,
-    }));
-    if (value) {
-      options.forEach(option => {
-        if (value.includes(option.value)) {
-          selected[option.value] = option;
-        }
-      });
-    }
-    first = false;
-  });
-
-  // Update dimensions after each dom update
-  afterUpdate(() => {
-    if (anchor) {
-      updateDimensions();
-    }
-  });
-
-  // Keep value up to date with selected options
-  $: {
-    if (!first) {
-      value = Object.values(selected).map(option => option.value);
-    }
-  }
+  $: lookupMap = mapValues(value)
+  $: selectedOptions = options.filter(option => lookupMap[option.value])
 
   // Build CSS styles for options dropdown
   $: menuStyle = buildStyle({
@@ -58,6 +28,30 @@
     top: `${dimensions.top}px`,
     left: `${dimensions.left}px`,
   });
+
+  afterUpdate(() => {
+    // Update available options
+    const domOptions = Array.from(slot.querySelectorAll("option"));
+    options = domOptions.map(option => ({
+      value: option.value,
+      name: option.textContent,
+    }));
+
+    // Update dimensions after each dom update
+    if (optionsVisible) {
+      updateDimensions();
+    }
+  });
+
+  function mapValues(value) {
+    let map = {};
+    if (value) {
+      value.forEach(option => {
+        map[option] = true;
+      });
+    }
+    return map;
+  }
 
   function updateDimensions() {
     const { bottom, left, width } = anchor.getBoundingClientRect();
@@ -69,13 +63,12 @@
     };
   }
 
-  function add(token) {
-    selected[token.value] = token;
+  function add(val) {
+    value = [ ...value, val ];
   }
 
-  function remove(value) {
-    const { [value]: val, ...rest } = selected;
-    selected = rest;
+  function remove(val) {
+    value = value.filter(option => option !== val);
   }
 
   function showOptions(show) {
@@ -91,10 +84,10 @@
     if (value == null) {
       return;
     }
-    if (selected[value]) {
+    if (lookupMap[value]) {
       remove(value);
     } else {
-      add(options.filter(option => option.value === value)[0]);
+      add(value);
     }
   }
 </script>
@@ -114,7 +107,7 @@
         class:optionsVisible
         on:click|self={handleClick}
         class:empty={!value || !value.length}>
-        {#each Object.values(selected) as option}
+        {#each selectedOptions as option}
           <div class="token" class:secondary data-id={option.value} on:click|self={handleClick}>
             <span>{option.name}</span>
             <div
@@ -154,7 +147,7 @@
           transition:fly={{ duration: 200, y: 5 }}
           on:mousedown|preventDefault={handleOptionMousedown}>
           {#each options as option}
-            <li class:selected={selected[option.value]} data-value={option.value}>
+            <li class:selected={lookupMap[option.value]} data-value={option.value}>
               {option.name}
             </li>
           {/each}
