@@ -41,6 +41,7 @@
   ],
   "dependencies": {
     "sirv-cli": "^0.4.6",
-    "svelte-flatpickr": "^2.4.0"
+    "svelte-flatpickr": "^2.4.0",
+    "svelte-portal": "^1.0.0"
   }
 }
