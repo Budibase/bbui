@@ -39,7 +39,7 @@
 </p>
 <p>
   The modal module in BBUI exposes two
-  separate components to provide this functionality - a <code>Modal</code> component to control visibility of content,
+  separate components to provide this functionality; a <code>Modal</code> component to control visibility of content,
   and a <code>ModalContent</code> component to quickly construct the typical content - although this is optional.
 </p>
 <p>

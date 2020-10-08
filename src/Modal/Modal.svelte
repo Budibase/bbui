@@ -8,8 +8,8 @@
   export let padding = true
   export let width = undefined
   export let border = true
-  export let visible = false
 
+  let visible = false
   $: dispatch(visible ? "show" : "hide")
 
   export function show() {
