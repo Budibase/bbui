@@ -51,9 +51,10 @@
     color: var(--ink);
   }
   .secondary {
-    border: var(--border-dark);
+    border: var(--border-grey);
     background-color: white;
-    color: var(--ink);
+    color: var(--grey-8);
+    font-weight: 500;
   }
   button.secondary:hover:not([disabled]) {
     background-color: var(--grey-2);

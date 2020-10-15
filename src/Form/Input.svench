@@ -8,6 +8,10 @@
   <Input placeholder="Enter your name" label="Name" />
 </View>
 
+<View name="presentation">
+  <Input presentation placeholder="Enter your name" label="Name" />
+</View>
+
 <View name="outline">
   <Input outline placeholder="Enter your name" label="Name" />
 </View>
@@ -18,6 +22,14 @@
 
 <View name="thin">
   <Input thin placeholder="Enter your name" label="Name" />
+</View>
+
+<View name="large">
+  <Input large presentation placeholder="Enter your name" label="Name" />
+</View>
+
+<View name="border">
+  <Input border presentation placeholder="Enter your name" label="Name" />
 </View>
 
 

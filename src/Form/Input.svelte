@@ -7,7 +7,10 @@
   export let name = undefined;
   export let label = undefined;
   export let outline = false;
+  export let presentation = false;
   export let thin = false;
+  export let large = false;
+  export let border = false;
   export let edit = false;
   export let disabled = false;
   export let type = undefined;
@@ -42,12 +45,12 @@
 <style>
   .container {
     min-width: 0;
-    display: flex;
+    presentation: flex;
     flex-direction: column;
   }
 
   .label-container {
-    display: flex;
+    presentation: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -59,7 +62,7 @@
 
   .controls {
     align-items: center;
-    display: grid;
+    presentation: grid;
     grid-template-columns: auto auto;
     grid-gap: 12px;
     margin-left: auto;
@@ -84,13 +87,30 @@
     outline: none;
     font-family: var(--font-sans);
     border: var(--border-transparent);
+    transition: all 0.2s ease-in-out;
+  }
+  input.presentation {
+    background-color: white;
+    border: var(--white) 2px solid;
+  }
+  input.presentation:hover {
+    background-color: var(--grey-2);
+    border: var(--grey-4) 2px solid;
   }
   input.thin {
     font-size: var(--font-size-xs);
   }
+  input.large {
+    font-size: var(--font-size-m);
+    padding: var(--spacing-l);
+
+  }
   input.outline {
     border: var(--border-dark);
     background: white;
+  }
+  input.border {
+    border: var(--border-grey);
   }
   input::placeholder {
     color: var(--grey-6);
@@ -130,7 +150,10 @@
   {/if}
   <input
     class:outline
+    class:presentation
     class:thin
+    class:large
+    class:border
     on:change
     on:input
     on:change={updateValue}
