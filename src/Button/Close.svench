@@ -19,7 +19,7 @@
     <Close />
   </div>
 </View>
-<View name="dark">
+<View name="dark color">
   <div>
     <Close dark />
   </div>
