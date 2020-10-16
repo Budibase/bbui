@@ -17,7 +17,6 @@
   export let placeholder = "";
   export let value = "";
   export let error = false;
-
   export let validator = () => {};
 
   // This section handles the edit mode and dispatching of things to the parent when saved
