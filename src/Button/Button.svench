@@ -18,6 +18,24 @@
   <Button secondary large on:click={() => alert('Clicked!')}>Large</Button>
   <Button secondary wide on:click={() => alert('Clicked!')}>Wide</Button>
 </View>
+<View name="Translucent">
+  <div class="translucent">
+    <div class="light">
+      <Button translucent small on:click={() => alert('Clicked!')}>Small</Button>
+      <Button translucent on:click={() => alert('Clicked!')}>Default</Button>
+      <Button translucent medium on:click={() => alert('Clicked!')}>Medium</Button>
+      <Button translucent large on:click={() => alert('Clicked!')}>Large</Button>
+      <Button translucent wide on:click={() => alert('Clicked!')}>Wide</Button>
+    </div>
+    <div class="dark">
+      <Button translucent small on:click={() => alert('Clicked!')}>Small</Button>
+      <Button translucent on:click={() => alert('Clicked!')}>Default</Button>
+      <Button translucent medium on:click={() => alert('Clicked!')}>Medium</Button>
+      <Button translucent large on:click={() => alert('Clicked!')}>Large</Button>
+      <Button translucent wide on:click={() => alert('Clicked!')}>Wide</Button>
+    </div>
+  </div>
+</View>
 <View name="Blue">
   <Button blue small on:click={() => alert('Clicked!')}>Small</Button>
   <Button blue on:click={() => alert('Clicked!')}>Default</Button>
@@ -101,3 +119,20 @@
 <View name="a link that looks like a button">
   <Button primary href="https://google.com">Linkbutton</Button>
 </View>
+
+
+<style>
+  .translucent {
+    display: flex;
+    gap: 20px;
+  }
+  .translucent > div {
+    padding: 10px;
+  }
+  .light {
+    background-color: white;
+  }
+  .dark {
+    background-color: #2a2a2a;
+  }
+</style>
