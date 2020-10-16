@@ -17,7 +17,7 @@
   export let placeholder = "";
   export let value = "";
   export let error = false;
-  
+
   export let validator = () => {};
 
   // This section handles the edit mode and dispatching of things to the parent when saved
@@ -45,12 +45,12 @@
 <style>
   .container {
     min-width: 0;
-    presentation: flex;
+    display: flex;
     flex-direction: column;
   }
 
   .label-container {
-    presentation: flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -62,7 +62,7 @@
 
   .controls {
     align-items: center;
-    presentation: grid;
+    display: grid;
     grid-template-columns: auto auto;
     grid-gap: 12px;
     margin-left: auto;
