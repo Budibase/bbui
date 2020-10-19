@@ -26,5 +26,8 @@ export { default as Heading } from "./Styleguide/Heading.svelte";
 export { default as Label } from "./Styleguide/Label.svelte";
 export { default as Close } from "./Button/Close.svelte";
 export { default as Modal } from "./Modal/Modal.svelte";
+export { default as ModalContent } from "./Modal/ModalContent.svelte";
 export { default as Spacer } from "./Spacer/Spacer.svelte";
 export { default as DatePicker } from "./DatePicker/DatePicker.svelte";
+export { default as Multiselect } from "./Form/Multiselect.svelte";
+export { default as Context } from "./context";

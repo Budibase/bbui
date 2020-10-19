@@ -3,6 +3,7 @@
     secondary = false,
     blue = false,
     disabled = false,
+    translucent = false,
     text = false,
     red = false,
     yellow = false,
@@ -51,11 +52,22 @@
     color: var(--ink);
   }
   .secondary {
-    border: var(--border-dark);
+    border: var(--border-grey);
     background-color: white;
-    color: var(--ink);
+    color: var(--grey-8);
+    font-weight: 500;
   }
   button.secondary:hover:not([disabled]) {
+    background-color: var(--grey-2);
+    color: var(--ink);
+  }
+  .translucent {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--grey-6);
+    font-weight: 500;
+  }
+  button.translucent:hover:not([disabled]) {
     background-color: var(--grey-2);
     color: var(--ink);
   }
@@ -157,6 +169,7 @@
     {href}
     class:primary
     class:secondary
+    class:translucent
     class:blue
     class:red
     class:yellow
@@ -175,6 +188,7 @@
   <button
     class:primary
     class:secondary
+    class:translucent
     class:blue
     class:red
     class:yellow
