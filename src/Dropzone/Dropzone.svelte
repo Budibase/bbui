@@ -22,6 +22,8 @@
 
   let selectedImageIdx = 0
   let fileDragged = false
+  // Generate a random ID so that multiple dropzones on the page don't conflict
+  let id = Math.random().toString(36).substring(7)
 
   $: selectedImage = files ? files[selectedImageIdx] : null
 
@@ -120,8 +122,8 @@
     {/if}
   </ul>
   <i class={icons.fileUpload} />
-  <input id="file-upload" type="file" multiple on:change={handleFile} />
-  <label for="file-upload">Upload</label>
+  <input {id} type="file" multiple on:change={handleFile} {...$$restProps} />
+  <label for={id}>Upload</label>
 </div>
 
 <style>
