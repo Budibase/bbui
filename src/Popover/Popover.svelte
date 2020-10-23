@@ -1,15 +1,19 @@
 <script>
+  import { createEventDispatcher } from "svelte"
   import buildStyle from "../utils/buildStyle"
+  const dispatch = createEventDispatcher()
 
   export let anchor
   export let align = "right"
 
   export const show = () => {
     open = true
+    dispatch("show")
   }
 
   export const hide = () => {
     open = false
+    dispatch("hide")
   }
 
   let open = null
