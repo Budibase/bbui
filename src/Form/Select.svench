@@ -51,4 +51,12 @@
   </Select>
 </View>
 
+<View name="extraThin">
+  <Select extraThin name="Test" label="Flavour">
+    <option value="">Choose an option</option>
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Select>
+</View>
 

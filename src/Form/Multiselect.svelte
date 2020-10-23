@@ -12,6 +12,7 @@
   export let outline = false;
   export let disabled = false;
   export let placeholder = undefined;
+  export let extraThin = false;
 
   let options = [];
   let optionsVisible = false;
@@ -104,11 +105,12 @@
         class:outline
         class:disabled
         class:secondary
+        class:extraThin
         class:optionsVisible
         on:click|self={handleClick}
         class:empty={!value || !value.length}>
         {#each selectedOptions as option}
-          <div class="token" class:secondary data-id={option.value} on:click|self={handleClick}>
+          <div class="token" class:extraThin data-id={option.value} on:click|self={handleClick}>
             <span>{option.name}</span>
             <div
               class="token-remove"
@@ -190,8 +192,7 @@
     flex: 1 1 auto;
     background-color: white;
     border-radius: var(--border-radius-m);
-    padding: 0 var(--spacing-m) calc(var(--spacing-m) - var(--spacing-xs))
-    calc(var(--spacing-m) / 2);
+    padding: 0 var(--spacing-m) calc(var(--spacing-m) - var(--spacing-xs)) calc(var(--spacing-m) / 2);
     border: var(--border-transparent);
   }
   .tokens.disabled {
@@ -204,6 +205,9 @@
   .tokens.secondary {
     background-color: var(--grey-2);
   }
+  .tokens.extraThin {
+    padding: 0 var(--spacing-m) calc(var(--spacing-s) - var(--spacing-xs)) calc(var(--spacing-m) / 2);
+  }
   .tokens:hover {
     cursor: pointer;
   }
@@ -214,6 +218,9 @@
     padding: var(--spacing-m);
     font-size: var(--font-size-xs);
     user-select: none;
+  }
+  .tokens.empty.extraThin {
+    padding: var(--spacing-s) var(--spacing-m);
   }
   .tokens::after {
     width: 100%;
@@ -235,6 +242,10 @@
     transition: background-color 0.3s;
     white-space: nowrap;
     overflow: hidden;
+  }
+  .token.extraThin {
+    margin: calc(var(--spacing-s) - var(--spacing-xs)) 0 0
+    calc(var(--spacing-m) / 2);
   }
   .token span {
     pointer-events: none;

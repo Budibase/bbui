@@ -24,6 +24,10 @@
   <Input thin placeholder="Enter your name" label="Name" />
 </View>
 
+<View name="extraThin">
+  <Input extraThin placeholder="Enter your name" label="Name" />
+</View>
+
 <View name="large">
   <Input large presentation placeholder="Enter your name" label="Name" />
 </View>

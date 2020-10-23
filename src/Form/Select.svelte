@@ -6,6 +6,7 @@
   export let name = undefined;
   export let label = undefined;
   export let thin = false;
+  export let extraThin = false;
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
@@ -32,6 +33,10 @@
   }
   select.thin {
     padding: var(--spacing-m);
+    font-size: var(--font-size-xs);
+  }
+  select.extraThin {
+    padding: var(--spacing-s) 2rem var(--spacing-s) var(--spacing-m) !important;
     font-size: var(--font-size-xs);
   }
   select.secondary {
@@ -73,6 +78,7 @@
     <select
       {name}
       class:thin
+      class:extraThin
       class:secondary
       class:outline
       {disabled}

@@ -9,6 +9,7 @@
   export let outline = false;
   export let presentation = false;
   export let thin = false;
+  export let extraThin = false;
   export let large = false;
   export let border = false;
   export let edit = false;
@@ -99,6 +100,10 @@
   input.thin {
     font-size: var(--font-size-xs);
   }
+  input.extraThin {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-s) var(--spacing-m);
+  }
   input.large {
     font-size: var(--font-size-m);
     padding: var(--spacing-l);
@@ -151,6 +156,7 @@
     class:outline
     class:presentation
     class:thin
+    class:extraThin
     class:large
     class:border
     on:change

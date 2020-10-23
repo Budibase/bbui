@@ -7,6 +7,7 @@
   export let value = "";
   export let name = undefined;
   export let thin = false;
+  export let extraThin = false;
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
@@ -27,8 +28,6 @@
     focus = false;
     dispatch("blur", e);
   }
-
-  $: console.log(value)
 </script>
 
 <style>
@@ -57,7 +56,7 @@
   select {
     display: block !important;
     width: 100% !important;
-    padding: var(--spacing-m) 2rem var(--spacing-m) var(--spacing-m) !important;
+    padding: var(--spacing-m) 2rem var(--spacing-m) var(--spacing-m);
     appearance: none !important;
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
@@ -79,6 +78,11 @@
   select.thin,
   input.thin {
     font-size: var(--font-size-xs);
+  }
+  select.extraThin,
+  input.extraThin {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-s) 0 var(--spacing-s) var(--spacing-m);
   }
   .secondary {
     background: var(--grey-2);
@@ -117,6 +121,7 @@
   <select
     {name}
     class:thin
+    class:extraThin
     class:secondary
     {disabled}
     on:change
@@ -128,6 +133,7 @@
   <slot name="custom-input" />
   <input
     class:thin
+    class:extraThin
     class:secondary
     class:disabled
     on:change={updateValue}

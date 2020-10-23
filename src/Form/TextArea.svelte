@@ -9,6 +9,7 @@
   export let name = false;
   export let label = false;
   export let thin = false;
+  export let extraThin = false;
   export let edit = false;
   export let disabled = false;
   export let placeholder;
@@ -79,6 +80,10 @@
   textarea.thin {
     font-size: var(--font-size-xs);
   }
+  textarea.extraThin {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-s) var(--spacing-m);
+  }
   textarea:focus {
     border: var(--border-blue);
   }
@@ -113,6 +118,7 @@
   {/if}
   <textarea
     class:thin
+    class:extraThin
     bind:value
     on:change
     disabled={disabled || (edit && !editMode)}
