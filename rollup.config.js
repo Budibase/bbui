@@ -74,7 +74,7 @@ const configs = {
       svelte({
         dev: !PRODUCTION,
         css: css => {
-          css.write('public/svench/svench.css')
+          css.write('svench.css')
         },
         extensions: ['.svelte', '.svench', '.svx', '.md'],
         // Svench's "combined" preprocessor wraps both Mdsvex preprocessors
