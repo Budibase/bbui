@@ -15,6 +15,11 @@
   export let placeholder;
   export let validator = () => {};
   export let value = "";
+  export const getCaretPosition = () => {
+    return {start: textarea.selectionStart, end: textarea.selectionEnd};
+  };
+
+  let textarea
 
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
@@ -120,6 +125,7 @@
     class:thin
     class:extraThin
     bind:value
+    bind:this={textarea}
     on:change
     disabled={disabled || (edit && !editMode)}
     {placeholder}
