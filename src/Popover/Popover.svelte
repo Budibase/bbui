@@ -38,7 +38,6 @@
     } = anchor.getBoundingClientRect()
     const spaceBelow = window.innerHeight - bottom
     const containerRect = containerEl.getBoundingClientRect()
-
     let y
 
     if (spaceAbove > spaceBelow) {
