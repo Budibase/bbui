@@ -114,7 +114,7 @@
     transform: scale(0);
     transition: opacity 0.13s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);
     overflow-y: auto;
-    background: #fff;
+    background-color: var(--background);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
   }
 

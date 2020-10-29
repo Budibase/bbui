@@ -18,7 +18,7 @@
     height: 1.25em;
     fill: currentColor;
     overflow: visible;
-    margin-right: var(--spacing-s);
+    margin-right: var(--spacing-xs);
   }
 </style>
 

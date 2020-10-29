@@ -70,6 +70,7 @@
     display: grid;
     position: relative;
     gap: var(--spacing-xl);
+    color: var(--ink);
   }
 
   header {

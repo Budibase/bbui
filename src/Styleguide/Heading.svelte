@@ -43,7 +43,7 @@
   }
 
   .white {
-    color: var(--white);
+    color: white;
   }
 
   .grey {

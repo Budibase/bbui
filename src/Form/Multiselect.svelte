@@ -190,7 +190,7 @@
     position: relative;
     width: 0;
     flex: 1 1 auto;
-    background-color: white;
+    background-color: var(--background);
     border-radius: var(--border-radius-m);
     padding: 0 var(--spacing-m) calc(var(--spacing-m) - var(--spacing-xs)) calc(var(--spacing-m) / 2);
     border: var(--border-transparent);
@@ -230,7 +230,7 @@
   .token {
     font-size: var(--font-size-xs);
     background-color: var(--ink);
-    color: white;
+    color: var(--background);
     border-radius: var(--border-radius-l);
     display: flex;
     flex-direction: row;
@@ -257,9 +257,8 @@
   }
   .token .token-remove {
     align-items: center;
-    background-color: var(--grey-8);
+    background-color: var(--grey-7);
     border-radius: 50%;
-    color: var(--white);
     display: flex;
     justify-content: center;
     height: 1rem;
@@ -268,13 +267,17 @@
     var(--spacing-xs);
     flex: 0 0 auto;
   }
+  .token path {
+    fill: var(--background);
+  }
   .token .token-remove:hover {
-    background-color: var(--grey-7);
+    background-color: var(--grey-6);
     cursor: pointer;
   }
 
   .placeholder {
     pointer-events: none;
+    color: var(--ink);
   }
   .placeholder.disabled {
     color: var(--grey-6);
@@ -306,14 +309,14 @@
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
     margin: var(--spacing-xs) 0;
     padding: var(--spacing-s) 0;
-    background-color: white;
+    background-color: var(--background);
     max-height: 200px;
   }
   li {
-    background-color: white;
     cursor: pointer;
     padding: var(--spacing-s) var(--spacing-m);
     font-size: var(--font-size-xs);
+    color: var(--ink);
   }
   li.selected {
     background-color: var(--blue);

@@ -36,6 +36,7 @@
     display: block;
     border-radius: var(--border-radius-s);
     border: var(--border-transparent);
+    background-color: var(--background);
   }
   .container.outline {
     border: var(--border-dark);
@@ -52,6 +53,7 @@
     border: none;
     color: var(--ink);
     text-align: left;
+    background-color: transparent;
   }
   select {
     display: block !important;
@@ -68,7 +70,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - 50px);
+    width: calc(100% - 30px);
     height: 100%;
     border: none;
     box-sizing: border-box;
@@ -110,7 +112,11 @@
     border-style: solid;
     border-width: 0 0 0 1px;
     border-color: var(--grey-4);
-    padding-left: var(--spacing-m);
+    padding-left: var(--spacing-xs);
+  }
+  .editable-pointer :global(svg) {
+    margin-right: var(--spacing-xs);
+    fill: var(--ink)
   }
 </style>
 
@@ -136,6 +142,7 @@
     class:extraThin
     class:secondary
     class:disabled
+    {disabled}
     on:change={updateValue}
     on:input={updateValue}
     on:focus={handleFocus}

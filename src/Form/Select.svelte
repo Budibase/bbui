@@ -30,6 +30,7 @@
     white-space: pre;
     outline: none;
     border: var(--border-transparent);
+    background-color: var(--background);
   }
   select.thin {
     padding: var(--spacing-m);
@@ -67,6 +68,7 @@
     padding-left: 0.5rem !important;
     align-items: center !important;
     display: flex !important;
+    color: var(--ink);
   }
 </style>
 

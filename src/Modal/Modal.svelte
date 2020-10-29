@@ -93,7 +93,7 @@
   }
 
   .modal {
-    background-color: white;
+    background-color: var(--background);
     display: grid;
     align-items: stretch;
     box-shadow: 0 0 4rem 1.5rem rgba(0, 0, 0, 0.15);

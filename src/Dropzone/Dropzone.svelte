@@ -155,7 +155,7 @@
     box-sizing: border-box;
     overflow: hidden;
     border-radius: var(--border-radius-s);
-    color: var(--white);
+    color: var(--background);
     padding: var(--spacing-s) var(--spacing-l);
     transition: all 0.2s ease 0s;
     display: inline-flex;
@@ -178,7 +178,7 @@
     padding: var(--spacing-xs);
     position: absolute;
     background: black;
-    color: var(--white);
+    color: white;
     display: flex;
     align-items: center;
     bottom: var(--spacing-s);
@@ -220,7 +220,7 @@
   }
 
   .file-icon {
-    color: var(--white);
+    color: white;
     font-size: 2em;
     margin-right: var(--spacing-s);
   }
@@ -250,7 +250,7 @@
   }
 
   header > div {
-    color: var(--white);
+    color: white;
     display: flex;
     align-items: center;
     font-size: 15px;
@@ -280,7 +280,7 @@
     border-radius: 10px;
     opacity: 0;
     transition: all 0.3s;
-    color: var(--white);
+    color: white;
   }
 
   .delete-button i {
