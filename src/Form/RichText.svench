@@ -1,0 +1,10 @@
+<script>
+  import { View } from "svench";
+  import RichText from "./RichText.svelte";
+
+  const options = ["Chocolate", "Vanilla", "Strawberry Cheesecake"];
+</script>
+
+<View name="default">
+  <RichText content="<h1>HELLO!!</h1>" />
+</View>
