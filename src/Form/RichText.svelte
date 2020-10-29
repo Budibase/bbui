@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   export let content = "";
   export let options = null;
+  export let width = 400;
 
   let quill;
   let container;
@@ -36,6 +37,6 @@
   <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
 </svelte:head>
 
-<div class="wrapper">
-  <div bind:this={container} on:text-change={console.log} />
+<div style="width: {width}px">
+  <div bind:this={container} />
 </div>
