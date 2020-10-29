@@ -2,9 +2,33 @@
   import { View } from "svench";
   import RichText from "./RichText.svelte";
 
-  const options = ["Chocolate", "Vanilla", "Strawberry Cheesecake"];
+  const options = { placeholder: "this is not the default value!" };
 </script>
 
+<h3>Rich Text Component</h3>
+<p>
+  This component uses the QuillJS library to add Rich Text editing
+  functionality.
+</p>
+<p>
+  It exposes a
+  <code>content</code>
+  variable that you can bind to in order to get HTML out of the component.
+</p>
+<p>
+  As well as the content you can also pass in an option object that looks like
+  so:
+</p>
+<pre>let options = {JSON.stringify({ modules: { toolbar: [[{ header: [1, 2, 3, false] }], ['bold', 'italic', 'underline', 'strike']] }, placeholder: 'Type something...', theme: 'snow' }, null, 2)}</pre>
+
 <View name="default">
+  <RichText />
+</View>
+
+<View name="passing in HTML">
   <RichText content="<h1>HELLO!!</h1>" />
+</View>
+
+<View name="passing in custom options">
+  <RichText {options} />
 </View>

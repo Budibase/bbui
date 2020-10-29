@@ -1,10 +1,11 @@
 <script>
   import Quill from "quill";
   import { onMount } from "svelte";
-  export let content;
+  export let content = "";
+  export let options = null;
+
   let quill;
   let container;
-  let options = {};
   let defaultOptions = {
     modules: {
       toolbar: [
@@ -38,5 +39,3 @@
 <div class="wrapper">
   <div bind:this={container} on:text-change={console.log} />
 </div>
-
-<pre>{@html content}</pre>
