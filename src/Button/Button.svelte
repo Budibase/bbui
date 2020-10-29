@@ -26,7 +26,7 @@
     box-sizing: border-box;
     overflow: hidden;
     border-radius: var(--border-radius-s);
-    color: var(--white);
+    color: white;
     padding: var(--spacing-s) var(--spacing-l);
     transition: all 0.2s ease 0s;
     display: inline-flex;
@@ -44,16 +44,17 @@
   }
 
   .primary {
+    color: var(--background);
     border: var(--border-black);
     background-color: var(--ink);
   }
   button.primary:hover:not([disabled]) {
-    background-color: var(--white);
+    background-color: var(--background);
     color: var(--ink);
   }
   .secondary {
     border: var(--border-grey);
-    background-color: white;
+    background-color: var(--background);
     color: var(--grey-8);
     font-weight: 500;
   }
@@ -129,6 +130,7 @@
     color: var(--grey-7);
     border: none;
     padding: 0;
+    font-weight: 500;
   }
   button.text:hover:not([disabled]) {
     color: var(--ink);

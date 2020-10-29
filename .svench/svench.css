@@ -28,9 +28,7 @@ h6.svench-content {
 }
 
 :root {
-  --white: #ffffff;
-  --black: #000000;
-
+  --background: #ffffff;
   --ink: #000000;
 
   --grey-1: #fafafa;
@@ -118,7 +116,7 @@ h6.svench-content {
   --border-radius-l: 1rem;
   --border-radius-xl: 100rem;
 
-  --border-black: 2.5px var(--black) solid;
+  --border-black: 2.5px var(--ink) solid;
   --border-dark: 2px var(--grey-7) solid;
   --border-grey: 1px var(--grey-4) solid;
   --border-light: 1px var(--grey-3) solid;

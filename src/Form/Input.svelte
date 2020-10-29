@@ -90,8 +90,8 @@
     transition: all 0.2s ease-in-out;
   }
   input.presentation {
-    background-color: white;
-    border: var(--white) 2px solid;
+    background-color: var(--background);
+    border: var(--background) 2px solid;
   }
   input.presentation:hover {
     background-color: var(--grey-2);
@@ -111,7 +111,7 @@
   }
   input.outline {
     border: var(--border-dark);
-    background: white;
+    background: var(--background);
   }
   input.border {
     border: var(--border-grey);
@@ -124,7 +124,7 @@
   }
   input:disabled {
     background: var(--grey-4);
-    color: var(--grey-5);
+    color: var(--grey-6);
   }
 
   .error {

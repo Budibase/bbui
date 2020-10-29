@@ -38,6 +38,7 @@
     background-color: transparent;
     color: var(--grey-7);
     border: none;
+    font-weight: 500;
   }
   button.text:hover:not([disabled]) {
     color: var(--ink);

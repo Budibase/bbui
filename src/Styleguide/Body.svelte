@@ -41,7 +41,7 @@
   }
 
   .white {
-    color: var(--white);
+    color: white;
   }
 
   .grey {
@@ -66,7 +66,7 @@
   class:extraLarge
   class:white
   class:grey
-  class:black  
+  class:black
   class:lh>
   <slot />
 </p>
