@@ -20,7 +20,7 @@
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^6.0.0",
     "cross-env": "^7.0.2",
-    "nollup": "^0.12.1",
+    "nollup": "^0.13.13",
     "rollup": "^2.10.9",
     "rollup-plugin-delete": "^1.2.0",
     "rollup-plugin-hot": "^0.0.25",
