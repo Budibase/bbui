@@ -21,8 +21,8 @@
   <TextArea thin placeholder="Enter your email text" label="Email Body" />
 </View>
 
-<View name="thin">
-  <TextArea thin disabled placeholder="Enter your email text" label="Email Body" />
+<View name="extraThin">
+  <TextArea extraThin placeholder="Enter your email text" label="Email Body" />
 </View>
 
 <View name="with buttons">

@@ -47,4 +47,11 @@
   </DataList>
 </View>
 
+<View name="extraThin">
+  <DataList extraThin name="Test" label="Flavour">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </DataList>
+</View>
 

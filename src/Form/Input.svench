@@ -20,8 +20,16 @@
   <Input disabled placeholder="Enter your name" label="Name" />
 </View>
 
+<View name="disabled with value">
+  <Input value="Some text" disabled placeholder="Enter your name" label="Name" />
+</View>
+
 <View name="thin">
   <Input thin placeholder="Enter your name" label="Name" />
+</View>
+
+<View name="extraThin">
+  <Input extraThin placeholder="Enter your name" label="Name" />
 </View>
 
 <View name="large">

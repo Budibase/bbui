@@ -21,9 +21,9 @@
   .toggle {
     position: relative;
     display: inline-block;
-    align-self: center; 
+    align-self: center;
     cursor: pointer;
-    -webkit-user-select: none; 
+    -webkit-user-select: none;
     background: transparent;
   }
 
@@ -85,6 +85,7 @@
     font-family: var(--font-sans);
     cursor: pointer;
     user-select: none;
+    color: var(--ink);
   }
   .text.thin {
     font-size: var(--font-size-xs);

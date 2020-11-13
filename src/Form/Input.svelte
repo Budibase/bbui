@@ -9,6 +9,7 @@
   export let outline = false;
   export let presentation = false;
   export let thin = false;
+  export let extraThin = false;
   export let large = false;
   export let border = false;
   export let edit = false;
@@ -89,8 +90,8 @@
     transition: all 0.2s ease-in-out;
   }
   input.presentation {
-    background-color: white;
-    border: var(--white) 2px solid;
+    background-color: var(--background);
+    border: var(--background) 2px solid;
   }
   input.presentation:hover {
     background-color: var(--grey-2);
@@ -99,6 +100,10 @@
   input.thin {
     font-size: var(--font-size-xs);
   }
+  input.extraThin {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-s) var(--spacing-m);
+  }
   input.large {
     font-size: var(--font-size-m);
     padding: var(--spacing-l);
@@ -106,7 +111,7 @@
   }
   input.outline {
     border: var(--border-dark);
-    background: white;
+    background: var(--background);
   }
   input.border {
     border: var(--border-grey);
@@ -119,7 +124,7 @@
   }
   input:disabled {
     background: var(--grey-4);
-    color: var(--grey-5);
+    color: var(--grey-6);
   }
 
   .error {
@@ -151,6 +156,7 @@
     class:outline
     class:presentation
     class:thin
+    class:extraThin
     class:large
     class:border
     on:change

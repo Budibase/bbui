@@ -3,7 +3,7 @@
 </script>
 
 <View name="Base">
-  <div class="white">var(--white)</div>
+  <div class="white">white</div>
   <div class="grey1">var(--grey-1)</div>
   <div class="grey2">var(--grey-2)</div>
   <div class="grey3">var(--grey-3)</div>
@@ -63,7 +63,7 @@ div {
 }
 
 .white {
- background-color: var(--white);
+ background-color: white;
 }
 
 .grey1 {
@@ -96,27 +96,27 @@ div {
 
 .grey7 {
   background-color: var(--grey-7);
-  color: var(--white);
+  color: white;
 }
 
 .grey8 {
   background-color: var(--grey-8);
-  color: var(--white);
+  color: white;
 }
 
 .grey9 {
   background-color: var(--grey-9);
-  color: var(--white);
+  color: white;
 }
 
 .ink {
   background-color: var(--ink);
-  color: var(--white);
+  color: white;
 }
 
 .blue {
   background-color: var(--blue);
-  color: var(--white);
+  color: white;
 }
 
 .blue-light {
@@ -125,12 +125,12 @@ div {
 
 .blue-dark {
   background-color: var(--blue-dark);
-  color: var(--white);
+  color: white;
 }
 
 .yellow {
   background-color: var(--yellow);
-  color: var(--white);
+  color: white;
 }
 
 .yellow-light {
@@ -139,12 +139,12 @@ div {
 
 .yellow-dark {
   background-color: var(--yellow-dark);
-  color: var(--white);
+  color: white;
 }
 
 .red {
   background-color: var(--red);
-  color: var(--white);
+  color: white;
 }
 
 .red-light {
@@ -153,12 +153,12 @@ div {
 
 .red-dark {
   background-color: var(--red-dark);
-  color: var(--white);
+  color: white;
 }
 
 .orange {
   background-color: var(--orange);
-  color: var(--white);
+  color: white;
 }
 
 .orange-light {
@@ -167,12 +167,12 @@ div {
 
 .orange-dark {
   background-color: var(--orange-dark);
-  color: var(--white);
+  color: white;
 }
 
 .green {
   background-color: var(--green);
-  color: var(--white);
+  color: white;
 }
 
 .green-light {
@@ -181,12 +181,12 @@ div {
 
 .green-dark {
   background-color: var(--green-dark);
-  color: var(--white);
+  color: white;
 }
 
 .purple {
   background-color: var(--purple);
-  color: var(--white);
+  color: white;
 }
 
 .purple-light {
@@ -195,7 +195,7 @@ div {
 
 .purple-dark {
   background-color: var(--purple-dark);
-  color: var(--white);
+  color: white;
 }
 
 </style>

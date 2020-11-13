@@ -1,15 +1,19 @@
 <script>
+  import { createEventDispatcher } from "svelte"
   import buildStyle from "../utils/buildStyle"
+  const dispatch = createEventDispatcher()
 
   export let anchor
   export let align = "right"
 
   export const show = () => {
     open = true
+    dispatch("show")
   }
 
   export const hide = () => {
     open = false
+    dispatch("hide")
   }
 
   let open = null
@@ -34,7 +38,6 @@
     } = anchor.getBoundingClientRect()
     const spaceBelow = window.innerHeight - bottom
     const containerRect = containerEl.getBoundingClientRect()
-
     let y
 
     if (spaceAbove > spaceBelow) {
@@ -110,7 +113,7 @@
     transform: scale(0);
     transition: opacity 0.13s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);
     overflow-y: auto;
-    background: #fff;
+    background-color: var(--background);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
   }
 

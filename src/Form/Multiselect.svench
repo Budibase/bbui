@@ -36,3 +36,11 @@
     {/each}
   </Multiselect>
 </View>
+
+<View name="extraThin">
+  <Multiselect name="Test" label="Colours" extraThin placeholder="Choose some colours">
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </Multiselect>
+</View>

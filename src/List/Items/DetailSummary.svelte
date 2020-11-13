@@ -1,8 +1,9 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-  
+
   const dispatch = createEventDispatcher();
 
+  export let thin = false;
   export let name,
     show = false;
 
@@ -21,26 +22,33 @@
     display: flex;
     flex-direction: column;
     height: auto;
-    margin: 0px 0px 4px 0px;
-    padding: 8px 0px;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: var(--border-radius-m);
+    font-family: var(--font-sans);
   }
 
   .property-group-name {
     cursor: pointer;
     display: flex;
     flex-flow: row nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .name {
-    flex: 1;
     text-align: left;
-    padding-top: 2px;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.14px;
     color: var(--ink);
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .name.thin {
+    font-size: var(--font-size-xs);
   }
 
   .icon {
@@ -60,12 +68,13 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    margin-top: var(--spacing-m);
   }
 </style>
 
-<div class="property-group-container">
+<div class="property-group-container" class:thin>
   <div class="property-group-name" on:click={onHeaderClick}>
-    <div class="name">{capitalize(name)}</div>
+    <div class:thin class="name">{capitalize(name)}</div>
     <div class="icon">
       <i class={show ? 'ri-arrow-down-s-fill' : 'ri-arrow-left-s-fill'} />
     </div>

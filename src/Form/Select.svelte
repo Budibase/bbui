@@ -6,6 +6,7 @@
   export let name = undefined;
   export let label = undefined;
   export let thin = false;
+  export let extraThin = false;
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
@@ -29,9 +30,14 @@
     white-space: pre;
     outline: none;
     border: var(--border-transparent);
+    background-color: var(--background);
   }
   select.thin {
     padding: var(--spacing-m);
+    font-size: var(--font-size-xs);
+  }
+  select.extraThin {
+    padding: var(--spacing-s) 2rem var(--spacing-s) var(--spacing-m) !important;
     font-size: var(--font-size-xs);
   }
   select.secondary {
@@ -62,6 +68,7 @@
     padding-left: 0.5rem !important;
     align-items: center !important;
     display: flex !important;
+    color: var(--ink);
   }
 </style>
 
@@ -73,6 +80,7 @@
     <select
       {name}
       class:thin
+      class:extraThin
       class:secondary
       class:outline
       {disabled}

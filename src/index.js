@@ -9,6 +9,7 @@
 
 export { default as Input } from "./Form/Input.svelte";
 export { default as TextArea } from "./Form/TextArea.svelte";
+export { default as RichText } from "./Form/RichText.svelte";
 export { default as Select } from "./Form/Select.svelte";
 export { default as DataList } from "./Form/DataList.svelte";
 export { default as Dropzone } from "./Dropzone/Dropzone.svelte";
@@ -30,4 +31,5 @@ export { default as ModalContent } from "./Modal/ModalContent.svelte";
 export { default as Spacer } from "./Spacer/Spacer.svelte";
 export { default as DatePicker } from "./DatePicker/DatePicker.svelte";
 export { default as Multiselect } from "./Form/Multiselect.svelte";
+export { default as Slider } from "./Form/Slider.svelte";
 export { default as Context } from "./context";

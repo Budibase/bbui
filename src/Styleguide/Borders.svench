@@ -97,14 +97,14 @@ hr {
 .border-light {
     width: 40rem;
     height: 10rem;
-    background-color: var(--white);
+    background-color: white;
     border: var(--border-light);
 }
 
 .border-dark {
     width: 40rem;
     height: 10rem;
-    background-color: var(--white);
+    background-color: white;
     border: var(--border-dark);
 }
 
@@ -116,7 +116,7 @@ hr {
     font-family: var(--font-sans);
     width: 8rem;
     height: 3rem;
-    background-color: var(--black);
+    background-color: black;
     border-radius: var(--border-radius-xs);
     margin-right: var(--spacing-l);
 }
@@ -129,7 +129,7 @@ hr {
     font-family: var(--font-sans);
     width: 8rem;
     height: 3rem;
-    background-color: var(--black);
+    background-color: black;
     border-radius: var(--border-radius-s);
     margin-right: var(--spacing-l);
 }
@@ -142,7 +142,7 @@ hr {
     font-family: var(--font-sans);
     width: 8rem;
     height: 3rem;
-    background-color: var(--black);
+    background-color: black;
     border-radius: var(--border-radius-m);
     margin-right: var(--spacing-l);
 }
@@ -155,7 +155,7 @@ hr {
     font-family: var(--font-sans);
     width: 8rem;
     height: 3rem;
-    background-color: var(--black);
+    background-color: black;
     border-radius: var(--border-radius-l);
     margin-right: var(--spacing-l);
 }
@@ -168,7 +168,7 @@ hr {
     font-family: var(--font-sans);
     width: 8rem;
     height: 3rem;
-    background-color: var(--black);
+    background-color: black;
     border-radius: var(--border-radius-xl);
     margin-right: var(--spacing-l);
 }
