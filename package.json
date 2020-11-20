@@ -10,9 +10,11 @@
     "build": "rollup --config",
     "dev": "rollup --config --watch",
     "prepublishOnly": "npm run build",
-    "svench": "cross-env SVENCH=1 rollup -cw",
-    "svench:nollup": "cross-env SVENCH=1 nollup --hot --port 42421 --virtual-write public --watch src --watch '.svench/*' --watch node_modules/svench/tmp --config",
-    "svench:nollup:dev": "yarn svench:nollup --watch ../svench/src --watch ../svench/*.js",
+    "svench:rollup": "cross-env SVENCH=1 rollup -cw",
+    "svench:nollup": "cross-env SVENCH=1 nollup",
+    "svench:nollup:dev:help": "echo 'this script is used to dev Svench itself'",
+    "svench:nollup:dev": "yarn svench:nollup  --watch ../svench/src --watch ../svench/themes --watch ../svench/*.js",
+    "svench": "npm run --silent svench:nollup",
     "build:svench": "cross-env SVENCH=1 rollup -c",
     "test": "echo TODO"
   },
@@ -20,17 +22,16 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^6.0.0",
     "cross-env": "^7.0.2",
-    "nollup": "rixo/nollup#next",
-    "rehype-add-classes": "^1.0.0",
+    "nollup": "^0.13.13",
     "rollup": "^2.10.9",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-delete": "^1.2.0",
     "rollup-plugin-hot": "^0.0.25",
     "rollup-plugin-postcss-hot": "^0.0.5",
-    "rollup-plugin-svelte-hot": "^0.8.0",
+    "rollup-plugin-svelte-hot": "^0.11.0",
     "semantic-release": "^17.0.8",
-    "svelte": "^3.22.0",
-    "svench": "^0.0.10-4"
+    "svelte": "^3.29.0",
+    "svench": "^0.0.10-7"
   },
   "keywords": [
     "svelte"

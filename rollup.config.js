@@ -20,17 +20,29 @@ const SVENCH = !!process.env.SVENCH
 const HOT = WATCH
 const PRODUCTION = !WATCH
 
-// let $
 const svench = Svench({
   // The root dir that Svench will parse and watch.
-  dir: 'src',
+  //
+  // NOTE Watching the root of the project, to let Svench render *.md for us.
+  //
+  // NOTE By default, `node_modules` and `.git` dirs are ignored. This can be
+  // customized by passing a function to `ignore` option. Default ignore is:
+  //
+  //     ignore: path => /(?:^|\/)(?:node_modules|\.git)\//.test(path),
+  //
+  dir: '.',
+
+  // Make `src` dir a section (that is, it will always be "expanded" in the
+  // menu).
+  autoSections: ['src'],
 
   // Use custom index.html
   index: {
     source: "public/index.html"
   },
 
-  extensions: ['.svench', '.svench.svelte', '.svench.svx'],
+  extensions: ['.svench', '.svench.svelte', '.svench.svx', '.md'],
+
   serve: WATCH && {
     host: '0.0.0.0',
     port: 4242,
@@ -68,7 +80,10 @@ const configs = {
 
       svelte({
         dev: !PRODUCTION,
-        extensions: ['.svelte', '.svench', '.svx'],
+        css: css => {
+          css.write('svench.css')
+        },
+        extensions: ['.svelte', '.svench', '.svx', '.md'],
         // Svench's "combined" preprocessor wraps both Mdsvex preprocessors
         // (configured for Svench), and its own preprocessor (for static
         // analysis -- eg extract source from views)
