@@ -2,6 +2,7 @@ import * as path from 'path'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import copy from 'rollup-plugin-copy'
 import hmr from 'rollup-plugin-hot'
 import del from 'rollup-plugin-delete'
@@ -97,6 +98,7 @@ const configs = {
       resolve({ browser: true }),
 
       commonjs(),
+      json(),
 
       HOT &&
       hmr({
@@ -144,7 +146,8 @@ const configs = {
 
       resolve(),
 
-      commonjs()
+      commonjs(),
+      json(),
     ],
   }),
 }

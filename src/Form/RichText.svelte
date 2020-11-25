@@ -1,4 +1,6 @@
 <script>
+  import { MarkdownToQuill } from "md-to-quill-delta";
+  const converter = new MarkdownToQuill({ debug: false });
   import Quill from "quill";
   import { onMount } from "svelte";
   export let content = "";
