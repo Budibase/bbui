@@ -2,11 +2,13 @@ import * as path from 'path'
 import svelte from 'rollup-plugin-svelte-hot'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import copy from 'rollup-plugin-copy'
 import hmr from 'rollup-plugin-hot'
 import del from 'rollup-plugin-delete'
 import postcss from 'rollup-plugin-postcss-hot'
 import { plugin as Svench } from 'svench/rollup'
+import builtins from 'rollup-plugin-node-builtins'
 
 import pkg from './package.json'
 
@@ -38,7 +40,7 @@ const svench = Svench({
 
   // Use custom index.html
   index: {
-    source: "public/index.html"
+    source: 'public/index.html',
   },
 
   extensions: ['.svench', '.svench.svelte', '.svench.svx', '.md'],
@@ -62,6 +64,8 @@ const configs = {
       dir: 'public/svench',
     },
     plugins: [
+      builtins(),
+
       // NOTE cleaning old builds is required to avoid serving stale static
       // files from a previous build instead of in-memory files from the dev/hmr
       // server
@@ -97,14 +101,15 @@ const configs = {
       resolve({ browser: true }),
 
       commonjs(),
+      json(),
 
       HOT &&
-      hmr({
-        host: "0.0.0.0",
-        public: 'public',
-        inMemory: true,
-        compatModuleHot: !HOT, // for terser
-      }),
+        hmr({
+          host: '0.0.0.0',
+          public: 'public',
+          inMemory: true,
+          compatModuleHot: !HOT, // for terser
+        }),
     ],
 
     watch: {
@@ -135,16 +140,17 @@ const configs = {
       copy({
         targets: [
           {
-            src: ".svench/svench.css",
-            dest: "dist",
-            rename: 'bbui.css'
+            src: '.svench/svench.css',
+            dest: 'dist',
+            rename: 'bbui.css',
           },
         ],
       }),
 
       resolve(),
 
-      commonjs()
+      commonjs(),
+      json(),
     ],
   }),
 }
