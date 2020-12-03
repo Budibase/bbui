@@ -84,9 +84,6 @@ const configs = {
 
       svelte({
         dev: !PRODUCTION,
-        css: css => {
-          css.write('svench.css')
-        },
         extensions: ['.svelte', '.svench', '.svx', '.md'],
         // Svench's "combined" preprocessor wraps both Mdsvex preprocessors
         // (configured for Svench), and its own preprocessor (for static
@@ -104,12 +101,12 @@ const configs = {
       json(),
 
       HOT &&
-        hmr({
-          host: '0.0.0.0',
-          public: 'public',
-          inMemory: true,
-          compatModuleHot: !HOT, // for terser
-        }),
+      hmr({
+        host: '0.0.0.0',
+        public: 'public',
+        inMemory: true,
+        compatModuleHot: !HOT, // for terser
+      }),
     ],
 
     watch: {
@@ -143,6 +140,15 @@ const configs = {
             src: '.svench/svench.css',
             dest: 'dist',
             rename: 'bbui.css',
+          },
+        ],
+      }),
+      copy({
+        targets: [
+          {
+            src: '.svench/svench.css',
+            dest: 'public',
+            rename: 'global.css',
           },
         ],
       }),
