@@ -3,6 +3,7 @@
   import MarkdownIt from "markdown-it";
   import TurndownService from "turndown";
   import { onMount } from "svelte";
+  import "quill/dist/quill.snow.css";
 
   const convertMarkdown = new MarkdownIt();
   convertMarkdown.set({
@@ -27,12 +28,14 @@
     theme: "snow", // or 'bubble'
   };
 
+  let mergedOptions = { ...defaultOptions, ...options };
+
   const updateContent = () => {
     value = turndownService.turndown(quill.container.firstChild.innerHTML);
   };
 
   onMount(() => {
-    quill = new Quill(container, { ...defaultOptions, ...options });
+    quill = new Quill(container, mergedOptions);
     if (value)
       quill.clipboard.dangerouslyPasteHTML(
         convertMarkdown.render(value + "\n")
@@ -46,7 +49,11 @@
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
+  {#if mergedOptions.theme !== 'snow'}
+    <link
+      rel="stylesheet"
+      href="//cdn.quilljs.com/1.3.6/quill.{mergedOptions.theme}.css" />
+  {/if}
 </svelte:head>
 
 <div style="width: {width}px">
