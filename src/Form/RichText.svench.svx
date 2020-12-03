@@ -3,6 +3,7 @@
   import RichText from "./RichText.svelte";
 
   const options = { placeholder: "this is not the default value!" };
+  let value;
 </script>
 
 ### Rich Text Component
@@ -27,11 +28,11 @@ let options = {
 ```
 
 <View name="default">
-  <RichText />
+  <RichText bind:value />
 </View>
 
 <View name="passing in Markdown">
-  <RichText content="# This is an h1 heading!" />
+  <RichText value="# This is an h1 heading!" />
 </View>
 
 <View name="passing in custom options">

@@ -10,7 +10,7 @@
   });
   const turndownService = new TurndownService();
 
-  export let content = "";
+  export let value = "";
   export let options = null;
   export let width = 400;
 
@@ -28,15 +28,14 @@
   };
 
   const updateContent = () => {
-    content = turndownService.turndown(quill.container.firstChild.innerHTML);
-    console.log(content);
+    value = turndownService.turndown(quill.container.firstChild.innerHTML);
   };
 
   onMount(() => {
     quill = new Quill(container, { ...defaultOptions, ...options });
-    if (content)
+    if (value)
       quill.clipboard.dangerouslyPasteHTML(
-        convertMarkdown.render(content + "\n")
+        convertMarkdown.render(value + "\n")
       );
 
     quill.on("text-change", updateContent);
