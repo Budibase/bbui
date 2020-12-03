@@ -3,13 +3,14 @@
   import RichText from "./RichText.svelte";
 
   const options = { placeholder: "this is not the default value!" };
+  let value;
 </script>
 
 ### Rich Text Component
 
 This component uses the QuillJS library to add Rich Text editing functionality.
 
-It exposes a <code>content</code> variable that you can bind to in order to get HTML out of the component.
+It exposes a <code>content</code> variable that you can bind to in order to get Markdown out of the component.
 
 As well as the content you can also pass in an option object that looks like so:
 
@@ -27,11 +28,11 @@ let options = {
 ```
 
 <View name="default">
-  <RichText />
+  <RichText bind:value />
 </View>
 
-<View name="passing in HTML">
-  <RichText content="<h1>HELLO!!</h1>" />
+<View name="passing in Markdown">
+  <RichText value="# This is an h1 heading!" />
 </View>
 
 <View name="passing in custom options">

@@ -1,9 +1,16 @@
 <script>
-  import { MarkdownToQuill } from "md-to-quill-delta";
-  const converter = new MarkdownToQuill({ debug: false });
   import Quill from "quill";
+  import MarkdownIt from "markdown-it";
+  import TurndownService from "turndown";
   import { onMount } from "svelte";
-  export let content = "";
+
+  const convertMarkdown = new MarkdownIt();
+  convertMarkdown.set({
+    html: true,
+  });
+  const turndownService = new TurndownService();
+
+  export let value = "";
   export let options = null;
   export let width = 400;
 
@@ -21,12 +28,15 @@
   };
 
   const updateContent = () => {
-    content = container.getElementsByClassName("ql-editor")[0].innerHTML;
+    value = turndownService.turndown(quill.container.firstChild.innerHTML);
   };
 
   onMount(() => {
     quill = new Quill(container, { ...defaultOptions, ...options });
-    if (content) quill.clipboard.dangerouslyPasteHTML(content);
+    if (value)
+      quill.clipboard.dangerouslyPasteHTML(
+        convertMarkdown.render(value + "\n")
+      );
 
     quill.on("text-change", updateContent);
     return () => {
