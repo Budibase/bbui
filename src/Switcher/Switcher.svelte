@@ -17,7 +17,7 @@
   span {
     margin-right: var(--spacing-xl);
     font-size: var(--font-size-m);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--grey-5);
   }
 
