@@ -13,6 +13,7 @@ export { default as RichText } from "./Form/RichText.svelte";
 export { default as Select } from "./Form/Select.svelte";
 export { default as DataList } from "./Form/DataList.svelte";
 export { default as Dropzone } from "./Dropzone/Dropzone.svelte";
+export { default as Drawer } from "./Drawer.svelte";
 export { default as Button } from "./Button/Button.svelte";
 export { default as Icon, iconOptions, directions } from "./Icons/Icon.svelte";
 export { default as TextButton } from "./Button/TextButton.svelte";

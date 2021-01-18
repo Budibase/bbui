@@ -1,0 +1,22 @@
+<script>
+  import { View } from "svench";
+  import Button from "../Button/Button.svelte";
+  import Drawer from "./Drawer.svelte";
+
+  let drawerOpen = false;
+</script>
+
+<View name="Right Align (default)">
+  <Button secondary small on:click={() => (drawerOpen = true)}>
+    Open Sesame!
+  </Button>
+
+  {#if drawerOpen}
+    <Drawer title={'Actions'} onClose={() => (drawerOpen = false)}>
+      <heading slot="buttons">
+        <Button thin blue on:click={() => (drawerOpen = false)}>Save</Button>
+      </heading>
+      <div slot="body">Some content here</div>
+    </Drawer>
+  {/if}
+</View>
