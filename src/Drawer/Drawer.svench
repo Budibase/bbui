@@ -6,7 +6,7 @@
   let drawerOpen = false;
 </script>
 
-<View name="Right Align (default)">
+<View name="A basic drawer with a title and button (default)">
   <Button secondary small on:click={() => (drawerOpen = true)}>
     Open Sesame!
   </Button>
