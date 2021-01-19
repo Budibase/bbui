@@ -3,7 +3,6 @@
   import Portal from "svelte-portal";
 
   export let title;
-  export let onClose = () => {};
 
   let visible = false;
 
@@ -23,7 +22,7 @@
 
   function handleKey(e) {
     if (visible && e.key === "Escape") {
-      onClose();
+      hide();
     }
   }
 </script>
