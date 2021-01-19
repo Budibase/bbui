@@ -4,7 +4,28 @@
   import clickOutside from "../actions/click_outside";
 
   export let title;
-  export let onClose = () => {};
+
+  let visible = false;
+
+  export function show() {
+    if (visible) {
+      return;
+    }
+    visible = true;
+  }
+
+  export function hide() {
+    if (!visible) {
+      return;
+    }
+    visible = false;
+  }
+
+  function handleKey(e) {
+    if (visible && e.key === "Escape") {
+      hide();
+    }
+  }
 </script>
 
 <style>
@@ -45,18 +66,22 @@
   }
 </style>
 
-<Portal>
-  <section class="drawer" transition:slide>
-    <header>
-      <div class="text">
-        <div class="title">{title}</div>
-        <slot name="description" />
-      </div>
-      <div class="controls">
-        <slot name="buttons" />
-        <i class="ri-close-fill close" on:click={onClose} />
-      </div>
-    </header>
-    <slot name="body" />
-  </section>
-</Portal>
+<svelte:window on:keydown={handleKey} />
+
+{#if visible}
+  <Portal>
+    <section class="drawer" transition:slide>
+      <header>
+        <div class="text">
+          <div class="title">{title}</div>
+          <slot name="description" />
+        </div>
+        <div class="controls">
+          <slot name="buttons" />
+          <i class="ri-close-fill close" on:click={hide} />
+        </div>
+      </header>
+      <slot name="body" />
+    </section>
+  </Portal>
+{/if}
