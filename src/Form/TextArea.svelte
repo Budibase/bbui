@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import Button from "../Button/Button.svelte";
   import Label from "../Styleguide/Label.svelte";
-  import { text_area_resize } from "../actions/autoresize_textarea.js";
+  import text_area_resize from "../actions/autoresize_textarea.js";
 
   const dispatch = createEventDispatcher();
 
@@ -16,10 +16,10 @@
   export let validator = () => {};
   export let value = "";
   export const getCaretPosition = () => {
-    return {start: textarea.selectionStart, end: textarea.selectionEnd};
+    return { start: textarea.selectionStart, end: textarea.selectionEnd };
   };
 
-  let textarea
+  let textarea;
 
   // This section handles the edit mode and dispatching of things to the parent when saved
   let editMode = false;
@@ -107,9 +107,7 @@
   {#if label || edit}
     <div class="label-container">
       {#if label}
-        <Label extraSmall grey forAttr={name}>
-          {label}
-        </Label>
+        <Label extraSmall grey forAttr={name}>{label}</Label>
       {/if}
       {#if edit}
         <div class="controls">
