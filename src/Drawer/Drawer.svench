@@ -6,6 +6,12 @@
   let drawerOpen = false;
 </script>
 
+<style>
+  .drawer {
+    height: 40vh;
+  }
+</style>
+
 <View name="A basic drawer with a title and button (default)">
   <Button secondary small on:click={() => (drawerOpen = true)}>
     Open Sesame!
@@ -16,7 +22,23 @@
       <heading slot="buttons">
         <Button thin blue on:click={() => (drawerOpen = false)}>Save</Button>
       </heading>
-      <div slot="body">Some content here</div>
+      <div class="drawer" slot="body">Some content here</div>
+    </Drawer>
+  {/if}
+</View>
+
+<View name="A drawer with a description">
+  <Button secondary small on:click={() => (drawerOpen = true)}>
+    Open A new drawer with a description!
+  </Button>
+
+  {#if drawerOpen}
+    <Drawer title={'Actions'} onClose={() => (drawerOpen = false)}>
+      <heading slot="buttons">
+        <Button thin blue on:click={() => (drawerOpen = false)}>Save</Button>
+      </heading>
+      <div slot="description">This describes the drawer!</div>
+      <div class="drawer" slot="body">Some content here</div>
     </Drawer>
   {/if}
 </View>

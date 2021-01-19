@@ -1,6 +1,7 @@
 <script>
   import { slide } from "svelte/transition";
   import Portal from "svelte-portal";
+  import clickOutside from "../actions/click_outside";
 
   export let title;
   export let onClose = () => {};
@@ -8,7 +9,6 @@
 
 <style>
   .drawer {
-    height: 50vh;
     position: absolute;
     bottom: 0;
     width: 100vw;
@@ -36,12 +36,22 @@
     font-size: var(--font-size-xl);
     cursor: pointer;
   }
+  .title {
+    font-weight: bold;
+    margin-right: var(--spacing-m);
+  }
+  .text {
+    display: flex;
+  }
 </style>
 
 <Portal>
   <section class="drawer" transition:slide>
     <header>
-      {title}
+      <div class="text">
+        <div class="title">{title}</div>
+        <slot name="description" />
+      </div>
       <div class="controls">
         <slot name="buttons" />
         <i class="ri-close-fill close" on:click={onClose} />
