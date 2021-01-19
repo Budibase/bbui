@@ -38,4 +38,4 @@ export { default as Context } from "./context";
 
 // Actions
 export { default as autoResizeTextArea } from "./actions/autoresize_textarea";
-export { default as clickOutside } from "./actions/clickOutside";
+export { default as clickOutside } from "./actions/click_outside";

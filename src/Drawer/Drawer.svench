@@ -29,7 +29,7 @@
 
 <View name="A drawer with a description">
   <Button secondary small on:click={() => (drawerOpen = true)}>
-    Open A new drawer!
+    Open A new drawer with a description!
   </Button>
 
   {#if drawerOpen}
