@@ -109,12 +109,27 @@
     padding: var(--spacing-l);
 
   }
+  input.border {
+    border: var(--border-grey-2);
+  }
+  input.border:active {
+    border: var(--border-blue);
+  }
+  input.border:focus {
+    border: var(--border-blue);
+  }
   input.outline {
-    border: var(--border-dark);
+    border: var(--grey-2) 2px solid;
     background: var(--background);
   }
-  input.border {
-    border: var(--border-grey);
+  input.outline:active {
+    border: var(--border-blue);
+  }
+  input.outline:focus {
+    border: var(--border-blue);
+  }
+  input:hover {
+    border: var(--grey-4) 2px solid;
   }
   input::placeholder {
     color: var(--grey-6);

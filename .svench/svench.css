@@ -115,10 +115,12 @@ h6.svench-content {
   --border-radius-l: 1rem;
   --border-radius-xl: 100rem;
 
-  --border-black: 2.5px var(--ink) solid;
+  --border-black: 2px var(--ink) solid;
   --border-dark: 2px var(--grey-7) solid;
   --border-grey: 1px var(--grey-4) solid;
+  --border-grey-2: 2px var(--grey-4) solid;
   --border-light: 1px var(--grey-3) solid;
+  --border-light-2: 2px var(--grey-3) solid;
   --border-blue: 2px var(--blue) solid;
   --border-transparent: 2px transparent solid;
 }
