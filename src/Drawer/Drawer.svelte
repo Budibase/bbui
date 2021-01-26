@@ -32,9 +32,10 @@
   .drawer {
     position: absolute;
     bottom: 0;
-    width: 100vw;
+    left: 260px;
+    width: calc(100% - 520px);    
     background: var(--background);
-    border-top: var(--border-light);
+    border: var(--border-light);
     z-index: 2;
   }
 
@@ -42,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: var(--border-light);
+    border-bottom: var(--border-light);
     padding: var(--spacing-m);
   }
 
