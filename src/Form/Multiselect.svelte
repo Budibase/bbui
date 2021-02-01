@@ -1,4 +1,5 @@
 <script>
+  import Portal from "svelte-portal";
   import { afterUpdate } from "svelte";
   import { createEventDispatcher } from "svelte";
   import { fly } from "svelte/transition";
@@ -7,10 +8,14 @@
   const xPath =
     "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z";
 
+  import positionDropdown from '../actions/position_dropdown'
+  import clickOutside from '../actions/click_outside'
+
   const dispatch = createEventDispatcher();
 
   export let value = [];
   export let label = undefined;
+  export let align = "left"
   export let secondary = false;
   export let outline = false;
   export let disabled = false;
@@ -21,17 +26,8 @@
   let optionsVisible = false;
   let slot;
   let anchor;
-  let dimensions = { top: 0, left: 0, minWidth: 0, maxHeight: 0 };
   $: lookupMap = mapValues(value);
   $: selectedOptions = options.filter((option) => lookupMap[option.value]);
-
-  // Build CSS styles for options dropdown
-  $: menuStyle = buildStyle({
-    "max-height": `${dimensions.maxHeight.toFixed(0)}px`,
-    "min-width": `${dimensions.minWidth.toFixed(0)}px`,
-    top: `${dimensions.top}px`,
-    left: `${dimensions.left}px`,
-  });
 
   afterUpdate(() => {
     // Update available options
@@ -40,11 +36,6 @@
       value: option.value,
       name: option.textContent,
     }));
-
-    // Update dimensions after each dom update
-    if (optionsVisible) {
-      updateDimensions();
-    }
   });
 
   function mapValues(value) {
@@ -55,16 +46,6 @@
       });
     }
     return map;
-  }
-
-  function updateDimensions() {
-    const { bottom, left, width } = anchor.getBoundingClientRect();
-    dimensions = {
-      top: bottom,
-      left,
-      minWidth: width - 4,
-      maxHeight: window.innerHeight - bottom - 30,
-    };
   }
 
   function add(val) {
@@ -225,16 +206,6 @@
   .icon-clear path {
     fill: white;
   }
-
-  .options-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-  }
-
   .options {
     left: 0;
     list-style: none;
@@ -283,10 +254,9 @@
 {#if label}
   <Label extraSmall grey>{label}</Label>
 {/if}
-<div class="multiselect">
+<div class="multiselect" bind:this={anchor}>
   <div class="tokens-wrapper">
     <div
-      bind:this={anchor}
       class="tokens"
       class:outline
       class:disabled
@@ -332,10 +302,11 @@
   </select>
 
   {#if optionsVisible}
-    <div class="options-overlay" on:mousedown|self={() => showOptions(false)}>
+    <Portal>
       <ul
         class="options"
-        style={menuStyle}
+        use:positionDropdown={{anchor, align}}
+        use:clickOutside={() => showOptions(false)}
         transition:fly={{ duration: 200, y: 5 }}
         on:mousedown|preventDefault={handleOptionMousedown}>
         {#each options as option}
@@ -349,6 +320,6 @@
           <li class="no-results">No results</li>
         {/if}
       </ul>
-    </div>
+    </Portal>
   {/if}
 </div>

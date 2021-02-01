@@ -1,10 +1,19 @@
-export default function positionDropdown(element, anchor) {
+export default function positionDropdown(element, { anchor, align }) {
+  console.log(align);
   const { bottom, left, width } = anchor.getBoundingClientRect();
-  const containerRect = element.getBoundingClientRect();
-  element.style.position = "fixed";
+  console.log(anchor.getBoundingClientRect());
+  const calcLeftPosition = (left) => {
+    console.log(width);
+    console.log(element.getBoundingClientRect().width);
+    return align === "right"
+      ? left + width - element.getBoundingClientRect().width
+      : left;
+  };
+  console.log(element.clientWidth);
+  element.style.position = "absolute";
   element.style.top = `${bottom}px`;
-  element.style.left = `${left}px`;
   element.style.minWidth = `${(width - 4).toFixed(0)}px`;
+  element.style.left = `${calcLeftPosition(left)}px`;
   element.style.maxHeight = `${(window.innerHeight - bottom - 30).toFixed(
     0
   )}px`;
