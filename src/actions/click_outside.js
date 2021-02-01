@@ -1,18 +1,18 @@
 export default function clickOutside(element, callbackFunction) {
   function onClick(event) {
     if (!element.contains(event.target)) {
-      callbackFunction;
+      callbackFunction();
     }
   }
 
-  document.body.addEventListener("click", onClick);
+  document.body.addEventListener("click", onClick, true);
 
   return {
     update(newCallbackFunction) {
       callbackFunction = newCallbackFunction;
     },
     destroy() {
-      document.body.removeEventListener("click", onClick);
+      document.body.removeEventListener("click", onClick, true);
     },
   };
 }
