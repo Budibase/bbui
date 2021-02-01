@@ -1,11 +1,11 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import positionDropdown from '../actions/position_dropdown'
   import buildStyle from "../utils/buildStyle"
 
   const dispatch = createEventDispatcher();
   export let anchor;
   export let align = "right";
-  export let width = null;
   export let borderColor = "";
 
   export const show = () => {
@@ -19,11 +19,6 @@
   };
 
   let open = null;
-  let dimensions = { top: 0, bottom: 0, left: 0, width: 0, containerWidth: 0 };
-  let containerEl;
-  let positionSide = "top";
-  let maxHeight = 0;
-  let scrollTop = 0;
 
   function handleEscape(e) {
     if (open && e.key === "Escape") {
@@ -31,50 +26,7 @@
     }
   }
 
-  function getDimensions() {
-    const {
-      bottom,
-      top: spaceAbove,
-      left,
-      width,
-    } = anchor.getBoundingClientRect();
-    const spaceBelow = window.innerHeight - bottom;
-    const containerRect = containerEl.getBoundingClientRect();
-
-    let y;
-
-    if (spaceAbove > spaceBelow) {
-      positionSide = "bottom";
-      maxHeight = spaceAbove - 20;
-      y = window.innerHeight - spaceAbove;
-    } else {
-      positionSide = "top";
-      y = bottom;
-      maxHeight = spaceBelow - 20;
-    }
-
-    dimensions = {
-      [positionSide]: y,
-      left,
-      width,
-      containerWidth: containerRect.width,
-    };
-  }
-
-  const calcLeftPosition = () =>
-    align === "right"
-      ? dimensions.left + dimensions.width - dimensions.containerWidth
-      : dimensions.left;
-
-  // get dimensions when containerElement exists (i.e. open = true & rendered)
-  $: if (containerEl) getDimensions();
-
   $: menuStyle = buildStyle({
-    "max-height": `${maxHeight.toFixed(0)}px`,
-    "transform-origin": `center ${positionSide}`,
-    [positionSide]: `${dimensions[positionSide]}px`,
-    left: `${calcLeftPosition(dimensions)}px`,
-    width,
     borderColor,
   });
 </script>
@@ -120,7 +72,7 @@
     <div
       tabindex="0"
       class:open
-      bind:this={containerEl}
+      use:positionDropdown={{anchor, align}}
       style={menuStyle}
       on:keydown={handleEscape}
       class="menu-container">
