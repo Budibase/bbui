@@ -175,8 +175,6 @@
   div.nav {
     padding: var(--spacing-xs);
     position: absolute;
-    background: black;
-    color: white;
     display: flex;
     align-items: center;
     bottom: var(--spacing-s);
@@ -224,7 +222,7 @@
   }
 
   .file-icon {
-    color: white;
+    color: var(--background);
     font-size: 2em;
     margin-right: var(--spacing-s);
   }
