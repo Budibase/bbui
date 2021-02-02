@@ -135,7 +135,7 @@
     flex-direction: column;
     border-radius: 10px;
     transition: all 0.3s;
-    background: var(--grey-1);
+    background: var(--grey-2);
   }
 
   .fileDragged {
@@ -218,7 +218,7 @@
 
   i:hover{
     cursor: pointer;
-    color: var(--blue);
+    color: var(--background);
   }
 
   .file-icon {
