@@ -186,7 +186,7 @@
 
   .nav:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    color: var(--blue);
   }
 
   .left {
@@ -214,8 +214,13 @@
   }
 
   i {
-    font-size: 3rem;
-    color: var(--grey-5);
+    font-size: 2rem;
+    color: var(--ink);
+  }
+
+  i:hover{
+    cursor: pointer;
+    color: var(--blue);
   }
 
   .file-icon {
@@ -239,8 +244,8 @@
     position: absolute;
     background: linear-gradient(
       180deg,
-      rgba(12, 12, 12, 1),
-      rgba(60, 60, 60, 0)
+      rgb(255, 255, 255),
+      rgba(255, 255, 255, 0)
     );
     width: 100%;
     border-top-left-radius: 10px;
@@ -249,10 +254,10 @@
   }
 
   header > div {
-    color: white;
+    color: var(--ink);
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 12px;
     margin-left: var(--spacing-m);
     width: 60%;
     overflow: hidden;
@@ -277,22 +282,16 @@
     right: var(--spacing-s);
     padding: var(--spacing-s);
     border-radius: 10px;
-    opacity: 0;
     transition: all 0.3s;
-    color: white;
   }
 
   .delete-button i {
-    font-size: 4em;
+    font-size: 2em;
+    color: var(--ink);
   }
 
   .delete-button:hover {
-    opacity: 1;
     cursor: pointer;
-    background: linear-gradient(
-      to top right,
-      rgba(60, 60, 60, 0),
-      rgba(255, 0, 0, 0.2)
-    );
+    color: var(--red);
   }
 </style>
