@@ -11,6 +11,9 @@ export default function positionDropdown(element, { anchor, align }) {
     } = anchor.getBoundingClientRect();
     const spaceBelow = window.innerHeight - bottom;
     const containerRect = element.getBoundingClientRect();
+    const anchorRect = anchor.getBoundingClientRect();
+
+    console.log(anchorRect);
 
     let y;
 
@@ -39,11 +42,11 @@ export default function positionDropdown(element, { anchor, align }) {
   }
 
   element.style.position = "absolute";
+  element.style.minWidth = `${dimensions.width}px`;
   element.style.maxHeight = `${maxHeight.toFixed(0)}px`;
   element.style.transformOrigin = `center ${positionSide}`;
   element.style[positionSide] = `${dimensions[positionSide]}px`;
   element.style.left = `${calcLeftPosition(dimensions)}px`;
-  element.style.width = dimensions.width;
 
   //   console.log(element.clientWidth);
   //   element.style.top = `${bottom}px`;
