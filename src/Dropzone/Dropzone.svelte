@@ -158,13 +158,13 @@
     outline: none;
     font-feature-settings: "case" 1, "rlig" 1, "calt" 0;
     -webkit-box-align: center;
-    user-select: none;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 100%;
     text-decoration: underline;
   }
+
 
   .drop {
     font-family: var(--font-sans);
