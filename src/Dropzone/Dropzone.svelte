@@ -9,9 +9,6 @@
     image: "fas fa-file-image",
     code: "fas fa-file-code",
     file: "fas fa-file",
-    leftArrow: "fas fa-arrow-left",
-    rightArrow: "fas fa-arrow-right",
-    deleteButton: "fas fa-times",
     fileUpload: "fas fa-upload",
   }
 
@@ -105,17 +102,17 @@
           </p>
         </header>
         <div class="delete-button" on:click={removeFile}>
-          <i class={icons.deleteButton} />
+          <i class="ri-close-circle-fill"></i>
         </div>
         {#if selectedImageIdx !== 0}
           <div class="nav left" on:click={navigateLeft}>
-            <i class={icons.leftArrow} />
+            <i class="ri-arrow-left-circle-fill"></i>
           </div>
         {/if}
         <img src={selectedImage.url} />
         {#if selectedImageIdx !== files.length - 1}
           <div class="nav right" on:click={navigateRight}>
-            <i class={icons.rightArrow} />
+            <i class="ri-arrow-right-circle-fill"></i>
           </div>
         {/if}
       </li>
@@ -123,24 +120,26 @@
   </ul>
   <i class={icons.fileUpload} />
   <input {id} type="file" multiple on:change={handleFile} {...$$restProps} />
-  <label for={id}>Upload</label>
+  <i class="ri-upload-cloud-line"></i>
+  <p class="drop">Drop your files here</p>
+  <label for={id}>Select a file from your computer</label>
 </div>
 
 <style>
   .dropzone {
     padding: var(--spacing-l);
-    border: 2px dashed var(--grey-7);
+    border: 2px dashed var(--grey-4);
     text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
     transition: all 0.3s;
+    background: var(--grey-1);
   }
 
   .fileDragged {
     border: 2px dashed var(--grey-7);
-    transform: scale(1.03);
     background: var(--blue-light);
   }
 
@@ -150,15 +149,10 @@
 
   label {
     font-family: var(--font-sans);
+    font-size: var(--font-size-s);
     cursor: pointer;
-    font-weight: 600;
-    box-sizing: border-box;
     overflow: hidden;
-    border-radius: var(--border-radius-s);
-    color: var(--background);
-    padding: var(--spacing-s) var(--spacing-l);
-    transition: all 0.2s ease 0s;
-    display: inline-flex;
+    color: var(--grey-7);
     text-rendering: optimizeLegibility;
     min-width: auto;
     outline: none;
@@ -168,10 +162,14 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
     width: 100%;
-    border: solid 1.5px var(--ink);
-    background-color: var(--ink);
+    text-decoration: underline;
+  }
+
+  .drop {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-s);
+    margin: 12px 0;
   }
 
   div.nav {
@@ -216,7 +214,8 @@
   }
 
   i {
-    font-size: 3em;
+    font-size: 3rem;
+    color: var(--grey-5);
   }
 
   .file-icon {
@@ -284,7 +283,7 @@
   }
 
   .delete-button i {
-    font-size: 2em;
+    font-size: 4em;
   }
 
   .delete-button:hover {
