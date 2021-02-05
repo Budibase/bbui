@@ -99,6 +99,10 @@
   <Icon name="group" />
 </View>
 
+<View name="Lightning">
+  <Icon name="lightning" />
+</View>
+
 <View name="Download">
   <Icon name="download" />
 </View>
