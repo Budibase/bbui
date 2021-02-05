@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import positionDropdown from '../actions/position_dropdown'
+  import positionDropdown from '../Actions/position_dropdown'
   import buildStyle from "../utils/buildStyle"
 
   const dispatch = createEventDispatcher();
