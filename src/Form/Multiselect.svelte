@@ -4,12 +4,11 @@
   import { createEventDispatcher } from "svelte";
   import { fly } from "svelte/transition";
   import Label from "../Styleguide/Label.svelte";
-  import buildStyle from "../utils/buildStyle";
   const xPath =
     "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z";
 
-  import positionDropdown from '../actions/position_dropdown'
-  import clickOutside from '../actions/click_outside'
+  import positionDropdown from '../Actions/position_dropdown'
+  import clickOutside from '../Actions/click_outside'
 
   const dispatch = createEventDispatcher();
 
