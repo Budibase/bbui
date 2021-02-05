@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import Button from "../Button/Button.svelte";
   import Label from "../Styleguide/Label.svelte";
-  import text_area_resize from "../actions/autoresize_textarea.js";
+  import text_area_resize from "../Actions/autoresize_textarea.js";
 
   const dispatch = createEventDispatcher();
 
