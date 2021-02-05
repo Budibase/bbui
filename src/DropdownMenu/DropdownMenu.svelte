@@ -1,6 +1,7 @@
 <script>
   import Portal from "svelte-portal";
   import { createEventDispatcher } from "svelte";
+  import buildStyle from "../utils/buildStyle"
   import positionDropdown from '../Actions/position_dropdown'
   import clickOutside from '../Actions/click_outside'
   const dispatch = createEventDispatcher();
