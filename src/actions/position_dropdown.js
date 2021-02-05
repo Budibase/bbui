@@ -43,16 +43,18 @@ export default function positionDropdown(element, { anchor, align }) {
   element.style.maxHeight = `${maxHeight.toFixed(0)}px`;
   element.style.transformOrigin = `center ${positionSide}`;
   element.style[positionSide] = `${dimensions[positionSide]}px`;
-  element.style.left = `${calcLeftPosition(dimensions)}px`;
+  element.style.left = `${calcLeftPosition(dimensions).toFixed(0)}px`;
 
   const resizeObserver = new ResizeObserver((entries) => {
     for (let entry of entries) {
       dimensions = getDimensions();
       element.style[positionSide] = `${dimensions[positionSide]}px`;
+      element.style.left = `${calcLeftPosition(dimensions).toFixed(0)}px`;
     }
   });
 
   resizeObserver.observe(anchor);
+  resizeObserver.observe(element);
 
   return {
     destroy() {
