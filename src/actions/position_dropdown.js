@@ -1,7 +1,7 @@
 export default function positionDropdown(element, { anchor, align }) {
   let positionSide = "top";
   let maxHeight = 0;
-  let dimensions = getDimensions();
+  let dimensions = getDimensions(anchor);
   function getDimensions() {
     const {
       bottom,
@@ -11,7 +11,6 @@ export default function positionDropdown(element, { anchor, align }) {
     } = anchor.getBoundingClientRect();
     const spaceBelow = window.innerHeight - bottom;
     const containerRect = element.getBoundingClientRect();
-    const anchorRect = anchor.getBoundingClientRect();
 
     let y;
 
@@ -47,9 +46,12 @@ export default function positionDropdown(element, { anchor, align }) {
   element.style.left = `${calcLeftPosition(dimensions)}px`;
 
   const resizeObserver = new ResizeObserver((entries) => {
-    for (let _ of entries) {
+    for (let entry of entries) {
+      console.log(entry);
       console.log("Size changed!");
-      getDimensions();
+      dimensions = getDimensions();
+      console.log("Position side: ", positionSide);
+      console.log("Number: ", dimensions[positionSide]);
       element.style[positionSide] = `${dimensions[positionSide]}px`;
     }
   });
