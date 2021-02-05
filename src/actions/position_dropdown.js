@@ -13,8 +13,6 @@ export default function positionDropdown(element, { anchor, align }) {
     const containerRect = element.getBoundingClientRect();
     const anchorRect = anchor.getBoundingClientRect();
 
-    console.log(anchorRect);
-
     let y;
 
     if (spaceAbove > spaceBelow) {
@@ -48,26 +46,19 @@ export default function positionDropdown(element, { anchor, align }) {
   element.style[positionSide] = `${dimensions[positionSide]}px`;
   element.style.left = `${calcLeftPosition(dimensions)}px`;
 
-  //   console.log(element.clientWidth);
-  //   element.style.top = `${bottom}px`;
-  //   element.style.minWidth = `${(width - 4).toFixed(0)}px`;
-  //   element.style.left = `${calcLeftPosition(left)}px`;
-  //   element.style.maxHeight = `${(window.innerHeight - bottom - 30).toFixed(
-  //     0
-  //   )}px`;
+  const resizeObserver = new ResizeObserver((entries) => {
+    for (let _ of entries) {
+      console.log("Size changed!");
+      getDimensions();
+      element.style[positionSide] = `${dimensions[positionSide]}px`;
+    }
+  });
 
-  //   const resizeObserver = new ResizeObserver((entries) => {
-  //     for (let entry of entries) {
-  //       const { bottom } = entry.target.getBoundingClientRect();
-  //       element.style.top = `${bottom}px`;
-  //     }
-  //   });
+  resizeObserver.observe(anchor);
 
-  //   resizeObserver.observe(anchor);
-
-  //   return {
-  //     destroy() {
-  //       resizeObserver.disconnect();
-  //     },
-  //   };
+  return {
+    destroy() {
+      resizeObserver.disconnect();
+    },
+  };
 }
