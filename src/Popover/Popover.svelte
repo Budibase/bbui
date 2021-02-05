@@ -1,10 +1,13 @@
 <script>
+  import Portal from "svelte-portal";
   import { createEventDispatcher } from "svelte"
-  import buildStyle from "../utils/buildStyle"
+  import positionDropdown from '../Actions/position_dropdown'
+  import clickOutside from '../Actions/click_outside'
   const dispatch = createEventDispatcher()
 
   export let anchor
   export let align = "right"
+  let open = null;
 
   export const show = () => {
     open = true
@@ -16,87 +19,29 @@
     dispatch("hide")
   }
 
-  let open = null
-  let dimensions = { top: 0, bottom: 0, left: 0, width: 0, containerWidth: 0 }
-  let containerEl
-  let positionSide = "top"
-  let maxHeight = 0
-  let scrollTop = 0
-
   function handleEscape(e) {
     if (open && e.key === "Escape") {
       hide()
     }
   }
 
-  function getDimensions() {
-    const {
-      bottom,
-      top: spaceAbove,
-      left,
-      width,
-    } = anchor.getBoundingClientRect()
-    const spaceBelow = window.innerHeight - bottom
-    const containerRect = containerEl.getBoundingClientRect()
-    let y
-
-    if (spaceAbove > spaceBelow) {
-      positionSide = "bottom"
-      maxHeight = spaceAbove - 20
-      y = window.innerHeight - spaceAbove
-    } else {
-      positionSide = "top"
-      y = bottom
-      maxHeight = spaceBelow - 20
-    }
-
-    dimensions = {
-      [positionSide]: y,
-      left,
-      width,
-      containerWidth: containerRect.width,
-    }
-  }
-
-  const calcLeftPosition = () =>
-    align === "right"
-      ? dimensions.left + dimensions.width - dimensions.containerWidth
-      : dimensions.left
-
-  // get dimensions when containerElement exists (i.e. open = true & rendered)
-  $: if (containerEl) getDimensions()
-
-  $: menuStyle = buildStyle({
-    "max-height": `${maxHeight.toFixed(0)}px`,
-    "transform-origin": `center ${positionSide}`,
-    [positionSide]: `${dimensions[positionSide]}px`,
-    left: `${calcLeftPosition(dimensions)}px`,
-  })
 </script>
 
 {#if open}
-  <div
-    tabindex="0"
-    class:open
-    bind:this={containerEl}
-    style={menuStyle}
-    on:keydown={handleEscape}
-    class="menu-container">
-    <slot/>
-  </div>
-  <div on:click|self={hide} class="overlay" />
+  <Portal>
+    <div
+      tabindex="0"
+      class:open
+      use:positionDropdown={{anchor, align}}
+      use:clickOutside={hide}
+      on:keydown={handleEscape}
+      class="menu-container">
+      <slot/>
+    </div>
+  </Portal>
 {/if}
 
 <style>
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 5;
-  }
-
   .menu-container {
     position: fixed;
     margin-top: var(--spacing-xs);
