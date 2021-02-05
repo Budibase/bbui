@@ -37,8 +37,9 @@ export { default as Slider } from "./Form/Slider.svelte";
 export { default as Context } from "./context";
 
 // Actions
-export { default as autoResizeTextArea } from "./actions/autoresize_textarea";
-export { default as clickOutside } from "./actions/click_outside";
+export { default as autoResizeTextArea } from "./Actions/autoresize_textarea";
+export { default as positionDropdown } from "./Actions/position_dropdown";
+export { default as clickOutside } from "./Actions/click_outside";
 
 // Stores
 export { notifications } from "./Stores/notifications";

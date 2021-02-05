@@ -71,7 +71,7 @@
 
 {#if visible}
   <Portal>
-    <section class="drawer" transition:slide>
+    <section use:clickOutside={hide} class="drawer" transition:slide>
       <header>
         <div class="text">
           <div class="title">{title}</div>
