@@ -1,7 +1,7 @@
 <script>
   import { slide } from "svelte/transition";
   import Portal from "svelte-portal";
-  import clickOutside from "../actions/click_outside";
+  import clickOutside from "../Actions/click_outside";
 
   export let title;
 

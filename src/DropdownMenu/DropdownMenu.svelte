@@ -3,8 +3,6 @@
   import { createEventDispatcher } from "svelte";
   import positionDropdown from '../Actions/position_dropdown'
   import clickOutside from '../Actions/click_outside'
-  import buildStyle from "../utils/buildStyle"
-
   const dispatch = createEventDispatcher();
   export let anchor;
   export let align = "right";
