@@ -1,6 +1,8 @@
 <script>
+  import Portal from "svelte-portal";
   import { createEventDispatcher } from "svelte";
-  import positionDropdown from '../actions/position_dropdown'
+  import positionDropdown from '../Actions/position_dropdown'
+  import clickOutside from '../Actions/click_outside'
   import buildStyle from "../utils/buildStyle"
 
   const dispatch = createEventDispatcher();
@@ -33,7 +35,7 @@
 
 <style>
   .overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -68,15 +70,16 @@
 </style>
 
 {#if open}
-  <div on:click|self={hide} class="overlay">
+  <Portal>
     <div
       tabindex="0"
       class:open
       use:positionDropdown={{anchor, align}}
+      use:clickOutside={hide}
       style={menuStyle}
       on:keydown={handleEscape}
       class="menu-container">
       <slot />
     </div>
-  </div>
+  </Portal>
 {/if}
