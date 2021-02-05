@@ -47,11 +47,7 @@ export default function positionDropdown(element, { anchor, align }) {
 
   const resizeObserver = new ResizeObserver((entries) => {
     for (let entry of entries) {
-      console.log(entry);
-      console.log("Size changed!");
       dimensions = getDimensions();
-      console.log("Position side: ", positionSide);
-      console.log("Number: ", dimensions[positionSide]);
       element.style[positionSide] = `${dimensions[positionSide]}px`;
     }
   });
