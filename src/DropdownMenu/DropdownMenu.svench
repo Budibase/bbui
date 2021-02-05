@@ -2,7 +2,6 @@
   import { View } from "svench";
   import DropdownMenu from "./DropdownMenu.svelte";
   import Button from "../Button/Button.svelte";
-  import TextButton from "../Button/TextButton.svelte";
   import Icon from "../Icons/Icon.svelte";
 
   let anchorRight;
