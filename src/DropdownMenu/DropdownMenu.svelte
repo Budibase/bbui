@@ -4,7 +4,9 @@
   import buildStyle from "../utils/buildStyle"
   import positionDropdown from '../Actions/position_dropdown'
   import clickOutside from '../Actions/click_outside'
+
   const dispatch = createEventDispatcher();
+
   export let anchor;
   export let align = "right";
   export let borderColor = "";
@@ -65,6 +67,7 @@
       tabindex="0"
       class:open
       use:positionDropdown={{anchor, align}}
+      use:clickOutside={hide}
       style={menuStyle}
       on:keydown={handleEscape}
       class="menu-container">

@@ -2,6 +2,7 @@ export default function positionDropdown(element, { anchor, align }) {
   let positionSide = "top";
   let maxHeight = 0;
   let dimensions = getDimensions(anchor);
+
   function getDimensions() {
     const {
       bottom,
