@@ -33,7 +33,6 @@
       tabindex="0"
       class:open
       use:positionDropdown={{anchor, align}}
-      use:clickOutside={hide}
       on:keydown={handleEscape}
       class="menu-container">
       <slot/>

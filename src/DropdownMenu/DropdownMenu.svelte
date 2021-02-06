@@ -65,7 +65,6 @@
       tabindex="0"
       class:open
       use:positionDropdown={{anchor, align}}
-      use:clickOutside={hide}
       style={menuStyle}
       on:keydown={handleEscape}
       class="menu-container">
