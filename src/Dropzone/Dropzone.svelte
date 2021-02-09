@@ -87,8 +87,8 @@
   on:dragenter={handleDragOver}
   on:drop={handleDrop}
   class:fileDragged>
-  <ul>
-    {#if selectedImage}
+  {#if selectedImage}
+    <ul>
       <li>
         <header>
           <div>
@@ -116,8 +116,8 @@
           </div>
         {/if}
       </li>
-    {/if}
-  </ul>
+    </ul>
+  {/if}
   <i class={icons.fileUpload} />
   <input {id} type="file" multiple on:change={handleFile} {...$$restProps} />
   <i class="ri-upload-cloud-line"></i>
