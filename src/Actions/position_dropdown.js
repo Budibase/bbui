@@ -40,6 +40,7 @@ export default function positionDropdown(element, { anchor, align }) {
   }
 
   element.style.position = "absolute";
+  element.style.zIndex = "9999"
   element.style.minWidth = `${dimensions.width}px`;
   element.style.maxHeight = `${maxHeight.toFixed(0)}px`;
   element.style.transformOrigin = `center ${positionSide}`;
