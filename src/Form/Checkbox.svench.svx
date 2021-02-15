@@ -24,9 +24,9 @@ Use an array and an each block to use multiple checkboxes
 ```svelte
 <script>
   let menu = [
-    {text: 'Cookies and cream', selected: false},
-    {text: 'Mint choc chip', selected: false},
-    {text: 'Raspberry ripple', selected: true}
+    {text: 'Cookies and cream', checked: false},
+    {text: 'Mint choc chip', checked: false},
+    {text: 'Raspberry ripple', checked: true}
   ];
 </script>
 
