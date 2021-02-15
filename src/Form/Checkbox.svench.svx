@@ -1,0 +1,52 @@
+<script>
+  import { View } from "svench";
+  import Checkbox from "./Checkbox.svelte";
+
+  let checked = false
+
+  let menu = [
+    {text: 'Cookies and cream', checked: false},
+    {text: 'Mint choc chip', checked: false},
+    {text: 'Raspberry ripple', checked: true}
+  ];
+</script>
+
+<View name="Single checkbox">
+      <Checkbox bind:checked label="One single checkbox with text" showLabel/>
+</View>
+
+<View name="No text">
+  <Checkbox bind:checked label="One single checkbox with text"/>
+</View>
+
+## Multiple checkboxes
+Use an array and an each block to use multiple checkboxes
+```svelte
+<script>
+  let menu = [
+    {text: 'Cookies and cream', checked: false},
+    {text: 'Mint choc chip', checked: false},
+    {text: 'Raspberry ripple', checked: true}
+  ];
+</script>
+
+{#each menu as {text, checked}}
+  <Checkbox value={text} bind:checked label={text} showLabel/>
+{/each}
+```
+
+
+<View name="Multiple checkboxes">
+  <div class="container">
+    {#each menu as {text, checked}}
+      <Checkbox value={text} bind:checked label={text} showLabel/>
+    {/each}
+  </div>
+</View>
+
+<style>
+  .container {
+    display: grid;
+    grid-gap: 10px;
+  }
+</style>
