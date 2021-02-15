@@ -19,6 +19,8 @@ export { default as Button } from "./Button/Button.svelte";
 export { default as Icon, iconOptions, directions } from "./Icons/Icon.svelte";
 export { default as TextButton } from "./Button/TextButton.svelte";
 export { default as Toggle } from "./Form/Toggle.svelte";
+export { default as Radio } from "./Form/Radio.svelte";
+export { default as Checkbox } from "./Form/Checkbox.svelte";
 export { default as Home } from "./Links/Home.svelte";
 export { default as DetailSummary } from "./List/Items/DetailSummary.svelte";
 export { default as Switcher } from "./Switcher/Switcher.svelte";
