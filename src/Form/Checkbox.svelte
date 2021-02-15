@@ -4,6 +4,7 @@
     const dispatch = createEventDispatcher()
   
     export let checked = false
+    export let value;
     export let showLabel = false
     export let label
     export let name
@@ -15,7 +16,7 @@
   </script>
   
   <div class="container">
-    <input bind:checked type="checkbox" {name} class="checkbox" id={label} />
+    <input on:change={handleChange} {value} bind:checked  type="checkbox" {name} class="checkbox" id={label} />
     <div class="checkbox-container" on:click={handleChange}>
       <div class="check-div" class:checked>
         <div class="tick_mark" />

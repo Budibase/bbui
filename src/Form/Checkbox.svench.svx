@@ -1,13 +1,35 @@
 <script>
-    import { View } from "svench";
-    import Checkbox from "./Checkbox.svelte";
-  </script>
-  
-  <View name="Multiple checkboxes">
-    <Checkbox label="Huey" name="drone" showLabel/>
-    <Checkbox label="Dewey" name="drone" showLabel/>
-    <Checkbox label="Louie" name="drone" showLabel/>
-  </View>
+  import { View } from "svench";
+  import Checkbox from "./Checkbox.svelte";
 
-  
-  
+  let checked = false
+
+  let menu = [
+    {text: 'Cookies and cream', selected: false},
+    {text: 'Mint choc chip', selected: false},
+    {text: 'Raspberry ripple', selected: true}
+  ];
+</script>
+
+<View name="Single checkbox">
+      <Checkbox bind:checked label="One single checkbox with text" showLabel/>
+</View>
+
+<View name="No text">
+  <Checkbox bind:checked label="One single checkbox with text"/>
+</View>
+
+<View name="Multiple checkboxes">
+  <div class="container">
+    {#each menu as {text, selected}}
+      <Checkbox value={text} bind:checked={selected} label={text} showLabel/>
+    {/each}
+  </div>
+</View>
+
+<style>
+  .container {
+    display: grid;
+    grid-gap: 10px;
+  }
+</style>
