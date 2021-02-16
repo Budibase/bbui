@@ -41,11 +41,14 @@
     align-items: center;
     justify-content: center;
     margin: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
   }
 
   .primary {
     color: var(--background);
-    border: var(--border-black);
+    border-color: var(--ink);
     background-color: var(--ink);
   }
   button.primary:hover:not([disabled]) {
@@ -53,7 +56,7 @@
     color: var(--ink);
   }
   .secondary {
-    border: var(--border-grey);
+    border-color: var(--grey-4);
     background-color: var(--background);
     color: var(--grey-8);
     font-weight: 500;
@@ -63,7 +66,7 @@
     color: var(--ink);
   }
   .translucent {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--grey-6);
     font-weight: 500;
@@ -74,14 +77,14 @@
   }
   .blue {
     background-color: var(--blue);
-    border: solid 1.5px var(--blue);
+    border-color: var(--blue);
   }
   button.blue:hover:not([disabled]) {
     background-color: var(--blue-light);
     color: var(--blue);
   }
   .red {
-    border: solid 1.5px var(--red);
+    border-color: var(--red);
     background-color: var(--red);
     color: white;
   }
@@ -90,7 +93,7 @@
     color: var(--red);
   }
   .yellow {
-    border: solid 1.5px var(--yellow);
+    border-color: var(--yellow);
     background-color: var(--yellow);
     color: white;
   }
@@ -99,7 +102,7 @@
     color: var(--yellow);
   }
   .orange {
-    border: solid 1.5px var(--orange);
+    border-color: var(--orange);
     background-color: var(--orange);
     color: white;
   }
@@ -108,7 +111,7 @@
     color: var(--orange);
   }
   .green {
-    border: solid 1.5px var(--green);
+    border-color: var(--green);
     background-color: var(--green);
     color: white;
   }
@@ -117,7 +120,7 @@
     color: var(--green);
   }
   .purple {
-    border: solid 1.5px var(--purple);
+    border-color: var(--purple);
     background-color: var(--purple);
     color: white;
   }
@@ -161,7 +164,7 @@
   button:disabled {
     background-color: var(--grey-4);
     cursor: not-allowed;
-    border: solid 1.5px var(--grey-4);
+    border-color: var(--grey-4);
     color: var(--grey-5);
   }
 </style>
