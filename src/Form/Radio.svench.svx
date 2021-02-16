@@ -33,12 +33,18 @@
   <View name="Multiple radio buttons">
     <div class="container">
         {#each menu as flavour}
-            <Radio name="Ice Cream Flavour"  value={flavour} bind:group={selected} label={flavour} showLabel/>
+            <Radio name="Ice Cream Flavour"  value={flavour} bind:group={selected}>
+              <label for={flavour}>{flavour}</label>
+            </Radio>
         {/each}
     </div>
   </View>
   
   <style>
+    label {
+      display: grid;
+      place-items: center;
+    }
     .container {
       display: grid;
       grid-gap: 10px;

@@ -5,8 +5,6 @@
   
     export let checked = false
     export let value;
-    export let showLabel = false
-    export let label
     export let name
   
     function handleChange() {
@@ -16,15 +14,13 @@
   </script>
   
   <div class="container">
-    <input on:change={handleChange} {value} bind:checked  type="checkbox" {name} class="checkbox" id={label} />
+    <input on:change={handleChange} {value} bind:checked  type="checkbox" {name} class="checkbox" id={value} />
     <div class="checkbox-container" on:click={handleChange}>
       <div class="check-div" class:checked>
         <div class="tick_mark" />
       </div>
     </div>
-    {#if showLabel}
-      <label for={label}>{label}</label>
-    {/if}
+    <slot />
   </div>
   
   <style>
