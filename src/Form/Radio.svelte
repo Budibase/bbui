@@ -28,6 +28,10 @@
   </div>
   
   <style>
+    label {
+      display: grid;
+      place-items: center;
+    }
     .container {
       display: flex;
       gap: var(--spacing-s);   
