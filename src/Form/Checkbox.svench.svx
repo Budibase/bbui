@@ -12,11 +12,13 @@
 </script>
 
 <View name="Single checkbox">
-      <Checkbox bind:checked label="One single checkbox with text" showLabel/>
+      <Checkbox bind:checked value="value">
+        <label for="value">One single checkbox with text</label>
+      </Checkbox>
 </View>
 
 <View name="No text">
-  <Checkbox bind:checked label="One single checkbox with text"/>
+  <Checkbox bind:checked value="somevalue" />
 </View>
 
 ## Multiple checkboxes
@@ -31,7 +33,9 @@ Use an array and an each block to use multiple checkboxes
 </script>
 
 {#each menu as {text, checked}}
-  <Checkbox value={text} bind:checked label={text} showLabel/>
+  <Checkbox value={text} bind:checked>
+    <label for={text}>{text}</label>
+  </Checkbox>
 {/each}
 ```
 
@@ -39,12 +43,18 @@ Use an array and an each block to use multiple checkboxes
 <View name="Multiple checkboxes">
   <div class="container">
     {#each menu as {text, checked}}
-      <Checkbox value={text} bind:checked label={text} showLabel/>
+      <Checkbox value={text} bind:checked>
+        <label for={text}>{text}</label>
+      </Checkbox>
     {/each}
   </div>
 </View>
 
 <style>
+    label {
+      display: grid;
+      place-items: center;
+    }
   .container {
     display: grid;
     grid-gap: 10px;

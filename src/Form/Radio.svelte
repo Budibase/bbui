@@ -3,35 +3,27 @@
   
     const dispatch = createEventDispatcher()
   
-    export let group;
     export let value;
-    export let showLabel = false
-    export let label
+    export let group;
     export let name
   
     function handleChange() {
-      group = label
+      group = value
       dispatch("change", group)
     }
   </script>
   
   <div class="container">
-    <input on:change={handleChange} {value} bind:group  type="radio" {name} class="checkbox" id={label} />
+    <input on:change={handleChange} {value} bind:group type="radio" {name} class="checkbox" id={value} />
     <div class="checkbox-container" on:click={handleChange}>
-      <div class="check-div" class:checked={group === label}>
+      <div class="check-div" class:checked={group === value}>
         <div class="tick_mark" />
       </div>
     </div>
-    {#if showLabel}
-      <label for={label}>{label}</label>
-    {/if}
+    <slot />
   </div>
   
   <style>
-    label {
-      display: grid;
-      place-items: center;
-    }
     .container {
       display: flex;
       gap: var(--spacing-s);   
