@@ -45,7 +45,6 @@ Use an array and an each block to use multiple checkboxes
 {/each}
 ```
 
-
 <View name="Multiple checkboxes">
   <div class="container">
     {#each menu as {text, checked}}
