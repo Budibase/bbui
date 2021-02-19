@@ -6,17 +6,19 @@
     export let checked = false
     export let value;
     export let name
+    export let disabled
   
     function handleChange() {
+      if (disabled) return
       checked = !checked
       dispatch("change", checked)
     }
   </script>
   
   <div class="container">
-    <input on:change={handleChange} {value} bind:checked  type="checkbox" {name} class="checkbox" id={value} />
+    <input {disabled} on:change={handleChange} {value} bind:checked  type="checkbox" {name} class="checkbox" id={value} />
     <div class="checkbox-container" on:click={handleChange}>
-      <div class="check-div" class:checked>
+      <div class:disabled class="check-div" class:checked>
         <div class="tick_mark" />
       </div>
     </div>
@@ -105,10 +107,18 @@
       box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
       transform: translateX(78px);
     }
+
+    .check-div.disabled:active {
+      transform: none;
+    }
   
     .checked {
       background-color: var(--grey-2);
     }
+    .checked.disabled {
+      background-color: var(--grey-5);
+    }
+  
   
     .checked:before {
       width: 0;

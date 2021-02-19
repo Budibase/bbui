@@ -17,6 +17,12 @@
       </Checkbox>
 </View>
 
+<View name="Single disabled checkbox">
+  <Checkbox disabled checked value="value">
+    <label for="someOtherValue">A disabled checkbox</label>
+  </Checkbox>
+</View>
+
 <View name="No text">
   <Checkbox bind:checked value="somevalue" />
 </View>
