@@ -6,8 +6,10 @@
     export let value;
     export let group;
     export let name
+    export let disabled = false
   
     function handleChange() {
+      if (disabled) return
       group = value
       dispatch("change", group)
     }
@@ -16,7 +18,7 @@
   <div class="container">
     <input on:change={handleChange} {value} bind:group type="radio" {name} class="checkbox" id={value} />
     <div class="checkbox-container" on:click={handleChange}>
-      <div class="check-div" class:checked={group === value}>
+      <div class:disabled class="check-div" class:checked={group === value}>
         <div class="tick_mark" />
       </div>
     </div>
@@ -105,9 +107,16 @@
       box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
       transform: translateX(78px);
     }
+
+    .check-div.disabled:active {
+      transform: none;
+    }
   
     .checked {
       background-color: var(--grey-2);
+    }
+    .checked.disabled {
+      background-color: var(--grey-5);
     }
   
     .checked:before {
