@@ -16,7 +16,7 @@
   </script>
   
   <div class="container">
-    <input class:disabled on:change={handleChange} {value} bind:group type="radio" {name} class="checkbox" id={value} />
+    <input {disabled} on:change={handleChange} {value} bind:group type="radio" {name} class="checkbox" id={value} />
     <div class="checkbox-container" on:click={handleChange}>
       <div class:disabled class="check-div" class:checked={group === value}>
         <div class="tick_mark" />
