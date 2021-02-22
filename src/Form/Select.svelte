@@ -44,7 +44,7 @@
     background: var(--grey-2);
   }
   select.outline {
-    border: var(--border-dark);
+    border: var(--border-light-2);
   }
   select:focus {
     border: var(--border-blue);
