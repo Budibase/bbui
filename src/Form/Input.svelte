@@ -119,7 +119,7 @@
     border: var(--border-blue);
   }
   input.outline {
-    border: var(--border-light-2);
+    border: var(--grey-2) 2px solid;
     background: var(--background);
   }
   input.outline:active {

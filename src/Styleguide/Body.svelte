@@ -45,7 +45,7 @@
   }
 
   .grey {
-    color: var(--grey-6);
+    color: var(--grey-5);
   }
 
   .black {
@@ -53,7 +53,7 @@
   }
 
   .lh {
-    line-height: 1.75;
+    line-height: 1.5;
   }
 </style>
 
