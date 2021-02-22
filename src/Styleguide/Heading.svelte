@@ -47,7 +47,7 @@
   }
 
   .grey {
-    color: var(--grey-5);
+    color: var(--grey-6);
   }
 
   .black {
